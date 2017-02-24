@@ -1,14 +1,14 @@
 # webjxj
-日常原生js代码学习
+日常原生js代码练习
 
 
 ## 2月
 
-[0224 call apply](z0224.md)
-[0223 constructor](z0223.md)
-[0222 AJAX get](z0222.md)
-[0221 AJAX post](z0221.md)
-[0220 try catch](z0220.md)
-[0219 create](z0219.md)
-[0219 new](z0218.md)
-[0219 obj](z0217.md)
+[24 call apply](z0224.md)
+[23 constructor](z0223.md)
+[22 AJAX get](z0222.md)
+[21 AJAX post](z0221.md)
+[20 try catch](z0220.md)
+[19 create](z0219.md)
+[19 new](z0218.md)
+[19 obj](z0217.md)
