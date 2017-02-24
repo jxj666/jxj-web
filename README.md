@@ -3,4 +3,4 @@
 
 [0224 call apply](0224.md)
 [0223 constructor](0223.md)
-[0223 AJAX get](0222.md)
+[0222 AJAX get](0222.md)
