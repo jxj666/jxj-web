@@ -16,23 +16,16 @@ qq:228322991(请注明您的目的)
  
 ## 2月
 
- [25 使用useAgent验证用户访问的设备](zk0225.md)
- 
- [24 call apply](zk0224.md)
- 
- [23 constructor](zk0223.md)
- 
- [22 AJAX get](zk0222.md)
- 
- [21 AJAX post](zk0221.md)
- 
- [20 try catch](zk0220.md)
- 
- [19 create](zk0219.md)
- 
- [18 new](zk0218.md)
- 
- [17 obj](zk0217.md)
+ [es5es6 getter setter]
+ [使用useAgent验证用户访问的设备](zk0225.md)
+ [call apply](zk0224.md)
+ [constructor](zk0223.md)
+ [AJAX get](zk0222.md)
+ [AJAX post](zk0221.md)
+ [try catch](zk0220.md)
+ [create](zk0219.md)
+ [new](zk0218.md)
+ [obj](zk0217.md)
  
  
 ## 1月
