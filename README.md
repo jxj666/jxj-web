@@ -2,7 +2,7 @@
 这里是靳小健天天坚持的原生js笔记小站
 如果您需要我,您还可以联系:jxjweb@foxmail.com
 
- !  [我](me.jpg)
+ ![我](me.jpg)
  
  [欢迎访问我的技术验证项目小站](http://webjxj.sc2yun.com/)
  
