@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue01</title>
+</head>
+<body>
+	<div>
+<h5>打开控制台调试</h5>
+<h6>1:</h6>
+<pre>
+// 一个“比较深”的对象：某些属性的值也是一个对象
+let obj = {
+ a: 1,
+ b: 2,
+ c: {
+     d: 3,
+     e: 4
+ }
+}
+</pre>
+<h6>2:</h6>
+<pre>
+let app1 = new Observer({
+         name: 'youngwind',
+         age: 25
+ });
+
+ app1.data.name = {
+         lastName: 'liang',
+         firstName: 'shaofeng'
+ };
+
+ app1.data.name.lastName;
+ // 这里还需要输出 '你访问了 lastName '
+ app1.data.name.firstName = 'lalala';
+ // 这里还需要输出 '你设置了firstName, 新的值为 lalala'
+</pre>
+<h6>3:</h6>
+<pre>
+let app1 = new Observer({
+         name: 'youngwind',
+         age: 25
+ });
+
+ // 你需要实现 $watch 这个 API
+ app1.$watch('age', function(age) {
+         console.log(`我的年纪变了，现在已经是：${age}岁了`)
+ });
+
+ app1.data.age = 100; // 输出：'我的年纪变了，现在已经是100岁了'
+</pre>
+	</div>
+	<script src="main.js"></script>
+</body>
+</html>
