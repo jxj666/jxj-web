@@ -1,27 +1,45 @@
+function Event() {
+    this.events = {};
+}
+Event.prototype.on = function(attr, callback) {
+    if (this.events[attr]) {
+        this.events[attr].push(callback);
+    } else {
+        this.events[attr] = [callback];
+    }
+}
+Event.prototype.off = function(attr) {
+    for (let key in this.events) {
+        if (this.events.hasOwnProperty(key) && key === attr) {
+            delete this.events[key];
+        }
+    }
+}
+Event.prototype.emit = function(attr, ...arg) {
+    this.events[attr] && this.events[attr].forEach(function(item) {
+        item(...arg);
+    })
+}
+
+
 function Observer(data) {
     this.data = data;
-    this.walk(data)
+    this.walk(data);
+    this.watch = new Event();
 }
-// $watch(key,callback){
-//     this.watch[key] = callback;
-// }
+
 let p = Observer.prototype;
+p.$watch = function(attr, callback) {
+    this.watch.on(attr, callback);
+}
 
-
-// 此函数用于深层次遍历对象的各个属性
-// 采用的是递归的思路
-// 因为我们要为对象的每一个属性绑定getter和setter
 p.walk = function(obj) {
     let val;
     for (let key in obj) {
 
-        // 因为for...in 要用hasOwnProperty进行过滤
-        // 循环会把对象原型链上的所有可枚举属性都循环出来
-        // 而我们想要的仅仅是这个对象本身拥有的属性，所以要这么做。
         if (obj.hasOwnProperty(key)) {
             val = obj[key];
 
-            // 这里进行判断，如果还没有遍历到最底层，继续new Observer
             if (typeof val === 'object') {
                 new Observer(val);
             }
@@ -32,10 +50,7 @@ p.walk = function(obj) {
 };
 
 p.convert = function(key, val) {
-
-
-
-
+    let _this = this;
     Object.defineProperty(this.data, key, {
         enumerable: true,
         configurable: true,
@@ -43,16 +58,15 @@ p.convert = function(key, val) {
             console.log('你访问了' + key);
             return val
         },
-             set: function (valnew) {
-         // self.watch[key](valnew) // 回调监听 取代下面那条语句
-         console.log(`你设置了 ${key}, 新的值为${valnew}`);
-         if (typeof valnew === 'object') {
-             new Observer(valnew);
-         }
-         if (valnew === val) return;
-         val = valnew
+        set: function(newVal) {
 
-     }
+            if (typeof newVal === 'object') {
+                new Observer(newVal);
+            }
+            _this.watch.emit(key, val, newVal);
+            console.log(`你设置了 ${key}, 新的值为${newVal}`);
+            val = newVal;
+
+        }
     })
 };
-
