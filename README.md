@@ -10,11 +10,11 @@ qq:228322991(请注明您的目的)
  
 ###### 由于github服务器在中国访问较慢，为了展示方便，我的项目均放在自己的云主机上了，您可以点击链接访问。
  
- [欢迎访问我自有网站](https://jxj322991.github.io/animating-resume/dist/)
+ [欢迎访问我自有网站](http://webjxj.sc2yun.com/)
  
  [欢迎访问慕课网查看我的最近动态](http://www.imooc.com/u/2413606)
  
- [跟大神学动态简历](jxj322991.github.io/animating-resume)
+ [跟大神学动态简历](https://jxj322991.github.io/animating-resume/dist/)
  
 ## 3月
 
