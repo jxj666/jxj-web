@@ -14,6 +14,8 @@ qq:228322991(请注明您的目的)
  
  [欢迎访问慕课网查看我的最近动态](http://www.imooc.com/u/2413606)
  
+ [跟大神学动态简历](jxj322991.github.io/animating-resume)
+ 
 ## 3月
 
  [http小复习](zj0308.md)
