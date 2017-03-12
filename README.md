@@ -11,7 +11,7 @@ qq:228322991(请注明您的目的)
 ###### 由于github服务器在中国访问较慢，为了展示方便，我的项目均放在自己的云主机上了，您可以点击链接访问。
  
 
-##  [欢迎点击访问我自有网站](http://webjxj.sc2yun.com/)
+##  [欢迎点击访问我的自有网站](http://webjxj.sc2yun.com/)
 
  [![link](mouseover.gif)](http://webjxj.sc2yun.com/)
  
