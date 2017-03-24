@@ -1,0 +1,304 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"get",
+				"get\tGet Elements"
+			],
+			[
+				"border",
+				"border-right"
+			],
+			[
+				"min",
+				"min-width"
+			],
+			[
+				"fun",
+				"function"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "in",
+		"selected_items":
+		[
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"for",
+				"Format: Javascript"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 593.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/xiaojianjin/Desktop/web2017jxj/03/22.md",
+		"/Users/xiaojianjin/Desktop/siwei/README.md",
+		"/Users/xiaojianjin/Desktop/web2017jxj/01/zl0110.md",
+		"/Users/xiaojianjin/Desktop/web2017jxj/01/zl0111.md",
+		"/Users/xiaojianjin/Desktop/jibenapi.md",
+		"/Users/xiaojianjin/Desktop/web2017jxj/01/zl0105.md",
+		"/Users/xiaojianjin/Desktop/web2017jxj/README.md",
+		"/Users/xiaojianjin/Desktop/web2017jxj/03/21.md",
+		"/Users/xiaojianjin/Desktop/22.md",
+		"/Users/xiaojianjin/Downloads/课程作业/index.html",
+		"/Users/xiaojianjin/Downloads/课程作业/css/main.css",
+		"/Users/xiaojianjin/Downloads/课程作业/js/main.js",
+		"/Users/xiaojianjin/Desktop/web2017jxj/03/16.md",
+		"/Users/xiaojianjin/Desktop/web2017jxj/03/20.md",
+		"/Users/xiaojianjin/Desktop/web2017jxj/03/19.md",
+		"/Users/xiaojianjin/Desktop/siwei/js/11regexp.md",
+		"/Users/xiaojianjin/Desktop/siwei/js/12error.md",
+		"/Users/xiaojianjin/Desktop/siwei/js/22oop.md",
+		"/Users/xiaojianjin/Desktop/siwei/js/21function.md",
+		"/Users/xiaojianjin/Desktop/siwei/js/OOP.mmap.md",
+		"/Users/xiaojianjin/Desktop/siwei/js/String.mmap.md",
+		"/Users/xiaojianjin/Desktop/siwei/js/01object.md",
+		"/Users/xiaojianjin/Desktop/siwei/js/1object.md",
+		"/Users/xiaojianjin/Desktop/siwei/js/内置对象.mmap.md",
+		"/Users/xiaojianjin/Desktop/siwei/js.md",
+		"/Users/xiaojianjin/Desktop/siwei/ajax.md",
+		"/Users/xiaojianjin/Desktop/siwei/bom.md",
+		"/Users/xiaojianjin/Desktop/siwei/dom.md",
+		"/Users/xiaojianjin/Desktop/siwei/jq.md",
+		"/Users/xiaojianjin/Desktop/siwei/h5.md",
+		"/Users/xiaojianjin/Desktop/siwei/_config.yml",
+		"/Users/xiaojianjin/Desktop/web2017jxj/03/0317.md",
+		"/Users/xiaojianjin/Desktop/test/test.js",
+		"/Users/xiaojianjin/siwei/README.MD",
+		"/Users/xiaojianjin/.ssh/id_rsa.pub",
+		"/Users/xiaojianjin/.bash_profile",
+		"/usr/local/include/node/openssl/dsa.h"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"shuchu",
+			"!",
+			"lxxianmu",
+			"lianxixianmu",
+			"-md-",
+			"-sm-",
+			"sm-",
+			"md-",
+			"strExtension",
+			"^#{6}",
+			"^##",
+			"^#{6}",
+			"^##",
+			"^#{6}",
+			"^##",
+			"^#{6}",
+			"^##",
+			"^#{6}",
+			"^##",
+			"^#{6,}",
+			"^##",
+			":",
+			"/",
+			"^####",
+			"^##",
+			"^#{6}",
+			"^#{6,}",
+			"^##",
+			"^-.",
+			"^##",
+			"-.",
+			"^#{7}",
+			"^##",
+			"^\\.",
+			"^\\.\\n",
+			"^[#][#]",
+			"#{7,}",
+			"#{6,}"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"lxxianmu",
+			"-xs-",
+			"xs-",
+			"sm-",
+			"typeTest",
+			"-  ",
+			"#",
+			"-  ",
+			"#",
+			"- ",
+			"#",
+			"- ",
+			"#",
+			"- ",
+			"#",
+			"-  ",
+			"#",
+			" : ",
+			" / ",
+			"#####",
+			"#",
+			"-  ",
+			"#",
+			"-",
+			"#",
+			"- ",
+			"-.   ",
+			"###",
+			"#",
+			"-. ",
+			"###",
+			"#",
+			"."
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 35.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "main.sublime-project",
+	"replace":
+	{
+		"height": 66.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Desktop/siwei/jq.md"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
