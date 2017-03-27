@@ -16,6 +16,10 @@ qq:228322991(请注明您的目的)
  [![link](mouseover.gif)](http://webjxj.sc2yun.com/)
  
 ## 3月
+ 
+ [巧妙使用 canvas 压缩图片](03/27.md)
+
+ [有趣的js 题](03/26.md)
 
  [vue 事件处理器](03/25.md)
 
