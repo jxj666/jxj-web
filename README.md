@@ -14,6 +14,8 @@
  [![link](mouseover.gif)](http://webjxj.sc2yun.com/)
  
 ## 3月
+
+ [vue 表单控件绑定](03/28.md)
  
  [巧妙使用 canvas 压缩图片](03/27.md)
 
