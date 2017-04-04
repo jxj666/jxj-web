@@ -15,6 +15,8 @@
 
 ## 4月
 
+ [promise](04/04.md)
+
  [new 复习](04/0403.md)
 
  [浅谈 npm webpack](04/0402.md)
