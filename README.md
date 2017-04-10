@@ -13,8 +13,11 @@
 
  [![link](mouseover.gif)](http://webjxj.sc2yun.com/)
  
+ [只用速查 API 表 (jQuery)](mainkey/jQuery.md)
 
 ## 4月
+ 
+ [mvc 到 mvvm](04/0410.md)
 
  [jquery 温故知新(AJAX)](04/0409.md)
 
