@@ -13,11 +13,11 @@
 
  [![link](mouseover.gif)](http://webjxj.sc2yun.com/)
  
- [只用速查 API 表 (jQuery)](mainkey/jQuery.md)
+ [只用速查 API 表 (jQuery)](mainKey/jQuery.md)
 
 ## 4月
 
- [开发经常遇到的问题(布局/居中/模式)](04/0411.md)
+ [开发遇到的问题(布局/居中/模式)](04/0411.md)
  
  [mvc 到 mvvm](04/0410.md)
 
