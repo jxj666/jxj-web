@@ -16,6 +16,8 @@
  [只用速查 API 表 (jQuery)](mainkey/jQuery.md)
 
 ## 4月
+
+ [开发经常遇到的问题(布局/居中)](04/0411.md)
  
  [mvc 到 mvvm](04/0410.md)
 
