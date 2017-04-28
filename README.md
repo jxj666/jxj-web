@@ -13,9 +13,21 @@
 
  [![link](mouseover.gif)](http://webjxj.sc2yun.com/)
  
- [只用速查 API 表 (jQuery)](mainKey/jQuery.md)
+ [自用速查 API 表 (jQuery)](mainKey/jQuery.md)
 
 ## 4月
+
+ [ js 面向对象三 ](04/0428.md)
+
+ [ js 面向对象二 ](04/0427.md)
+
+ [ js 面向对象一 ](04/0426.md)
+
+ [ reduce ](04/0425.md)
+
+ [ css in js ](04/0424.md)
+
+ [ js 内存泄漏 ](04/0423.md)
 
  [ gulp ](04/0422.md)
 
