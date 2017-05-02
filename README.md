@@ -14,8 +14,16 @@
  [![link](mouseover.gif)](http://webjxj.sc2yun.com/)
  
  [自用速查 API 表 (jQuery)](mainKey/jQuery.md)
+ 
+## 5月
+ 
+ [js 循环加载](05/0501.md)
 
 ## 4月
+
+ [有趣的 js](04/0430.md)
+
+ [严格模式](04/0429.md)
 
  [ js 面向对象三 ](04/0428.md)
 
