@@ -5,13 +5,11 @@
 如果您需要我,您还可以联系:
 
 邮箱:webjxj@foxmail.com
- 
-###### 由于github服务器在中国访问较慢，为了展示方便，我的项目均放在自己的云主机上了，您可以点击链接访问。
+
  
 
 ##  [欢迎点击访问我的自有网站](http://webjxj.sc2yun.com/)
 
- [![link](mouseover.gif)](http://webjxj.sc2yun.com/)
  
  [自用速查 API 表 (jQuery)](mainKey/jQuery.md)
  
