@@ -6,12 +6,7 @@
 
 邮箱:webjxj@foxmail.com
 
- 
-
-##  [欢迎点击访问我的自有网站](http://webjxj.sc2yun.com/)
-
- 
- [自用速查 API 表 (jQuery)](mainKey/jQuery.md)
+ [自用浓缩知识](https://jxj322991.github.io/siwei/)
  
  [工作中对类名命名的一些总结](05/0523.md)
  
