@@ -7,6 +7,11 @@
 邮箱:webjxj@foxmail.com
 
  [自用浓缩知识](https://jxj322991.github.io/siwei/)
+
+
+ [WebSocket 协议了解](05/0526.md)
+
+ [css 变量入门](05/0525.md)
  
  [工作中对类名命名的一些总结](05/0523.md)
  
