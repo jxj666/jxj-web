@@ -176,15 +176,6 @@
  
  [后端温故知新1](02/zk0201.md)
 
- [create](02/zk0219.md)
- [new](02/zk0218.md)
- [obj](02/zk0217.md)
- [call apply](02/zk0224.md)
- [constructor](02/zk0223.md)
- [AJAX get](02/zk0222.md)
- [AJAX post](02/zk0221.md)
- [try catch](02/zk0220.md)
-
  [经典js代码总结](01/zl0101.md)
 
  [算法冒泡插入](01/zl0102.md)
