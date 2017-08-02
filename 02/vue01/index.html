@@ -4,33 +4,70 @@
 <head>
     <meta charset="UTF-8">
     <title>vue01</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+    img {
+        max-width: 100%;
+    }
+
+    div {
+        margin-bottom: 1px;
+    }
+    </style>
 </head>
 
 <body>
-    <h1>动态数据绑定</h1>
-    <h3>如何监听其属性的读取与变化？也就是说，如何知道程序访问了对象的哪个属性，又改变了哪个属性？</h3>
-    <h5>一下例子如何实现?</h5>
-    <pre>
-let app1 = new Observer({
+    <div class="container">
+        <div class="row">
+            <h1 class="text-info">vue核心原理</h1>
+            <h5 class="text-danger">动态数据绑定:如何监听其属性的读取与变化？<br>也就是说，如何知道程序访问了对象的哪个属性，又改变了哪个属性？</h5>
+        </div>
+        <div class="row">
+        <h3 class="text-success">问题</h3>
+            <div class="col-md-6">
+                <h5 class="text-primary">下面的例子如何实现?</h5>
+                <pre class="bg-info">
+let app1 = new Vue({
   name: 'youngwind',
   age: 25
 });
 
-let app2 = new Observer({
+let app2 = new Vue({
   university: 'bupt',
   major: 'computer'
 });
     </pre>
-    <h5>要实现的结果如下：</h5>
-    <pre>
-app1.data.name // 你访问了 name
-app.data.age = 100;  // 你设置了 age，新的值为100
-app2.data.university // 你访问了 university
-app2.data.major = 'science'  // 你设置了 major，新的值为 science
+            </div>
+            <div class="col-md-6">
+                <h5 class="text-primary">要实现的结果如下：</h5>
+                <pre class="bg-info">
+app1.data.name 
+// alert你访问了 name
+app1.data.age = 100;  
+// alert你设置了 age，新的值为100
+app2.data.university 
+// alert你访问了 university
+app2.data.major = 'science'  
+// alert你设置了 major，新的值为 science
     </pre>
-    <h3>实验一下</h3>
-    <input type="" name="" id="input">
-    <button id="button">实验一下</button>
+            </div>
+        </div>
+        <div class="row">
+            <h3 class="text-success">实验一下</h3>
+            <div class="form-group">
+                <label for="input" class="text-info">输入代码,查看结果</label>
+                <input type="text" class="form-control" name="" id="input">
+            </div>
+            <button id="button" type="button" class="btn btn-success">实验一下</button>
+        </div>
+        <div class="row">
+            <h3 class="text-success">原理</h3>
+            <div class="col-lg-6"><img src="1.jpeg" alt="" class="img-thumbnail"></div>
+            <div class="col-lg-6"><img src="11.jpeg" alt="" class="img-thumbnail"></div>
+            <div class="col-lg-6"><img src="2.jpeg" alt="" class="img-thumbnail"></div>
+            <div class="col-lg-6"><img src="3.jpeg" alt="" class="img-thumbnail"></div>
+        </div>
+    </div>
     <script src="main.js"></script>
 </body>
 

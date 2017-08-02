@@ -1,19 +1,20 @@
 //vue01
 
-function Observer(data) {
+function Vue(data) {
     this.data = data;
     this.walk(data)
 }
-let p = Observer.prototype;
+
+let p = Vue.prototype;
+
 p.walk = function(obj) {
     let val;
     for (let key in obj) {
         if (obj.hasOwnProperty(key)) {
             val = obj[key];
             if (typeof val === 'object') {
-                new Observer(val);
+                new Vue(val);
             }
-
             this.convert(key, val);
         }
     }
@@ -35,15 +36,18 @@ p.convert = function(key, val) {
     })
 };
 
-let app1 = new Observer({
+let app1 = new Vue({
     name: 'youngwind',
     age: 25
 });
 
-let app2 = new Observer({
+let app2 = new Vue({
     university: 'bupt',
     major: 'computer'
 });
 
 //dom绑定
-btn.click
+button.onclick = function() {
+    eval(input.value);
+    input.value='';
+}
