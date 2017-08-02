@@ -10,18 +10,13 @@
     img {
         max-width: 100%;
     }
-
-    div {
-        margin: 1px;
-        padding: 1px;
-    }
     </style>
 </head>
 
 <body>
     <div class="container">
         <div class="row">
-            <h1 class="text-info">vue核心原理</h1>
+            <h1 class="text-info">vue核心原理01</h1>
             <h5 class="text-danger">动态数据绑定:如何监听其属性的读取与变化？<br>也就是说，如何知道程序访问了对象的哪个属性，又改变了哪个属性？</h5>
         </div>
         <div class="row">
@@ -68,6 +63,67 @@ app2.data.major = 'science'
             <div class="col-lg-6"><img src="11.jpeg" alt="" class="img-thumbnail"></div>
             <div class="col-lg-6"><img src="2.jpeg" alt="" class="img-thumbnail"></div>
             <div class="col-lg-6"><img src="3.jpeg" alt="" class="img-thumbnail"></div>
+        </div>
+        <div class="row">
+            <h3 class="text-success">源码</h3>
+            <pre class="bg-success">
+function Vue(data) {
+    this.data = data;
+    this.walk(data)
+}
+
+let p = Vue.prototype;
+
+p.walk = function(obj) {
+    let val;
+    for (let key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            val = obj[key];
+            if (typeof val === 'object') {
+                new Vue(val);
+            }
+            this.convert(key, val);
+        }
+    }
+};
+
+p.convert = function(key, val) {
+    Object.defineProperty(this.data, key, {
+        enumerable: true,
+        configurable: true,
+        get: function() {
+            alert('你访问了' + key);
+            return val
+        },
+        set: function(newVal) {
+            alert('你设置了' + key + ',新的值为' + newVal);
+            if (newVal === val) return;
+            val = newVal
+        }
+    })
+};
+
+let app1 = new Vue({
+    name: 'youngwind',
+    age: 25
+});
+
+let app2 = new Vue({
+    university: 'bupt',
+    major: 'computer'
+});
+
+//dom绑定
+button.onclick = function() {
+    eval(input.value);
+    input.value='';
+}
+            </pre>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 col-sm-offset-9 text-info text-center">
+                jxjweb.top
+            </div>
         </div>
     </div>
     <script src="main.js"></script>

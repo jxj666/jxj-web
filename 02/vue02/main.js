@@ -1,34 +1,39 @@
+
 function Event() {
     this.events = {};
 }
-Event.prototype.on = function(attr, callback) {
-    if (this.events[attr]) {
-        this.events[attr].push(callback);
-    } else {
-        this.events[attr] = [callback];
-    }
-}
-Event.prototype.off = function(attr) {
-    for (let key in this.events) {
-        if (this.events.hasOwnProperty(key) && key === attr) {
-            delete this.events[key];
+Event.prototype = {
+    on: function(attr, callback) {
+        if (this.events[attr]) {
+            this.events[attr].push(callback);
+        } else {
+            this.events[attr] = [callback];
         }
+    },
+
+    off: function(attr) {
+        for (let key in this.events) {
+            if (this.events.hasOwnProperty(key) && key === attr) {
+                delete this.events[key];
+            }
+        }
+    },
+    trigger: function(attr, ...arg) {
+        this.events[attr] && this.events[attr].forEach(function(item) {
+            item(...arg);
+        })
     }
 }
-Event.prototype.emit = function(attr, ...arg) {
-    this.events[attr] && this.events[attr].forEach(function(item) {
-        item(...arg);
-    })
-}
 
 
-function Observer(data) {
+function Vue(data) {
     this.data = data;
     this.walk(data);
     this.watch = new Event();
 }
 
-let p = Observer.prototype;
+let p = Vue.prototype;
+
 p.$watch = function(attr, callback) {
     this.watch.on(attr, callback);
 }
@@ -41,7 +46,7 @@ p.walk = function(obj) {
             val = obj[key];
 
             if (typeof val === 'object') {
-                new Observer(val);
+                new Vue(val);
             }
 
             this.convert(key, val);
@@ -55,18 +60,34 @@ p.convert = function(key, val) {
         enumerable: true,
         configurable: true,
         get: function() {
-            console.log('你访问了' + key);
-            return val
+            alert('你访问了' + key);
+            return val;
         },
         set: function(newVal) {
 
             if (typeof newVal === 'object') {
-                new Observer(newVal);
+                new Vue(newVal);
             }
-            _this.watch.emit(key, val, newVal);
-            console.log(`你设置了 ${key}, 新的值为${newVal}`);
+            _this.watch.trigger(key, val, newVal);
+            alert(`你设置了 ${key}, 新的值为${newVal}`);
             val = newVal;
 
         }
     })
 };
+
+let app1 = new Vue({
+    name: 'youngwind',
+    age: 25
+});
+
+app1.data.name = {
+    lastName: 'liang',
+    firstName: 'shaofeng'
+};
+
+//dom绑定
+button.onclick = function() {
+    eval(input.value);
+    input.value = '';
+}

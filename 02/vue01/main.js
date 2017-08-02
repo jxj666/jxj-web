@@ -1,4 +1,3 @@
-//vue01
 
 function Vue(data) {
     this.data = data;
