@@ -1,16 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>vue01</title>
+    <meta charset="UTF-8">
+    <title>vue01</title>
 </head>
+
 <body>
-	<div>
-<h5>打开控制台调试</h5>
-<p>app1.data.age = 100;  // 你设置了 age，新的值为100</p>
-<p>app2.data.university // 你访问了 university</p>
-<p>也可传入新参数:let 变量名 = new Observer(对象);</p>
-	</div>
-	<script src="main.js"></script>
+    <h1>动态数据绑定</h1>
+    <h3>如何监听其属性的读取与变化？也就是说，如何知道程序访问了对象的哪个属性，又改变了哪个属性？</h3>
+    <h5>一下例子如何实现?</h5>
+    <pre>
+let app1 = new Observer({
+  name: 'youngwind',
+  age: 25
+});
+
+let app2 = new Observer({
+  university: 'bupt',
+  major: 'computer'
+});
+    </pre>
+    <h5>要实现的结果如下：</h5>
+    <pre>
+app1.data.name // 你访问了 name
+app.data.age = 100;  // 你设置了 age，新的值为100
+app2.data.university // 你访问了 university
+app2.data.major = 'science'  // 你设置了 major，新的值为 science
+    </pre>
+    <h3>实验一下</h3>
+    <input type="" name="" id="input">
+    <button id="button">实验一下</button>
+    <script src="main.js"></script>
 </body>
+
 </html>
