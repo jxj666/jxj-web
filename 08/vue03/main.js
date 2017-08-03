@@ -1,128 +1,93 @@
-"use strict"
-/* 此文件为一些过渡性代码 */
-/*use ES5 defineProperty*/
-function Observer (data) {
-  this.data = data;
-  this.dep = new Dep();
-
-  if(Array.isArray(data)){
-    //暂不考虑数组
-  }else{
-    this.makeObserver(data);
-  }
+function Vue(data) {
+    this.data = data;
+    this.walk(data);
+    this.events = {};
+    this.cancelBubble = true;
 }
 
-Observer.prototype.setterAndGetter = function (key, val) {
-  let dep = new Dep();
-  if(typeof val === 'object'){
-    var childOb = new Observer(val);
-  }
 
-  Object.defineProperty(this.data, key, {
-    enumerable: true,
-    configurable: true,
-    get: function(){
-      console.log('你访问了' + key);
-
-      if(Dep.target){
-        dep.depend();
-        if(childOb){
-          childOb.dep.depend();
+Vue.prototype.walk = function(data, path) {
+    let val;
+    for (let key in data) {
+        if (data.hasOwnProperty(key)) {
+            val = data[key];
+            this.convert(data, key, val, path);
         }
-      }
-      return val;
-    },
-    set: function(newVal){
-      console.log('你设置了' + key);
-      console.log('新的' + key + '=' + newVal);
-
-      if(newVal === val) return
-      val = newVal;
-
-      if(typeof val === 'object'){
-        childOb = new Observer(newVal);
-      }
-
-      dep.notify();
     }
-  })
 }
-Observer.prototype.makeObserver = function (obj) {
-  let val;
-  for(let key in obj){
-    if(obj.hasOwnProperty(key)){
-      val = obj[key];
-      //深度遍历
-      if(typeof val === 'object'){
-        new Observer(val);
-      }
+Vue.prototype.path = function(val, path) {
+    if (!val || typeof val !== 'object') return;
+    if (path) {
+        path = path + '.';
     }
-    this.setterAndGetter(key, val);
-  }
+    this.walk(val, path);
 }
-Observer.prototype.$watch = function(attr, callback){
-  //this.eventsBus.on(attr, callback);
-  for(let key in this.data){
-    if(this.data.hasOwnProperty(key) && typeof this.data[key] === 'object'){
-      this.data[key].__ob__.eventsBus.on(attr, callback);
+Vue.prototype.convert = function(obj, key, val, path) {
+    if (!path) {
+        path = key;
+    } else {
+        path = path + key;
     }
-  }
+    this.path(val, path);
+
+    let self = this;
+    Object.defineProperty(obj, key, {
+        enumerable: true,
+        configurable: true,
+        get: function() {
+            return val;
+        },
+        set: function(newVal) {
+            if (newVal === val) return;
+            val = newVal;
+            if (!self.cancelBubble) {
+                self.$notify(path || key);
+            }
+            if (typeof val === 'object') {
+                self.path(val, path);
+            }
+        }
+    });
 }
 
-//观察者
-function Dep(){
-  this.subs = [];
-}
-Dep.target = null;
 
-Dep.prototype.depend = function(){
-  Dep.target.addDep(this);
-}
-
-Dep.prototype.addSub = function(sub){
-  this.subs.push(sub);
-}
-Dep.prototype.notify = function(){
-  for(let i = 0, len = this.subs.length; i < len; i++ ){
-    this.subs[i].update();
-  }
-}
-
-
-//watcher
-function Watcher(value, attr){
-  this.value = value;
-  this.attr = attr;
-  this.get();
-}
-
-Watcher.prototype.beforeGet = function(){
-  Dep.target = this;
-}
-
-Watcher.prototype.get = function(){
-  this.beforeGet();
-
-  let val = this.value[this.attr];
-
-  if(typeof val === 'object'){
-    for(let childAttr in val){
-      new Watcher(val[childAttr], childAttr);
+Vue.prototype.$watch = function(attr, callback, cancelBubble) {
+    if (typeof callback !== 'function') {
+        console.log('应该使用函数作为回调');
+        return;
     }
-  }
+    if (this.events[attr]) {
+        this.events[attr].push(callback);
+    } else {
+        this.events[attr] = [];
+        this.events[attr].push(callback);
+    }
+    this.cancelBubble = cancelBubble || false;
 }
-
-Watcher.prototype.addDep = function(dep){
-  dep.addSub(this);
-  console.log("我订阅了basicInfo的变化")
+Vue.prototype.$notify = function(path) {
+    const keys = path.split('.');
+    const paths = keys.map((key, index) => {
+        if (index === 0) {
+            return key;
+        } else {
+            let str = '';
+            while (index--) str = keys[index] + '.' + str;
+            return str + key;
+        }
+    });
+    paths.forEach((path) => {
+        const fns = this.events[path];
+        if (fns && fns.length) {
+            fns.forEach(fn => fn && fn(this.$getValue(path)));
+        }
+    });
 }
-Watcher.prototype.update = function(){
-  console.log('name或者age变了，导致basicInfo变了，但是我要根据数据的变化来做一些牛逼的事情');
+Vue.prototype.$getValue = function(exp) {
+    const path = exp.split('.');
+    let val = this.data;
+    path.forEach(k => val = val[k]);
+    return val;
 }
-
-
-
-
 
 let app2 = new Vue({
     name: {
@@ -131,10 +96,6 @@ let app2 = new Vue({
     },
     age: 25
 });
-
-
-
-
 
 //dom绑定
 button.onclick = function() {
