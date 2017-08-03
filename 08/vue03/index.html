@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>vue03</title>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+    img {
+        max-width: 100%;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h1 class="text-info">vue核心原理03</h1>
+            <h5 class="text-danger">动态数据绑定:如何监听其属性的读取与变化？<br>也就是说，如何知道程序访问了对象的哪个属性，又改变了哪个属性？</h5>
+            <h5 class="text-danger">知识点:事件传播机制</h5>
+        </div>
+        <div class="row">
+            <h3 class="text-success">问题</h3>
+            <div class="col-md-6">
+                <h5 class="text-primary">深层次数据变化如何逐层往上传播</h5>
+                <pre class="bg-info">
+let app2 = new Observer({
+    name: {
+        firstName: 'shaofeng',
+        lastName: 'liang'
+    },
+    age: 25
+});
+    </pre>
+            </div>
+            <div class="col-md-6">
+                <h5 class="text-primary">要实现的结果如下：</h5>
+                <pre class="bg-info">
+app2.$watch('name', function (newName) {
+    alert('我的姓名发生了变化!')
+});
+
+app2.data.name.firstName = 'hahaha';
+// 输出：我的姓名发生了变化!
+app2.data.name.lastName = 'blablabla';
+// 输出：我的姓名发生了变化!
+    </pre>
+            </div>
+            <p class="text-primary">
+                firstName 和 lastName 作为 name 的属性，其中任意一个发生变化，都会得出以下结论："name 发生了变化。"这种机制符合”事件传播“机制，方向是从底层往上逐层传播到顶层。 DOM也一样,比如：“点击某一个DOM元素，相当于也其父元素和其所有祖先元素。”（当然，你可以手动禁止事件传播） 所以，这里的本质是："浏览器内部实现了一个事件传播的机制"!
+            </p>
+        </div>
+        <div class="row hidden-xs">
+            <h3 class="text-success">实验一下</h3>
+            <div class="form-group">
+                <label for="input" class="text-info">输入代码,查看结果</label>
+                <input type="text" class="form-control" name="" id="input">
+            </div>
+            <button id="button" type="button" class="btn btn-success">运行代码</button>
+        </div>
+        <div class="row">
+            <h3 class="text-success">原理</h3>
+            <div class="col-lg-6"><img src=" " alt="" class="img-thumbnail"></div>
+            <div class="col-lg-6"><img src=" " alt="" class="img-thumbnail"></div>
+        </div>
+        <div class="row">
+            <h3 class="text-success">js源码</h3>
+            <pre class="bg-success">
+
+
+            </pre>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 col-sm-offset-9 text-info text-center">
+                jxjweb.top
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
