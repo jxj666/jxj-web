@@ -1,12 +1,39 @@
+function Event() {
+    this.events = {};
+}
+Event.prototype = {
+    on: function(attr, callback) {
+        if (this.events[attr]) {
+            this.events[attr].push(callback);
+        } else {
+            this.events[attr] = [callback];
+        }
+    },
+
+    off: function(attr) {
+        for (let key in this.events) {
+            if (this.events.hasOwnProperty(key) && key === attr) {
+                delete this.events[key];
+            }
+        }
+    },
+    trigger: function(attr, ...arg) {
+        this.events[attr] && this.events[attr].forEach(function(item) {
+            item(...arg);
+        })
+    }
+}
+
 function Vue(data) {
     this.data = data;
     this.walk(data);
-    this.events = {};
+    this.watch = new Event();
     this.cancelBubble = true;
 }
 
+var v_father = Vue.prototype;
 
-Vue.prototype.walk = function(data, path) {
+v_father.walk = function(data, path) {
     let val;
     for (let key in data) {
         if (data.hasOwnProperty(key)) {
@@ -15,20 +42,13 @@ Vue.prototype.walk = function(data, path) {
         }
     }
 }
-Vue.prototype.path = function(val, path) {
-    if (!val || typeof val !== 'object') return;
-    if (path) {
-        path = path + '.';
-    }
-    this.walk(val, path);
-}
-Vue.prototype.convert = function(obj, key, val, path) {
+v_father.convert = function(obj, key, val, path) {
     if (!path) {
         path = key;
     } else {
         path = path + key;
     }
-    this.path(val, path);
+    this.new_path(val, path);
 
     let self = this;
     Object.defineProperty(obj, key, {
@@ -44,27 +64,20 @@ Vue.prototype.convert = function(obj, key, val, path) {
                 self.$notify(path || key);
             }
             if (typeof val === 'object') {
-                self.path(val, path);
+                self.new_path(val, path);
             }
         }
     });
 }
-
-
-Vue.prototype.$watch = function(attr, callback, cancelBubble) {
-    if (typeof callback !== 'function') {
-        console.log('应该使用函数作为回调');
-        return;
+v_father.new_path = function(val, path) {
+    if (!val || typeof val !== 'object') return;
+    if (path) {
+        path = path + '.';
     }
-    if (this.events[attr]) {
-        this.events[attr].push(callback);
-    } else {
-        this.events[attr] = [];
-        this.events[attr].push(callback);
-    }
-    this.cancelBubble = cancelBubble || false;
+    this.walk(val, path);
 }
-Vue.prototype.$notify = function(path) {
+
+v_father.$notify = function(path) {
     const keys = path.split('.');
     const paths = keys.map((key, index) => {
         if (index === 0) {
@@ -76,18 +89,19 @@ Vue.prototype.$notify = function(path) {
         }
     });
     paths.forEach((path) => {
-        const fns = this.events[path];
-        if (fns && fns.length) {
-            fns.forEach(fn => fn && fn(this.$getValue(path)));
-        }
+        this.watch.trigger(path);
     });
 }
-Vue.prototype.$getValue = function(exp) {
-    const path = exp.split('.');
-    let val = this.data;
-    path.forEach(k => val = val[k]);
-    return val;
+
+v_father.$watch = function(attr, callback, cancelBubble) {
+    if (typeof callback !== 'function') {
+        console.log('应该使用函数作为回调');
+        return;
+    }
+    this.watch.on(attr, callback);
+    this.cancelBubble = cancelBubble || false;
 }
+
 
 let app2 = new Vue({
     name: {

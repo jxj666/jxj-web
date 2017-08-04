@@ -37,13 +37,11 @@ let app2 = new Observer({
             <div class="col-md-6">
                 <h5 class="text-primary">要实现的结果如下：</h5>
                 <pre class="bg-info">
-app2.$watch('name', function (newName) {
-    alert('我的姓名发生了变化!')
+app2.$watch('name', function () {
+    alert('我的姓名发生了变化!');
 });
 
 app2.data.name.firstName = 'hahaha';
-// 输出：我的姓名发生了变化!
-app2.data.name.lastName = 'blablabla';
 // 输出：我的姓名发生了变化!
     </pre>
             </div>
@@ -61,14 +59,117 @@ app2.data.name.lastName = 'blablabla';
         </div>
         <div class="row">
             <h3 class="text-success">原理</h3>
-            <div class="col-lg-6"><img src=" " alt="" class="img-thumbnail"></div>
-            <div class="col-lg-6"><img src=" " alt="" class="img-thumbnail"></div>
+            <div class="col-lg-12"><img src="p1.jpeg" alt="" class="img-thumbnail"></div>
+            <div class="col-lg-12"><img src="p2.jpeg" alt="" class="img-thumbnail"></div>
+            <div class="col-lg-12"><img src="p3.jpeg" alt="" class="img-thumbnail"></div>
+            <div class="col-lg-12"><img src="p4.jpeg" alt="" class="img-thumbnail"></div>
         </div>
         <div class="row">
             <h3 class="text-success">js源码</h3>
             <pre class="bg-success">
+function Event() {
+    this.events = {};
+}
+Event.prototype = {
+    on: function(attr, callback) {
+        if (this.events[attr]) {
+            this.events[attr].push(callback);
+        } else {
+            this.events[attr] = [callback];
+        }
+    },
 
+    off: function(attr) {
+        for (let key in this.events) {
+            if (this.events.hasOwnProperty(key) && key === attr) {
+                delete this.events[key];
+            }
+        }
+    },
+    trigger: function(attr, ...arg) {
+        this.events[attr] && this.events[attr].forEach(function(item) {
+            item(...arg);
+        })
+    }
+}
 
+function Vue(data) {
+    this.data = data;
+    this.walk(data);
+    this.watch = new Event();
+    this.cancelBubble = true;
+}
+
+var v_father = Vue.prototype;
+
+v_father.walk = function(data, path) {
+    let val;
+    for (let key in data) {
+        if (data.hasOwnProperty(key)) {
+            val = data[key];
+            this.convert(data, key, val, path);
+        }
+    }
+}
+v_father.convert = function(obj, key, val, path) {
+    if (!path) {
+        path = key;
+    } else {
+        path = path + key;
+    }
+    this.new_path(val, path);
+
+    let self = this;
+    Object.defineProperty(obj, key, {
+        enumerable: true,
+        configurable: true,
+        get: function() {
+            return val;
+        },
+        set: function(newVal) {
+            if (newVal === val) return;
+            val = newVal;
+            if (!self.cancelBubble) {
+                self.$notify(path || key);
+            }
+            if (typeof val === 'object') {
+                self.new_path(val, path);
+            }
+        }
+    });
+}
+v_father.new_path = function(val, path) {
+    if (!val || typeof val !== 'object') return;
+    if (path) {
+        path = path + '.';
+    }
+    this.walk(val, path);
+}
+
+v_father.$notify = function(path) {
+    const keys = path.split('.');
+    const paths = keys.map((key, index) => {
+        if (index === 0) {
+            return key;
+        } else {
+            let str = '';
+            while (index--) str = keys[index] + '.' + str;
+            return str + key;
+        }
+    });
+    paths.forEach((path) => {
+        this.watch.trigger(path);
+    });
+}
+
+v_father.$watch = function(attr, callback, cancelBubble) {
+    if (typeof callback !== 'function') {
+        console.log('应该使用函数作为回调');
+        return;
+    }
+    this.watch.on(attr, callback);
+    this.cancelBubble = cancelBubble || false;
+}
             </pre>
         </div>
         <div class="row">
