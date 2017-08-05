@@ -59,6 +59,10 @@ app2.data.name.firstName = 'hahaha';
         </div>
         <div class="row">
             <h3 class="text-success">原理</h3>
+            <p>实例出对象时,对传入数据的每一个属性添加监听函数,并记录每一个属性的路径</p>
+            <p>在记录过程中;在 defineProperty中的 set 中添加发布方法;只要修改某个数据对象时就;启动发布方法</p>
+            <p>为事件对象添加监听方法;绑定符合条件时;要触发的函数</p>
+            <p>当修改某个数据对象的值得时候;触发发布方法;调用监听方法;通过对比对象所对应事件对象上是否有绑定方法;确定是否触发相关的绑定函数</p>
             <div class="col-lg-12"><img src="p1.jpeg" alt="" class="img-thumbnail"></div>
             <div class="col-lg-12"><img src="p2.jpeg" alt="" class="img-thumbnail"></div>
             <div class="col-lg-12"><img src="p3.jpeg" alt="" class="img-thumbnail"></div>

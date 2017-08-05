@@ -102,7 +102,6 @@ v_father.$watch = function(attr, callback, cancelBubble) {
     this.cancelBubble = cancelBubble || false;
 }
 
-
 let app2 = new Vue({
     name: {
         firstName: 'shaofeng',
