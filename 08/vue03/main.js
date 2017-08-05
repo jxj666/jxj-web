@@ -30,9 +30,7 @@ function Vue(data) {
     this.watch = new Event();
     this.cancelBubble = true;
 }
-
 var v_father = Vue.prototype;
-
 v_father.walk = function(data, path) {
     let val;
     for (let key in data) {
