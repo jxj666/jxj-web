@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>翻牌</title>
+    <link rel="stylesheet" type="text/css" href="../css/reset.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/draw_card.min.css">
+    <script type="text/javascript">
+    function get_hfs() {
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+    }
+    get_hfs();
+
+    function throttle(method, context) {
+        clearTimeout(method.timer);
+        method.timer = setTimeout(function() {
+            method.call(context);
+        }, 100);
+    }
+    window.onresize = function() {
+        throttle(get_hfs);
+    }
+    </script>
+</head>
+
+<body>
+    <div class="broadcast invisible">
+        <i class="icon"></i>
+        <ul class="list" id="broadcast_list"></ul>
+        <span class="already-sent">
+            <!-- 库存 -->
+            <ul class="stock-list" id="stock_list"></ul>
+        </span>
+    </div>
+    <div class="inform">
+        <div class="pirzes">
+            <ul>
+                <li>
+                    <h5>用户<span>微信名</span>获得<span>118元红包</span></h5>
+                </li>
+            </ul>
+        </div>
+        <div class="getinfo">
+            <a href="javascript:void(0)" data-click="winner-list">获奖名单&gt;</a>
+        </div>
+        <div class="clb"></div>
+    </div>
+    <div class="main">
+        <div class="lucky-top">
+            <div class="menban"></div>
+            <h1>翻牌有礼相送</h1>
+            <!--  <div class="huodon">活动时间:2017年5月1日-12月31日</div> -->
+            <img src="../img/draw_02.png" class="top-img">
+            <div class="top-text clearfix">
+                <p class="countdown">
+                    <span class="days">03</span> 天
+                    <span class="hours">04</span> 时
+                    <span class="minutes">54</span> 分
+                    <span class="seconds">33</span> 秒
+                </p>
+                <p class="stock">礼品库存： <span class="stock-num">12345</span>份</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="jiuge">
+                <ul class="clearfix">
+                    <li>
+                        <div class="pai"></div>
+                    </li>
+                    <li>
+                        <div class="pai"> </div>
+                    </li>
+                    <li>
+                        <div class="pai"></div>
+                    </li>
+                    <li>
+                        <div class="pai"></div>
+                    </li>
+                    <li>
+                        <div class="center_p"><img src="../img/card2_03.png"><a id="j_play_btn" href="javascript:void(0)"><h5 >请选择<br>卡片</h5></a>
+                            <p>您拥有<span>5</span>次机会</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pai"></div>
+                    </li>
+                    <li>
+                        <div class="pai"></div>
+                    </li>
+                    <li>
+                        <div class="pai"></div>
+                    </li>
+                    <li>
+                        <div class="pai"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <ul class="count-list">
+            <li class="count-item">
+                <p class="code-count">1234</p>
+                扫码次数
+            </li>
+            <li class="count-item">
+                <p class="prize-count">234</p>
+                送出奖品
+            </li>
+            <li class="count-item">
+                <p class="person-count">72344</p>
+                访问人数
+            </li>
+        </ul>
+        <ul class="click-list" id="app_info">
+            <li class="click-item">
+                <a href="javascript:void(0)" data-click="gift" @click='choice(1)'>活动礼品</a>
+            </li>
+            <li class="click-item">
+                <a href="javascript:void(0)" data-click="kf" @click='choice(2)'>&nbsp;联系客服</a>
+            </li>
+            <li class="click-item">
+                <a href="javascript:void(0)" data-click="statement" @click='choice(3)'>隐私权声明</a>
+            </li>
+        </ul>
+        <!-- 恭喜奖品 -->
+        <div class="pop-bg pop-bg1 invisible">
+            <div class="lucky-pop">
+                <a href="javascript:void(0)" class="pop-close"></a>
+                <p class="lucky-title">ipad 电脑一台</p>
+                <div class="img-content">
+                    <img src="../img/fanpai_03.png" class="yogurt">
+                </div>
+                <a href="javascript:void(0)" class="lucky-get">点击领取</a>
+            </div>
+        </div>
+        <!-- 恭喜红包 -->
+        <div class="pop-bg pop-bg2 invisible">
+            <div class="lucky-pop">
+                <a href="javascript:void(0)" class="pop-close"></a>
+                <p class="lucky-title">获得微信红包1.18元</p>
+                <div class="img-content">
+                    <img src="../img/hb_img.png" class="yogurt">
+                </div>
+                <a href="javascript:void(0)" class="lucky-get">点击领取</a>
+            </div>
+        </div>
+        <!-- 谢谢惠顾 -->
+        <div class="pop-bg pop-bg3 invisible">
+            <div class="liquan_pop">
+                <div class="close_pop">
+                    <a href="../"></a>
+                </div>
+                <h3>谢谢您的参与 !</h3>
+                <p> 一些优惠券可以领取</p>
+                <div class="imgbox"><img :src="img"></div>
+                <button class="btn">点击领取</button>
+            </div>
+        </div>
+        <!-- 扫码弹框 -->
+        <div class="tip-bg" id="bar_code" v-if='type!=0'>
+            <div class="scan-tip">
+                <div class="scan_title">
+                    <div class="title_img"><img :src="img" alt=""></div>
+                    <div class="title_text">
+                        <h2>扫码产品：<span>{{name}}</span></h2>
+                        <p>此次为第 <span>{{number}}</span> 次扫码
+                         
+                        </p>
+                    </div>
+                </div>
+                <div class="scan_num num_4" v-if='type ==4'>
+                    <div class="input_box">
+                        <input class="input" type="tel">
+                    </div>
+                    <div class="lines">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
+                    <h5>输入数字验证码领取福袋</h5>
+                </div>
+                <div class="scan_num num_6" v-if='type==6'>
+                    <div class="input_box">
+                        <input class="input" type="tel">
+                    </div>
+                    <div class="lines">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
+                    <h5>输入数字验证码领取福袋</h5>
+                </div>
+                <div class="scan_btn">
+                    <button>领福袋</button>
+                </div>
+            </div>
+        </div>
+        <!-- 通用弹框 -->
+        <div class="tip-bg " id="app_pop_common" v-if='type!=0'>
+            <div class="gift-tip " v-if='type==1'>
+                <a href="javascript:void(0)" data-click="tip-close" class="tip-close" @click='type=0'></a>
+                <h3 class="tip-title">活动礼品</h3>
+                <p class="tip-content">微信扫伊利大果粒二维码，首次验真可获得福袋。</p>
+                <p class="tip-content center">本期礼品（2017年4月10日-5月30日）如下：</p>
+                <ul class="tip-list">
+                    <li class="row row-border">
+                        <span class="row-color">礼品</span>
+                        <span class="row-color">说明</span>
+                        <span class="row-color">数量</span>
+                    </li>
+                    <li class="row">
+                        <span>微信红包</span>
+                        <span>随机金额最高88元</span>
+                        <span>12334份</span>
+                    </li>
+                    <li class="row">
+                        <span>伊利牛奶</span>
+                        <span>纯牛奶快递包邮</span>
+                        <span>3434份</span>
+                    </li>
+                </ul>
+                <img src="../img/winner_bg.png" class="tip-bottom">
+            </div>
+            <div class="kf-tip " v-if='type==2'>
+                <a href="javascript:void(0)" data-click="tip-close" class="tip-close" @click="type=0"></a>
+                <h3 class="tip-title">联系客服</h3>
+                <img src="../img/code.png" class="tip-code">
+                <p class="tip-content center">长按识别二维码，关注“伊利活动”微信号，发送微信留言，客户将及时处理。
+                    <br>客服电话：400-400-400
+                    <br>客服微信：yilihuodong</p>
+                <img src="../img/winner_bg.png" class="tip-bottom">
+            </div>
+            <div class="statement-tip " v-if='type==3'>
+                <div class="close_pop">
+                    <a href="javascript:void(0)" data-click="tip-close" class="tip-close" @click='type=0'></a>
+                </div>
+                <h3 class="tip-title">隐私权声明</h3>
+                <p class="tip-content">
+                    <span class="tip-top">特别声明：</span> 伊利集团非常重视用户信息的保护，在使用伊利集团的所有产品和服务前，请您务必仔细阅读并透彻理解本声明。一旦您选择使用，即表示您认可并接受本条款，现有内容及其可能随时更新的内容。
+                    <br>一、隐私权政策
+                    <br>有关您的若干信息及其它资料将受到中国有关隐私的法律和本公司《隐私权政策》之规范.
+                    <br>二、隐私权政策
+                    <br>有关您的若干信息及其它资料将受到中国有关隐私的法律和本公司《隐私权政策》之规范.
+                    <br>三、隐私权政策
+                    <br>有关您的若干信息及其它资料将受到中国有关隐私的法律和本公司《隐私权政策》之规范.
+                </p>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-img-content">
+                <img class="code" src="../img/code.png">
+            </div>
+            <p class="footer-text">长按识别二维码
+                <br>关注“伊利活动”，参加更多福利活动。
+                <br>
+            </p>
+            <div class="clearfix f_cb">
+                <p class="copy">版权所有:<span class="copy-name">引力集团</span></p>
+                <p class="support">技术支持:<span class="support-name">万川营销云&nbsp;&nbsp;</span></p>
+            </div>
+        </div>
+    </div>
+    <nav class="nav-fixed">
+        <ul class="nav-list" id="navlist">
+            <li class="nav bag active">拆福袋</li>
+            <li class="nav notice">活动公告</li>
+            <li class="nav prize">我的礼品</li>
+        </ul>
+    </nav>
+    <script src='../js/jquery.min.js'></script>
+    <script src='../js/vue.min.js'></script>
+    <script src="../js/draw_card.min.js"></script>
+</body>
+
+</html>
