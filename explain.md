@@ -1,31 +1,31 @@
 // 倒计时
 // 设置定时器,每一秒更新一次页面实现倒计时
-let timer = null;
+//let timer = null;
 
-function updateCountDown(endTime, dTime) { // 结束时间,服务器与本地时间差
-    let now = new Date().getTime() + dTime;
-    let time = (endTime - now) / 1000;
-    if (time >= 0) {
-        let day = parseInt(time / (3600 * 24), 10);
-        day < 10 && (day = '0' + day);
-        let hour = parseInt((time % (3600 * 24) / 3600), 10);
-        hour < 10 && (hour = `0${hour}`);
-        let minute = parseInt((time % 3600 / 60), 10);
-        minute < 10 && (minute = '0' + minute);
-        let second = parseInt(time % 60, 10);
-        second < 10 && (second = '0' + second);
-        $('[data-info=day]').html(day);
-        $('[data-info=hour]').html(hour);
-        $('[data-info=minute]').html(minute);
-        $('[data-info=second]').html(second);
+// function updateCountDown(endTime, dTime) { // 结束时间,服务器与本地时间差
+//     let now = new Date().getTime() + dTime;
+//     let time = (endTime - now) / 1000;
+//     if (time >= 0) {
+//         let day = parseInt(time / (3600 * 24), 10);
+//         day < 10 && (day = '0' + day);
+//         let hour = parseInt((time % (3600 * 24) / 3600), 10);
+//         hour < 10 && (hour = `0${hour}`);
+//         let minute = parseInt((time % 3600 / 60), 10);
+//         minute < 10 && (minute = '0' + minute);
+//         let second = parseInt(time % 60, 10);
+//         second < 10 && (second = '0' + second);
+//         $('[data-info=day]').html(day);
+//         $('[data-info=hour]').html(hour);
+//         $('[data-info=minute]').html(minute);
+//         $('[data-info=second]').html(second);
 
-        timer = setTimeout(updateCountDown.bind(null, endTime, dTime), 1000);
-    } else {
-        $('.cd-clock').html('<span class="text-time">活动已结束~</span>');
-        clearTimeout(timer);
-        timer = null;
-    }
-}
+//         timer = setTimeout(updateCountDown.bind(null, endTime, dTime), 1000);
+//     } else {
+//         $('.cd-clock').html('<span class="text-time">活动已结束~</span>');
+//         clearTimeout(timer);
+//         timer = null;
+//     }
+// }
 
 
 
@@ -92,274 +92,275 @@ function updateCountDown(endTime, dTime) { // 结束时间,服务器与本地时
 //     }
 // });
 
-// 用户信息
-let userInfo = {};
+// // 用户信息
+// let userInfo = {};
 
-// 抽奖按钮状态
-function platebtnStat() {
-    userInfo.score ? $('#turnPlatebtn').removeClass('disabled') :
-        $('#turnPlatebtn').addClass('disabled');
-}
+// // 抽奖按钮状态
+// function platebtnStat() {
+//     userInfo.score ? $('#turnPlatebtn').removeClass('disabled') :
+//         $('#turnPlatebtn').addClass('disabled');
+// }
 
-function getUserInfo() {
-    $.get('/act/comp/user', {
-        activityId,
-    }).done((res) => {
-        if (res.code === 1) {
-            userInfo = res.context.actUser;
-            $('[data-info=userScore]').text(userInfo.score);
-            platebtnStat();
-        } else {
-            alert(res.msg);
-        }
-    });
-}
+// function getUserInfo() {
+//     $.get('/act/comp/user', {
+//         activityId,
+//     }).done((res) => {
+//         if (res.code === 1) {
+//             userInfo = res.context.actUser;
+//             $('[data-info=userScore]').text(userInfo.score);
+//             platebtnStat();
+//         } else {
+//             alert(res.msg);
+//         }
+//     });
+// }
 
 
-// 调用验真接口
-$('[data-click=help]').off().click(function() {
-    const that = this;
-    if ($(this).hasClass('disabled')) {
-        $('.scan_num.active').find('h5').html('请输入烟包翻盖内的验证码').addClass('result');
-        return;
-    }
-    // 防止按钮重复点击
-    $(this).addClass('disabled');
-    let timer = setTimeout(() => {
-        $(this).removeClass('disabled');
-    }, 3000);
-    // 盒内验证码
-    const vcode = $('.scan_num.active input').val();
-    // alert(code);
-    $.post(`/qr/verify/${barCode}`, {
-        activityId,
-        vcode,
-        withDrawTimes: true,
-    }).done((res) => {
-        if (res.code === 1) {
-            const vRes = res.context.vres;
-            if (vRes.verifyTimes) {
-                $(this).removeClass('disabled');
-                $('.scan_num.active').find('h5').html(`验真成功,这是第${vRes.verifyTimes}次验真`).addClass('result');
-                $(that).text('确认').off().one('click', () => {
-                    $(that).closest('.tip-bg').addClass('invisible');
-                });
-            }
+// // 调用验真接口
+// $('[data-click=help]').off().click(function() {
+//     const that = this;
+//     if ($(this).hasClass('disabled')) {
+//         $('.scan_num.active').find('h5').html('请输入烟包翻盖内的验证码').addClass('result');
+//         return;
+//     }
+//     // 防止按钮重复点击
+//     $(this).addClass('disabled');
+//     let timer = setTimeout(() => {
+//         $(this).removeClass('disabled');
+//     }, 3000);
+//     // 盒内验证码
+//     const vcode = $('.scan_num.active input').val();
+//     // alert(code);
+//     $.post(`/qr/verify/${barCode}`, {
+//         activityId,
+//         vcode,
+//         withDrawTimes: true,
+//     }).done((res) => {
+//         if (res.code === 1) {
+//             const vRes = res.context.vres;
+//             if (vRes.verifyTimes) {
+//                 $(this).removeClass('disabled');
+//                 $('.scan_num.active').find('h5').html(`验真成功,这是第${vRes.verifyTimes}次验真`).addClass('result');
+//                 $(that).text('确认').off().one('click', () => {
+//                     $(that).closest('.tip-bg').addClass('invisible');
+//                 });
+//             }
 
-            // 获取用户抽奖次数
-            getUserInfo();
-        } else {
-            clearTimeout(timer);
-            $(that).addClass('disabled');
+//             // 获取用户抽奖次数
+//             getUserInfo();
+//         } else {
+//             clearTimeout(timer);
+//             $(that).addClass('disabled');
 
-            $('.scan_num.active').find('h5').html(res.msg).addClass('result');
-        }
-    });
-});
-$.get('/act/info', {
-    activityId,
-    cache: false, // 是否从缓存里读取
-    withParams: true, // 是否返回活动所有参数
-    withBanner: true, // 是否返回banner配置
-}).done((res) => {
-    const { activity, banners } = res.context;
-    let params = activity.paramsMap || {};
-    params['活动信息配置'] && (params = params['活动信息配置']);
-    // 主题色
-    if (params['acms.act.style'] && params['acms.act.style'].value) {
-        $('#theme').attr('href', `//weiop.oss-cn-beijing.aliyuncs.com/templates/run_plate/css/theme-${params['acms.act.style'].value}.min.css`);
-    } else {
-        $('#theme').attr('href', '//weiop.oss-cn-beijing.aliyuncs.com/templates/run_plate/css/theme-default.min.css');
-    }
-    // banner
-    let banner = {};
-    if (banners.length) {
-        banners.forEach((v) => {
-            v.status === 1 && (banner = v);
-        });
-    }
-    const $luckyTop = $('.lucky-top');
-    // $luckyTop.find('h1').html(activity.name);
-    $luckyTop.find('h1').html(params['acms.act.title'].value);
-    $luckyTop.find('.top-img').attr('src', banner.image ? banner.image : activity.bgImage);
+//             $('.scan_num.active').find('h5').html(res.msg).addClass('result');
+//         }
+//     });
+// });
 
-    // 倒计时
-    const endTime = activity.endTime ? new Date(activity.endTime).getTime() : 0; // 活动结束时间
-    const dTime = res.systemTime - new Date().getTime(); // 本地和服务器的时差
-    updateCountDown(endTime, dTime);
+// $.get('/act/info', {
+//     activityId,
+//     cache: false, // 是否从缓存里读取
+//     withParams: true, // 是否返回活动所有参数
+//     withBanner: true, // 是否返回banner配置
+// }).done((res) => {
+//     const { activity, banners } = res.context;
+//     let params = activity.paramsMap || {};
+//     params['活动信息配置'] && (params = params['活动信息配置']);
+//     // 主题色
+//     if (params['acms.act.style'] && params['acms.act.style'].value) {
+//         $('#theme').attr('href', `//weiop.oss-cn-beijing.aliyuncs.com/templates/run_plate/css/theme-${params['acms.act.style'].value}.min.css`); 
+//     } else {
+//         $('#theme').attr('href', '//weiop.oss-cn-beijing.aliyuncs.com/templates/run_plate/css/theme-default.min.css');
+//     }
+//     // banner
+//     let banner = {};
+//     if (banners.length) {
+//         banners.forEach((v) => {
+//             v.status === 1 && (banner = v);
+//         });
+//     }
+//     const $luckyTop = $('.lucky-top');
+//     // $luckyTop.find('h1').html(activity.name);
+//     $luckyTop.find('h1').html(params['acms.act.title'].value);
+//     $luckyTop.find('.top-img').attr('src', banner.image ? banner.image : activity.bgImage);
 
-    // 二维码
-    if (params['acms.act.qr']) {
-        $('img.code').attr('src', params['acms.act.qr'].value);
+//     // 倒计时
+//     const endTime = activity.endTime ? new Date(activity.endTime).getTime() : 0; // 活动结束时间
+//     const dTime = res.systemTime - new Date().getTime(); // 本地和服务器的时差
+//     updateCountDown(endTime, dTime);
 
-        $('#modal-kf img.tip-code').attr('src', params['acms.act.qr'].value);
-    }
-    // 活动主办方
-    params['acms.act.org'] && $('[data-info="org"]').text(params['acms.act.org'].value);
-    // 客服文案
-    params['acms.act.cstext'] && $('[data-info="cstext"]').text(params['acms.act.cstext'].value);
-    // 奖项规则
-    params['acms.act.rules'] && $('[data-info="rules"]').text(params['acms.act.rules'].value);
-    // 活动时间
-    activity.beginTime && $('[data-info="beginTime"]').text(activity.beginTime.split(' ')[0]);
-    activity.endTime && $('[data-info="endTime"]').text(activity.endTime.split(' ')[0]);
-    // 隐私权
-    params['acms.policy.privacy'] && $('[data-info=privacy]').text(params['acms.policy.privacy'].value);
-});
+//     // 二维码
+//     if (params['acms.act.qr']) {
+//         $('img.code').attr('src', params['acms.act.qr'].value);
 
-// 大转盘礼品
-let awardObj = {}; // 奖品对象，用于对应转盘上的位置
-$.get(`/act/plan/${activityId}`).done((res) => {
-    const items = res.context.items || [];
-    let itemsLen = items.length;
-    if (itemsLen) {
-        $('.canvas-wrap').html(`<button id="turnPlatebtn" class="btn disabled"></button>
-            <canvas id="canvas" class="canvas" width="590" height="590">您的浏览器不支持canvas！</canvas>
-           `);
-        let html = '';
-        let awardHtml = `<li class="row row-border">
-                        <span class="row-color">礼品</span>
-                        <span class="row-color">说明</span>
-                        <span class="row-color">数量</span>
-                    </li>`;
-        let awardQuantity = 0; // 礼品库存
-        let i = 0;
-        for (; i < itemsLen; i++) {
-            // 大转盘礼品，最多为7个
-            if (i < 7) {
-                html += `<div class="award plate-deg_${i * 45}">
-                     <div class="award-img">
-                        <h2>${items[i].productName}</h2>
-                        <img src="${items[i].productImage}" alt="">
-                    </div>
-            </div>`;
+//         $('#modal-kf img.tip-code').attr('src', params['acms.act.qr'].value);
+//     }
+//     // 活动主办方
+//     params['acms.act.org'] && $('[data-info="org"]').text(params['acms.act.org'].value);
+//     // 客服文案
+//     params['acms.act.cstext'] && $('[data-info="cstext"]').text(params['acms.act.cstext'].value);
+//     // 奖项规则
+//     params['acms.act.rules'] && $('[data-info="rules"]').text(params['acms.act.rules'].value);
+//     // 活动时间
+//     activity.beginTime && $('[data-info="beginTime"]').text(activity.beginTime.split(' ')[0]);
+//     activity.endTime && $('[data-info="endTime"]').text(activity.endTime.split(' ')[0]);
+//     // 隐私权
+//     params['acms.policy.privacy'] && $('[data-info=privacy]').text(params['acms.policy.privacy'].value);
+// });
 
-                awardObj[items[i].productId] = i + 1;
-            }
-            // 活动礼品说明
-            awardHtml += `<li class="row">
-                        <span>${items[i].productName}</span>
-                        <span>${items[i].detail ? items[i].detail : ''}</span>
-                        <span>${items[i].quantity}</span>
-                    </li>`;
-            awardQuantity += items[i].quantity - 0;
-        }
-        html += `<div class="award plate-deg_${i * 45}">
-                     <div class="award-img">
-                        <h2>神秘礼盒</h2>
-                        <img src="//cdn1.chengjuiot.com/templates/img/tk.png" alt="">
-                    </div>
-            </div>`;
-        $('.canvas-wrap').append(html);
+// // 大转盘礼品
+// let awardObj = {}; // 奖品对象，用于对应转盘上的位置
+// $.get(`/act/plan/${activityId}`).done((res) => {
+//     const items = res.context.items || [];
+//     let itemsLen = items.length;
+//     if (itemsLen) {
+//         $('.canvas-wrap').html(`<button id="turnPlatebtn" class="btn disabled"></button>
+//             <canvas id="canvas" class="canvas" width="590" height="590">您的浏览器不支持canvas！</canvas>
+//            `);
+//         let html = '';
+//         let awardHtml = `<li class="row row-border">
+//                         <span class="row-color">礼品</span>
+//                         <span class="row-color">说明</span>
+//                         <span class="row-color">数量</span>
+//                     </li>`;
+//         let awardQuantity = 0; // 礼品库存
+//         let i = 0;
+//         for (; i < itemsLen; i++) {
+//             // 大转盘礼品，最多为7个
+//             if (i < 7) {
+//                 html += `<div class="award plate-deg_${i * 45}">
+//                      <div class="award-img">
+//                         <h2>${items[i].productName}</h2>
+//                         <img src="${items[i].productImage}" alt="">
+//                     </div>
+//             </div>`;
 
-        platebtnStat(); // 抽奖按钮状态
+//                 awardObj[items[i].productId] = i + 1;
+//             }
+//             // 活动礼品说明
+//             awardHtml += `<li class="row">
+//                         <span>${items[i].productName}</span>
+//                         <span>${items[i].detail ? items[i].detail : ''}</span>
+//                         <span>${items[i].quantity}</span>
+//                     </li>`;
+//             awardQuantity += items[i].quantity - 0;
+//         }
+//         html += `<div class="award plate-deg_${i * 45}">
+//                      <div class="award-img">
+//                         <h2>神秘礼盒</h2>
+//                         <img src="//cdn1.chengjuiot.com/templates/img/tk.png" alt="">
+//                     </div>
+//             </div>`;
+//         $('.canvas-wrap').append(html);
 
-        plateInit(); // 初始化大转盘
+//         platebtnStat(); // 抽奖按钮状态
 
-        $('#giftList .tip-list').html(awardHtml);
-        $('[data-info=awardQuantity]').text(awardQuantity);
-    } else {
-        alert('还未设置礼品');
-        $('#turnPlatebtn').addClass('disabled');
-    }
-});
+//         plateInit(); // 初始化大转盘
 
-// 图标切换
-$('[data-click=orderList]').click(function(e) {
-    $(this).is('a') && e.preventDefault();
-    location.href = `/a/p/common-order-list-v1.html?${decodeURIComponent($.param(urlParamsObj))}`;
-});
+//         $('#giftList .tip-list').html(awardHtml);
+//         $('[data-info=awardQuantity]').text(awardQuantity);
+//     } else {
+//         alert('还未设置礼品');
+//         $('#turnPlatebtn').addClass('disabled');
+//     }
+// });
 
-$('[data-click="winner-list"]').click(function() {
-    location.href = `./2.html?${decodeURIComponent($.param(urlParamsObj))}`;
-});
+// // 图标切换
+// $('[data-click=orderList]').click(function(e) {
+//     $(this).is('a') && e.preventDefault();
+//     location.href = `/a/p/common-order-list-v1.html?${decodeURIComponent($.param(urlParamsObj))}`;
+// });
 
-// 转盘
-function plateInit() {
-    const canvas = document.getElementById('canvas');
-    const ctx = canvas.getContext('2d');
+// $('[data-click="winner-list"]').click(function() {
+//     location.href = `./2.html?${decodeURIComponent($.param(urlParamsObj))}`;
+// });
 
-    const canvasWidth = $('.canvas').width();
-    const canvasHeight = $('.canvas').height();
-    // canvas.setAttribute('width', canvasWidth + 'px');
-    // canvas.setAttribute('height', canvasHeight + 'px');
+// // 转盘
+// function plateInit() {
+//     const canvas = document.getElementById('canvas');
+//     const ctx = canvas.getContext('2d');
 
-    let initObj = {
-        index: 0,
-        timer: null,
-        deg: Math.PI / 180,
-        running: false, // 是否运行中
-        speed: 300, // 速度
-        isBeginPrize: false, // 是否开始抽奖
-        stepping: 0, // 步数，经过一个扇形为1步
-        baseCircle: 5, // 点击开始时，圆盘旋转的圈数，旋转玩指定圈数之后，再根据selected的值确定奖项
-        selected: 0, // 最终选中第几个扇形，也就是确定几等奖
-    };
-    const pin = new Image();
-    pin.src = '//cdn1.chengjuiot.com/templates/run_plate/img/new_pin.png';
+//     const canvasWidth = $('.canvas').width();
+//     const canvasHeight = $('.canvas').height();
+//     // canvas.setAttribute('width', canvasWidth + 'px');
+//     // canvas.setAttribute('height', canvasHeight + 'px');
 
-    ctx.translate(canvas.width / 2, canvas.height / 2);
+//     let initObj = {
+//         index: 0,
+//         timer: null,
+//         deg: Math.PI / 180,
+//         running: false, // 是否运行中
+//         speed: 300, // 速度
+//         isBeginPrize: false, // 是否开始抽奖
+//         stepping: 0, // 步数，经过一个扇形为1步
+//         baseCircle: 5, // 点击开始时，圆盘旋转的圈数，旋转玩指定圈数之后，再根据selected的值确定奖项
+//         selected: 0, // 最终选中第几个扇形，也就是确定几等奖
+//     };
+//     const pin = new Image();
+//     pin.src = '//cdn1.chengjuiot.com/templates/run_plate/img/new_pin.png';
 
-    function drawPin() {
-        ctx.clearRect(-canvas.width / 2, -canvas.height / 2, canvas.width, canvas.height);
-        ctx.drawImage(pin, 0, -253);
-        ctx.rotate(Math.PI / 180 * 45);
-    }
+//     ctx.translate(canvas.width / 2, canvas.height / 2);
 
-    function clearTimer() {
-        clearInterval(initObj.timer);
-        initObj.timer = null;
-    }
+//     function drawPin() {
+//         ctx.clearRect(-canvas.width / 2, -canvas.height / 2, canvas.width, canvas.height);
+//         ctx.drawImage(pin, 0, -253);
+//         ctx.rotate(Math.PI / 180 * 45);
+//     }
 
-    // 初始化抽奖参数
-    function init() {
-        initObj.baseCircle = 5;
-        initObj.selected = 0; // 最终选中第几个扇形，也就是确定几等奖
-        initObj.running = false;
-        initObj.isBeginPrize = false;
-        initObj.index = initObj.index++;
-        initObj.stepping = 1;
-        initObj.speed = 300;
-    }
+//     function clearTimer() {
+//         clearInterval(initObj.timer);
+//         initObj.timer = null;
+//     }
 
-    function spinPlate() {
-        if (initObj.stepping === 4) { // 4步之后开始加速
-            clearTimer();
-            initObj.speed = 100;
-            initObj.timer = setInterval(spinPlate, initObj.speed);
-        }
+//     // 初始化抽奖参数
+//     function init() {
+//         initObj.baseCircle = 5;
+//         initObj.selected = 0; // 最终选中第几个扇形，也就是确定几等奖
+//         initObj.running = false;
+//         initObj.isBeginPrize = false;
+//         initObj.index = initObj.index++;
+//         initObj.stepping = 1;
+//         initObj.speed = 300;
+//     }
 
-        if (initObj.baseCircle > 0 && initObj.index === 8) { // 基本圈数结束以后，开始随机抽奖
-            initObj.index = 0;
-            initObj.baseCircle--;
-            if (initObj.baseCircle === 0) { // 开始抽奖
-                clearTimer();
-                initObj.speed = 280;
-                initObj.timer = setInterval(spinPlate, initObj.speed);
-                initObj.isBeginPrize = true;
-            }
-        }
+//     function spinPlate() {
+//         if (initObj.stepping === 4) { // 4步之后开始加速
+//             clearTimer();
+//             initObj.speed = 100;
+//             initObj.timer = setInterval(spinPlate, initObj.speed);
+//         }
 
-        if (initObj.isBeginPrize && initObj.selected > 0) { // 开始抽奖
-            if (--initObj.selected === 0) { // 到了选择的奖项之后
-                clearTimer();
-                init();
-                getUserInfo();
+//         if (initObj.baseCircle > 0 && initObj.index === 8) { // 基本圈数结束以后，开始随机抽奖
+//             initObj.index = 0;
+//             initObj.baseCircle--;
+//             if (initObj.baseCircle === 0) { // 开始抽奖
+//                 clearTimer();
+//                 initObj.speed = 280;
+//                 initObj.timer = setInterval(spinPlate, initObj.speed);
+//                 initObj.isBeginPrize = true;
+//             }
+//         }
 
-                setTimeout(() => { // 展示奖品
-                    $('#winAward').removeClass('invisible');
-                }, 1000);
-            } else {
-                clearTimer();
-                initObj.speed += 60;
-                initObj.timer = setInterval(spinPlate, initObj.speed);
-            }
-        }
+//         if (initObj.isBeginPrize && initObj.selected > 0) { // 开始抽奖
+//             if (--initObj.selected === 0) { // 到了选择的奖项之后
+//                 clearTimer();
+//                 init();
+//                 getUserInfo();
 
-        drawPin();
-        initObj.index++;
-        initObj.stepping++;
-    }
+//                 setTimeout(() => { // 展示奖品
+//                     $('#winAward').removeClass('invisible');
+//                 }, 1000);
+//             } else {
+//                 clearTimer();
+//                 initObj.speed += 60;
+//                 initObj.timer = setInterval(spinPlate, initObj.speed);
+//             }
+//         }
+
+//         drawPin();
+//         initObj.index++;
+//         initObj.stepping++;
+//     }
 
     // 开始抽奖
     $('#turnPlatebtn').on('click', start);
@@ -402,10 +403,10 @@ function plateInit() {
         });
     }
 
-    function run() {
-        initObj.timer = setInterval(spinPlate, initObj.speed);
-    }
-}
+//     function run() {
+//         initObj.timer = setInterval(spinPlate, initObj.speed);
+//     }
+// }
 
 
 //  大喇叭
