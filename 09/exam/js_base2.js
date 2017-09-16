@@ -19,40 +19,50 @@ function type(obj) {
     return text;
 }
 
+//扩展一个类似于 Object.create 的方法 Object.create_new
 // 定义的Object.create_new(proto)方法，会创建并返回一个新的对象，这个新的对象以传入的proto对象为原型。
 // 语法如下：
 //     Object.create_new(proto)  （注：第二个参数忽略）
 //         proto —— 作为新创建对象的原型对象
 // 使用示例如下：
 //     var a = Object.create_new({x: 1, y: 2});
-
+// console.log(a.x)
 
 
 if (!Object.create_new) {
-    Object.create1 = function() {
+    Object.create_new = function(proto) {
         function F() {}
-        return function(proto) {
-            F.prototype = proto;
-            return new F();
+        F.prototype = proto;
+        return new F();
+    }
+}
+
+// 高版本的f的浏览器实现了Function.prototype.bind方法，bind方法调用语法为：
+// functionObj.bind(thisArg[, arg1[, arg2[, ...]]])
+// 使用范例参考如下:
+function move(x, y) {
+    this.x += x;
+    this.y += y;
+}
+var point = {x:1, y:2};
+var pointmove = move.bind(point, 2, 2);
+pointmove(); // {x:3, y:4}
+// 但是低版本浏览器中并未提供该方法，请给出类似于 bind 方法的兼容低版本浏览器的bind_new方法的代码实现。
+
+
+if (!Function.prototype.bind_new) {
+    Function.prototype.bind_new = function() {
+        var _self = this;
+        var data = arguments;
+        return function(){
+        return	_self.apply(data[0],Array.prototype.slice.call(data,1));
         }
     }
 }
 
 
-// 高版本的firefox,chrome及ie10以上的浏览器实现了Function.prototype.bind方法，bind方法调用语法为：
-// functionObj.bind(thisArg[, arg1[, arg2[, ...]]])
-// 使用范例参考如下:
-// function move(x, y) {
-//     this.x += x;
-//     this.y += y;
-// }
-// var point = {x:1, y:2};
-// var pointmove = move.bind(point, 2, 2);
-// pointmove(); // {x:3, y:4}
-// 但是低版本浏览器中并未提供该方法，请给出兼容低版本浏览器的bind方法的代码实现。
 
 // 斐波那契数列（Fibonacci Sequence）由 0 和 1 开始，之后的斐波那契数就由之前的两数相加。在数学上，斐波那契数列是以递归的方法来定义的：
-
 // 请实现一个函数，参数为n，返回结果为以n为下标的斐波那契数。函数语法为
 // var num = fibonacci(n);
 // 使用举例如下
