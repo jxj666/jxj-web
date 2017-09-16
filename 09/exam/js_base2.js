@@ -40,13 +40,14 @@ if (!Object.create_new) {
 // 高版本的f的浏览器实现了Function.prototype.bind方法，bind方法调用语法为：
 // functionObj.bind(thisArg[, arg1[, arg2[, ...]]])
 // 使用范例参考如下:
-function move(x, y) {
-    this.x += x;
-    this.y += y;
-}
-var point = {x:1, y:2};
-var pointmove = move.bind(point, 2, 2);
-pointmove(); // {x:3, y:4}
+// function move(x, y) {
+//     this.x += x;
+//     this.y += y;
+//     return{x:this.x,y:this.y}
+// }
+// var point = {x:1, y:2};
+// var pointmove = move.bind(point, 2, 2);
+// pointmove(); // {x:3, y:4}
 // 但是低版本浏览器中并未提供该方法，请给出类似于 bind 方法的兼容低版本浏览器的bind_new方法的代码实现。
 
 
@@ -54,8 +55,8 @@ if (!Function.prototype.bind_new) {
     Function.prototype.bind_new = function() {
         var _self = this;
         var data = arguments;
-        return function(){
-        return	_self.apply(data[0],Array.prototype.slice.call(data,1));
+        return function() {
+            _self.apply(data[0], [].slice.call(data, 1));
         }
     }
 }
@@ -63,8 +64,21 @@ if (!Function.prototype.bind_new) {
 
 
 // 斐波那契数列（Fibonacci Sequence）由 0 和 1 开始，之后的斐波那契数就由之前的两数相加。在数学上，斐波那契数列是以递归的方法来定义的：
+// f(0)=0;
+// f(1)=1;
+// f(n)=f(n-1)+f(n-2);
 // 请实现一个函数，参数为n，返回结果为以n为下标的斐波那契数。函数语法为
 // var num = fibonacci(n);
 // 使用举例如下
 // var num = fibonacci(3); // num值等于2
 // var num = fibonacci(5); // num值等于5
+
+function fibonacci(n) {
+    if (n == 0) {
+        return 0;
+    } else if (n == 1) {
+        return 1;
+    } else {
+        return fibonacci(n - 1) + fibonacci(n - 2)
+    }
+}
