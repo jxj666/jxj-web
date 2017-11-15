@@ -1,17 +1,18 @@
 //CMD
-difine(function(require, exports, module) {
-    var a = require('./a');
-    a.fun();
-    var b = require('./b');
-    b.fun();
-});
+define(function(require,exports,module){
+	var a=require('./a');
+	a.fun();
+	var b=require('./b');
+	b.fun();
+})
 
 
 //AMD
-define(['./a', './b'], function(a, b) {
-    a.fun();
-    b.fun();
+define(['./a','./b'],function(a,b){
+	a.fun();
+	b.fun();
 })
+
 
 //CommonJS
 //a.js
