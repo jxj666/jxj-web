@@ -2,34 +2,37 @@
 //大事化小
 // recursion merge
 
+//递归
 function recursion(arr) {
     var length = arr.length;
     if (length < 2) {
         return arr;
     }
-    var middle = Math.floor(length / 2);
-    var left = arr.slice(0, middle);
-    var right = arr.slice(middle);
-    return merge(recursion(left), recursion(right));
-
+    var middle_str = Math.floor(length / 2);
+    var left_arr = arr.slice(0, middle_str);
+    var right_arr = arr.slice(middle_str);
+    return merge(recursion(left_arr), recursion(right_arr));
 }
 
-function merge(left, right) {
-    var result = [];
-    while (left.length && right.length) {
-        if (left[0] <= right[0]) {
-            result.push(left.shift());
+//合并
+function merge(left_arr, right_arr) {
+    var result_arr = [];
+    while (left_arr.length && right_arr.length) {
+        if (left_arr[0] <= right_arr[0]) {
+            result_arr.push(left_arr.shift());
         } else {
-            result.push(right.shift());
+            result_arr.push(right_arr.shift());
         }
     }
-    while (left.length) {
-        result.push(left.shift());
+    while (left_arr.length) {
+        result_arr.push(left_arr.shift());
     }
-    while (right.length) {
-        result.push(right.shift());
+    while (right_arr.length) {
+        result_arr.push(right_arr.shift());
     }
-    return result;
+    return result_arr;
 }
+
+
 var arr = [1, 11, 3, 33, 2, 22];
 recursion(arr);
