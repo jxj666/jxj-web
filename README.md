@@ -32,7 +32,7 @@
 
  [AMD CMD ( versions 2 )](08/0809.md)
 
- [Vue 核心原理03](08/vue03.md)
+ [+ vue源码研习3](08/vue03)
 
  [什么是 saas](07/0725.md)
 
