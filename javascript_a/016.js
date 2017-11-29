@@ -24,5 +24,5 @@ function quick(arr) {
 }
 
 
-var arr = [1, 11, 2, 22, 3, 33];
+var arr = [1,11,3,33,2,22];
 quick(arr);
