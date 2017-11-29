@@ -5,14 +5,16 @@
   function quick(arr, left, right) {
       var length = arr.length;
       var part_index;
-      var left = typeof left != 'number' ? 0 : left;
-      var right = typeof right != 'number' ? length - 1 : right;
-      if (length < right) {
+      var left = (typeof left != 'number') ? 0 : left;
+      var right = (typeof right != 'number') ? length - 1 : right;
+      if (left < right) {
           part_index = part(arr, left, right);
+          console.log(part_index);
           quick(arr, left, part_index - 1);
           quick(arr, part_index + 1, right);
       }
-      console.log(arr) ;
+      console.log(arr);
+      return arr;
   }
 
   function part(arr, left, right) {
@@ -26,6 +28,8 @@
       }
       arr[pivot] = [arr[index - 1], arr[index - 1] = arr[pivot]][0];
       return index - 1;
+
   }
   var arr = [1, 11, 3, 33, 2, 22];
-  quick(arr);
+  var re_arr = quick(arr);
+  console.log('re_arr_str=' + re_arr);
