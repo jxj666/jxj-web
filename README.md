@@ -30,7 +30,7 @@
 
  [babel 原理](08/0810.md)
 
- [AMD CMD ( versions 2 )](08/0809.md)
+ [AMD CMD CommonJS](08/0809.md)
 
  [+ vue源码研习3](08/vue03)
 
