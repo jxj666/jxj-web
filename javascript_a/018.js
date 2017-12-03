@@ -1,6 +1,6 @@
 // unicode 解码编码
 // charCodeAt unescape
-// utf-8 usc-2
+// utf-8 usc-2 utf-16
 
 function to_unicode(str) {
     var res = [];
