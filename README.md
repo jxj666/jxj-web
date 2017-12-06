@@ -100,7 +100,7 @@
 
  [AMD CMD 1](04/0412.md)
  
- [+ mvc 到 mvvm](04/0410.md)
+ [mvc 到 mvvm](04/0410.md)
 
  [jquery 温故知新(AJAX)](04/0409.md)
 
