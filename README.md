@@ -173,16 +173,11 @@
 
 
 
-
-
-如果您需要我,您还可以联系:
-
-邮箱:[webjxj@foxmail.com](webjxj@foxmail.com)
-
-
-
 # 这一次我选择迎难而上!
 
+
+
+如果您需要我,您还可以联系: webjxj@foxmail.com
 
 
 ![凤凰](img/fenhuan.jpg)
