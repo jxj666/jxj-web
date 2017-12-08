@@ -172,11 +172,17 @@
  1. [身份验证](01/zl0104.md)
 
 
-![凤凰](img/fenhuan.jpg)
+
 
 
 如果您需要我,您还可以联系:
 
-邮箱:webjxj@foxmail.com
+邮箱:[webjxj@foxmail.com](webjxj@foxmail.com)
+
+
 
 # 这一次我选择迎难而上!
+
+
+
+![凤凰](img/fenhuan.jpg)
