@@ -1,0 +1,9 @@
+CREATE TABLE  `app_jxjweb`.`test1` (
+`id` TINYINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`username` VARCHAR( 32 ) NOT NULL ,
+`password` CHAR( 64 ) NOT NULL ,
+`email` VARCHAR( 32 ) NOT NULL ,
+UNIQUE (
+`username`
+)
+) ENGINE = INNODB;
