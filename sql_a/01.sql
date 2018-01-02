@@ -7,3 +7,26 @@ UNIQUE (
 `username`
 )
 ) ENGINE = INNODB;
+
+INSERT INTO  `app_jxjweb`.`test1` (
+`id` ,
+`username` ,
+`password` ,
+`email`
+)
+VALUES (
+NULL ,  'ftj',  '666666',  '228322991@qq.com'
+);
+
+UPDATE  `app_jxjweb`.`test1` SET  `id` =  '2' WHERE  `test1`.`id` =3;
+
+INSERT INTO  `app_jxjweb`.`test1` (
+`id` ,
+`username` ,
+`password` ,
+`email`
+)
+VALUES (
+NULL ,  'wsh',  '666666',  '228322991@qq.com'
+);
+
