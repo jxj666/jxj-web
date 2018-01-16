@@ -1,26 +1,21 @@
-(function loop() {
-    console.log('应用继续')
-    setTimeout(function() {
-        loop()
-    }, 1000)
+(function run() {
+    console.log('应用在运行')
+    setTimeout(() => run(), 1000)
 })()
-let syncError = function() {
+let syncError = () => {
     throw new Error('sync error')
 }
-let asyncError = function() {
-    throw new Error('async error')
+let asyncError = () => {
+    setTimeout(() => {
+        throw new Error('async error')
+    }, 2000)
 }
 try {
     syncError()
-} catch (e) {
-    console.log('同步错误')
+} catch (err) {
+    console.log(err)
 }
-console.log('同步错误被捕获,应用继续')
-let fs = require('fs')
+asyncError()
 process.on('uncaughtException', (err) => {
-    fs.writeSync(1, `异步错误:${err}\n`)
+    console.log(err)
 })
-setTimeout(() => {
-    asyncError()
-}, 100)
-console.log('异步错误被捕获,应用继续')
