@@ -30,3 +30,7 @@ VALUES (
 NULL ,  'wsh',  '666666',  '228322991@qq.com'
 );
 
+SELECT * 
+FROM  `test1` 
+WHERE  `id` =1
+LIMIT 0 , 30
