@@ -1,27 +1,31 @@
-function SuperType(name) {
-    this.name = name;
-    this.colors = ["red", "blue", "green"];
+//组合继承
+
+function first(name) {
+    this.name = name
+    this.has = [1, 2, 3]
 }
-SuperType.prototype.sayName = function() {
-    alert(this.name);
+first.prototype.sayName = function() {
+    alert(this.name)
 }
-function SubType(name, age) {
-    SuperType.call(this, name);
-    this.age = age;
-} 
-SubType.prototype = new SuperType();
-SubType.prototype.sayAge = function() {
-    alert(this.age);
+
+function second(name, size) {
+    first.call(this, name)
+    this.size = size
 }
-if (global) {
-    global.alert = console.log;
+second.prototype = new first()
+second.prototype.saySzie = function() {
+    alert(this.size)
 }
-let instance1 = new SubType("Nicholas", 29);
-instance1.colors.push("black");
-alert(instance1.colors);
-instance1.sayName();
-instance1.sayAge();
-let instance2 = new SubType("Greg", 28);
-alert(instance2.colors);
-instance2.sayName();
-instance2.sayAge();
+if (global) global.alert = console.log
+
+let a = new second('a', 5)
+a.has.push(4)
+alert(a.has)
+a.sayName()
+a.saySzie()
+
+let b = new second('b', 6)
+b.has.push(5)
+alert(b.has)
+b.sayName()
+b.saySzie()

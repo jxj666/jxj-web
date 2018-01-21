@@ -1,3 +1,5 @@
+//node 错误捕获
+
 (function run() {
     console.log('应用在运行')
     setTimeout(() => run(), 1000)
