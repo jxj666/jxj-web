@@ -5,7 +5,7 @@ function first(name) {
     this.has = [1, 2, 3]
 }
 first.prototype.sayName = function() {
-    alert(this.name)
+    console.log(this.name)
 }
 
 function second(name, size) {
@@ -14,18 +14,17 @@ function second(name, size) {
 }
 second.prototype = new first()
 second.prototype.saySzie = function() {
-    alert(this.size)
+    console.log(this.size)
 }
-if (global) global.alert = console.log
 
-let a = new second('a', 5)
-a.has.push(4)
-alert(a.has)
-a.sayName()
-a.saySzie()
+let a1 = new second('a', 5)
+a1.has.push(4)
+console.log(a1.has)
+a1.sayName()
+a1.saySzie()
 
-let b = new second('b', 6)
-b.has.push(5)
-alert(b.has)
-b.sayName()
-b.saySzie()
+let b1 = new second('b', 6)
+b1.has.push(5)
+console.log(b1.has)
+b1.sayName()
+b1.saySzie()
