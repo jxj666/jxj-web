@@ -1,4 +1,4 @@
-<?php
+  <?php
 header ('Content-Type: image/png');
 $image = imagecreatetruecolor(200, 60);
 $bgcolor = imagecolorallocate($image, 255, 255, 255);
