@@ -1,22 +1,22 @@
-// 函数random用于生成0-999之间的随机整数。
+// 函数random用于生成0-999之间的随机整数.
 // 语法如下：
 //     var number = random();
-//     number是0-999之间的整数。
+//     number是0-999之间的整数.
 
 function random() {
     return Math.floor(Math.random() * 1000)
 }
 
-// 函数parseQuery用于解析url查询参数。
+// 函数parseQuery用于解析url查询参数.
 // 语法如下：
 // 	var obj = parseQuery(query)
-// 	query是被解析的查询参数，函数返回解析后的对象。
+// 	query是被解析的查询参数，函数返回解析后的对象.
 // 使用范例如下：
 // 	var jerry = parseQuery("name=jerry&age=1");
 // 	jerry; 	返回值：{name: " jerry ", age: "1"}
 // 	var tom = parseQuery("name= tom &age=12&gender&");
 // 	tom; 	返回值：{name: "tom", age: "12", gender: ""}
-// 请写出函数parseQuery的实现代码。
+// 请写出函数parseQuery的实现代码.
 
 function parseQuery(query) {
     var arr = query.split('&')
@@ -28,14 +28,14 @@ function parseQuery(query) {
     return obj
 }
 
-// 函数multiply用于计算多个数字的乘积。
+// 函数multiply用于计算多个数字的乘积.
 // 语法如下：
 // 	var product = multiply (number0, number1[, number2, ….])；
 // 使用范例如下：
 // 	multiply(2, 3);	 返回值： 6
 // 	multiply(-1, 3, 4);	返回值： -12
 // 	multiply(1, 2, 3, 4, 5);    返回值： 120
-// 请写出函数multiply的实现代码。
+// 请写出函数multiply的实现代码.
 
 function multiply() {
     var arr = arguments
@@ -65,7 +65,7 @@ function Person(name, age) {
     }
 }
 
-// 函数escapeHTML用于转义html字符串中的特殊字符(<>"&)。
+// 函数escapeHTML用于转义html字符串中的特殊字符(<>"&).
 // 语法如下：
 // 	var escapedStr = escapeHTML(htmlStr);
 // 使用范例如下：
@@ -75,7 +75,7 @@ function Person(name, age) {
 // 	escapeHTML('<input type="text" name="mobile"> '); 		
 // 	返回值：
 // 		'&lt;inputtype=&quot;text&quot; name=&quot;mobile&quot;&gt; '
-// 请写出函数escapeHTML的实现代码。
+// 请写出函数escapeHTML的实现代码.
 function escapeHTML(htmlStr) {
     var new_str = htmlStr.replace(/[<>"&]/g, function(str) {
         switch (str) {

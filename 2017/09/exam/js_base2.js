@@ -20,7 +20,7 @@ function type(obj) {
 }
 
 //扩展一个类似于 Object.create 的方法 Object.create_new
-// 定义的Object.create_new(proto)方法，会创建并返回一个新的对象，这个新的对象以传入的proto对象为原型。
+// 定义的Object.create_new(proto)方法，会创建并返回一个新的对象，这个新的对象以传入的proto对象为原型.
 // 语法如下：
 //     Object.create_new(proto)  （注：第二个参数忽略）
 //         proto —— 作为新创建对象的原型对象
@@ -48,7 +48,7 @@ if (!Object.create_new) {
 // var point = {x:1, y:2};
 // var pointmove = move.bind(point, 2, 2);
 // pointmove(); // {x:3, y:4}
-// 但是低版本浏览器中并未提供该方法，请给出类似于 bind 方法的兼容低版本浏览器的bind_new方法的代码实现。
+// 但是低版本浏览器中并未提供该方法，请给出类似于 bind 方法的兼容低版本浏览器的bind_new方法的代码实现.
 
 
 if (!Function.prototype.bind_new) {
@@ -63,11 +63,11 @@ if (!Function.prototype.bind_new) {
 
 
 
-// 斐波那契数列（Fibonacci Sequence）由 0 和 1 开始，之后的斐波那契数就由之前的两数相加。在数学上，斐波那契数列是以递归的方法来定义的：
+// 斐波那契数列（Fibonacci Sequence）由 0 和 1 开始，之后的斐波那契数就由之前的两数相加.在数学上，斐波那契数列是以递归的方法来定义的：
 // f(0)=0;
 // f(1)=1;
 // f(n)=f(n-1)+f(n-2);
-// 请实现一个函数，参数为n，返回结果为以n为下标的斐波那契数。函数语法为
+// 请实现一个函数，参数为n，返回结果为以n为下标的斐波那契数.函数语法为
 // var num = fibonacci(n);
 // 使用举例如下
 // var num = fibonacci(3); // num值等于2
