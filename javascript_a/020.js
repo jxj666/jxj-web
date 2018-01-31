@@ -11,7 +11,7 @@
 // $class(example, “aaa”); 运行结果为包含id为p1, id为p2的元素列表
 // $class(example, “bbb ccc”);运行结果为包含id为p3的元素列表
 // $class(example, “ccc bbb”);运行结果为包含id为p3的元素列表
-// 请实现$class方法，要求浏览器兼容。
+// 请实现$class方法，要求浏览器兼容.
 
 
 function $class(element, names) {

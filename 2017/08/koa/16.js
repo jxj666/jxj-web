@@ -1,8 +1,8 @@
 //处理错误的中间键
 
-// try 语句测试代码块的错误。
-// catch 语句处理错误。
-// throw 语句创建自定义错误。
+// try 语句测试代码块的错误.
+// catch 语句处理错误.
+// throw 语句创建自定义错误.
 
 const Koa = require('koa');
 const app = new Koa();

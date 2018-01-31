@@ -12,7 +12,7 @@
                 var tmpFile = fil[intI];
                 var reader = new FileReader();
                 reader.readAsDataURL(tmpFile);
-                //该方法会读取指定的 Blob 或 File 对象。读取操作完成的时候，readyState 会变成已完成（DONE），并触发 loadend 事件，同时 result 属性将包含一个data:URL格式的字符串（base64编码）以表示所读取文件的内容。
+                //该方法会读取指定的 Blob 或 File 对象.读取操作完成的时候，readyState 会变成已完成（DONE），并触发 loadend 事件，同时 result 属性将包含一个data:URL格式的字符串（base64编码）以表示所读取文件的内容.
                 reader.onload = function (e) {
                     url = e.target.result;
                     imgss.src = url;
@@ -34,7 +34,7 @@
         function  pressss(){//
             //获取canvas压缩后的图片数据
             var Pic = document.getElementById("myCanvas").toDataURL("image/png");
-            //HTMLCanvasElement.toDataURL() 方法返回一个包含图片展示的 data URI 。
+            //HTMLCanvasElement.toDataURL() 方法返回一个包含图片展示的 data URI .
             var imgs =document.getElementById("press");
             imgs.src =Pic ;
             console.log(`压缩后大小约${parseInt(Pic.length/1024)}kb`);
