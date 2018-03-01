@@ -11,6 +11,8 @@
 
 ### 笔记
 
+ 1. [图片滑动验证核心原理](https://github.com/jxj322991/verify_user)
+
  1. [二维码活码管理系统](https://github.com/jxj322991/2code)
 
  1. [node 与 java 的区别](2018/01/25.md)
