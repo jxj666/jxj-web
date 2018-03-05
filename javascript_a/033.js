@@ -1,3 +1,4 @@
+//设备信息
 function device_type() {
     var ua = navigator.userAgent
     var agent = ['Android', 'iPhone'];
