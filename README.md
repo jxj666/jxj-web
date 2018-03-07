@@ -11,6 +11,8 @@
 
 ### 笔记
 
+ 1. [依赖注入(草稿)](2018/03/01.md)
+
  1. [gennerator 与 promise](2018/03/02.md)
 
  1. [图片滑动验证核心原理](https://github.com/jxj322991/verify_user)
