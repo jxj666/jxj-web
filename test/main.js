@@ -28,6 +28,6 @@ function imgToMin(files, id) {
 function imgInfo() {
     var img = document.getElementById('myCanvas').toDataURL('image/png')
     var img2 = document.getElementById('press')
-    img.src = img2
+    img2.src = img
     console.log(`压缩后${parseInt(img.length/1024)}kb`)
 }
