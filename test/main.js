@@ -15,7 +15,7 @@ function imgToMin(files, id) {
             url = e.target.result
             imgNew.src = url
             imgAgo.src = url
-            imgAgo, onload = function() {
+            imgAgo.onload = function() {
                 var m = imgNew.width / imgNew.height
                 cnv.height = 100;
                 cnv.width = 100 * m;
