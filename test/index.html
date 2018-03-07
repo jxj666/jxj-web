@@ -8,16 +8,19 @@
 </head>
 
 <body>
-	<h1>测试台</h1>
+    <h1>测试台</h1>
     <div id="content">
         <div id="example">
-            <p id="p1" class="aaa bbb" >1</p>
-            <p id="p2" class="aaa ccc" >2</p>
-            <p id="p3" class="bbb ccc" >3</p>
+            <p id="p1" class="aaa bbb">1</p>
+            <p id="p2" class="aaa ccc">2</p>
+            <p id="p3" class="bbb ccc">3</p>
         </div>
     </div>
-
-    
+    <input type="file" id="fileId" name="fileId" value="上传图片" hidefocus="true" onchange="imgToMin(this.files,this.id);" />
+    <canvas id="myCanvas" style="display: none"></canvas>
+    <img src="" alt="" id="ago" style="width: 500px;" />
+    <input type="button" value="ya suo->" onclick="imgInfo()" />
+    <img src="" alt="" id="press" />
     <script type="text/javascript" src="main.js"></script>
 </body>
 
