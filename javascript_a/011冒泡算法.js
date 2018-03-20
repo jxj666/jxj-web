@@ -18,6 +18,7 @@ pop.apply(arr);
 
 
 //冒泡算法
+//两两对比 直接对调
 function pop(arr) {
     for (let i = 0; i < arr.length; i++) {
         for (let j = 0; j < arr.length - i - 1; j++) {
