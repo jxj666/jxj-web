@@ -18,7 +18,7 @@ Vue.component('currency-input', {
             if (formatedValue !== value) {
                 this.$refs.input.value = formatedValue;
             }
-            this.$emit('input', Number(formattedValue));
+            this.$emit('input', Number(formatedValue));
         }
 
     }
