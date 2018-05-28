@@ -199,4 +199,4 @@
 
 <!-- [知识汇总](https://jxj322991.github.io/siwei/) -->
 
-![凤凰](img/fenhuan.jpg)
+<!-- ![凤凰](img/fenhuan.jpg) -->
