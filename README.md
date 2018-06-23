@@ -14,6 +14,7 @@
 
 ### 笔记
 
+ 1. [好友助力活动:经验](2018/06/z5.md)
 
  1. [人人贷 react native 技术验证](https://github.com/jxj322991/react_native_study2)
 
