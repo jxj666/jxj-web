@@ -14,7 +14,6 @@
 
 ### 笔记
 
- 1. [好友助力活动:经验](2018/06/z5.md)
 
  1. [人人贷 react native 技术验证](https://github.com/jxj322991/react_native_study2)
 
@@ -194,6 +193,8 @@
 如果您需要我,您还可以联系: webjxj@foxmail.com
 
 [测试台](test/index.html)
+
+ <!-- 1. [好友助力活动:经验](2018/06/z5.md) -->
 
 <!-- 1. [vue 常见的技术栈](2017/08/0822.md) -->
 
