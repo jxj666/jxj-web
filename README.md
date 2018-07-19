@@ -14,6 +14,7 @@
 
 ### 笔记
 
+ 1. [好分期3.0 项目复盘总结](2018/07/z7.md)
 
  1. [人人贷 react native 技术验证](https://github.com/jxj322991/react_native_study2)
 
