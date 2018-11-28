@@ -1,5 +1,5 @@
 //属性劫持
-'defineObjProp': function(obj, propName, propValue) {
+function defineObjProp (obj, propName, propValue) {
     var self = this;
     var _value = proValue || '';
     try {
