@@ -21,9 +21,9 @@
 
  1. [关于微信小程序多元素运动卡顿问题的见解](2018/08/z8.md)
 
- 1. [好分期3.0 项目复盘总结](2018/07/z7.md)
+ 1. [3.0 项目复盘总结](2018/07/z7.md)
 
- 1. [人人贷 react native 技术验证](https://github.com/jxj322991/react_native_study2)
+ 1. [react native 技术验证](https://github.com/jxj322991/react_native_study2)
 
  1. [gennerator 与 promise](2018/03/02.md)
 
