@@ -1,3 +1,11 @@
+/*
+ * @Description:
+ * @Author: 靳小健
+ * @Email: jinxiaojian@youxin.com
+ * @LastEditors: 靳小健
+ * @Date: 2018-08-15 11:34:44
+ * @LastEditTime: 2019-03-05 16:26:34
+ */
 // generator
 // function test(a:string='z',b?:string,c:string='z'){
 // 	console.log(a,b,c)
@@ -25,15 +33,19 @@
 // }
 // console.log(`get:${now_value}`);
 function get_info() {
-    return {
-        code: 'mi',
-        price: {
-            price1: 200,
-            price2: 100
-        },
-        age: 1
-    };
+  return {
+    code: "mi",
+    price: {
+      price1: 200,
+      price2: 100,
+    },
+    age: 1,
+  };
 }
-var _a = get_info(), code_0 = _a.code, price1 = _a.price.price1;
+var _a = get_info(),
+  code_0 = _a.code,
+  price1 = _a.price.price1;
 var arr1 = [1, 2, 3, 4, 5];
-var num1 = arr1[0], num3 = arr1[2], others = arr1.slice(3);
+var num1 = arr1[0],
+  num3 = arr1[2],
+  others = arr1.slice(3);

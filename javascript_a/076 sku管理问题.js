@@ -1,49 +1,53 @@
+/*
+ * @Description:
+ * @Author: 靳小健
+ * @Email: jinxiaojian@youxin.com
+ * @LastEditors: 靳小健
+ * @Date: 2018-08-15 11:34:44
+ * @LastEditTime: 2019-03-05 16:30:35
+ */
 var arr = {
-    "code": 0,
-    "data": {
-        "goods": {
-            "id": 12,
-            "image": "xxxx.jpg",
-            "periods": "期数",
-            "price": "￥5000.00",
-            "specifications": {
-                "内存": "23G",
-                "网络": "全网通",
-                "颜色": "天空灰"
-            },
-            "term_price": "月供￥100.00元起",
-            "title": "苹果手机XXXXXXXXXXX"
+  code: 0,
+  data: {
+    goods: {
+      id: 12,
+      image: "xxxx.jpg",
+      periods: "期数",
+      price: "￥5000.00",
+      specifications: {
+        内存: "23G",
+        网络: "全网通",
+        颜色: "天空灰",
+      },
+      term_price: "月供￥100.00元起",
+      title: "苹果手机XXXXXXXXXXX",
+    },
+    sku_lists: [
+      {
+        specifications: {
+          内存: "24G",
+          网络: "电信",
+          颜色: "白色",
         },
-        "sku_lists": [{
-                "specifications": {
-                    "内存": "24G",
-                    "网络": "电信",
-                    '颜色': '白色'
-                },
-                "id": 1,
-                "image": "222.jpg",
-                "periods": "6个月",
-                "price": "￥5000.00",
-                "term_price": "500.00"
-            },
-            {
-                "specifications": {
-                    "内存": "23G",
-                    "网络": "全网通",
-                    "颜色": "天空灰"
-                },
-                "id": 1,
-                "image": "111.jpg",
-                "periods": "6个月",
-                "price": "￥5000.00",
-                "term_price": "500.00"
-            },
-
-        ],
-        "spec_param": [
-            "颜色",
-            "内存",
-            "网络"
-        ]
-    }
-}
+        id: 1,
+        image: "222.jpg",
+        periods: "6个月",
+        price: "￥5000.00",
+        term_price: "500.00",
+      },
+      {
+        specifications: {
+          内存: "23G",
+          网络: "全网通",
+          颜色: "天空灰",
+        },
+        id: 1,
+        image: "111.jpg",
+        periods: "6个月",
+        price: "￥5000.00",
+        term_price: "500.00",
+      },
+    ],
+    spec_param: ["颜色", "内存", "网络"],
+  },
+};
