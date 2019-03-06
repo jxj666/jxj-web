@@ -3,15 +3,15 @@
  * @Author: 靳小健
  * @Email: jinxiaojian@youxin.com
  * @LastEditors: 靳小健
- * @Date: 2015-01-31 14:39:32
- * @LastEditTime: 2019-03-06 11:42:17
+ * @Date: 2016-01-31 14:39:32
+ * @LastEditTime: 2019-03-06 11:45:17
  -->
 
 # 欢迎来到小健的 github
 
 ### 这里是小健的前端学习小记
 
-##### [点击 => 进入 github 个人页](https://github.com/jxj322991.
+##### [点击 => 进入 github 个人页](https://github.com/jxj322991)
 
 ### 笔记
 
@@ -161,7 +161,7 @@
 
 1.  [vue 源码研习 2](2017/02/vue02)
 
-1.  [vue 源码研习 1](2017/02/vue01.md)
+1.  [vue 源码研习 1](2017/02/vue01)
 
 1.  [es6 常用特性](2017/02/es6.md)
 
@@ -181,8 +181,6 @@
 
 # 这一次我选择迎难而上!
 
-如果您需要我,您还可以联系: webjxj@foxmail.com
-
 [测试台](test/index.html)
 
  <!-- 1. [好友助力活动:经验](2018/06/z5.md) -->
@@ -193,4 +191,4 @@
 
 <!-- [知识汇总](https://jxj322991.github.io/siwei/) -->
 
-<!-- ![凤凰](img/fenhuan.jpg) -->
+![凤凰](img/fenhuan.jpg)
