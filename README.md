@@ -4,7 +4,7 @@
  * @Email: jinxiaojian@youxin.com
  * @LastEditors: 靳小健
  * @Date: 2016-01-31 14:39:32
- * @LastEditTime: 2019-03-12 20:19:39
+ * @LastEditTime: 2019-03-12 20:21:43
  -->
 
 # 欢迎来到小健的 github
@@ -15,7 +15,7 @@
 
 ### 笔记
 
-1.  [层叠上下位](2019/03/0312.html)
+1.  [层叠上下文](2019/03/0312.html)
 
 1.  [vue 组件通信的坑](2018/10/z15.md)
 
