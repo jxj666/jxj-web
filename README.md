@@ -4,7 +4,7 @@
  * @Email: jinxiaojian@youxin.com
  * @LastEditors: 靳小健
  * @Date: 2016-01-31 14:39:32
- * @LastEditTime: 2019-03-06 11:56:10
+ * @LastEditTime: 2019-03-12 20:18:15
  -->
 
 # 欢迎来到小健的 github
@@ -14,6 +14,8 @@
 ##### [点击 => 进入 github 个人页](https://github.com/jxj322991)
 
 ### 笔记
+
+1.  [vue 组件通信的坑](2019/03/0312.html)
 
 1.  [vue 组件通信的坑](2018/10/z15.md)
 
