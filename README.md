@@ -4,7 +4,7 @@
  * @Email: jinxiaojian@youxin.com
  * @LastEditors: 靳肖健
  * @Date: 2016-01-31 14:39:32
- * @LastEditTime: 2019-04-07 21:24:22
+ * @LastEditTime: 2019-04-10 20:15:15
  -->
 
 # 欢迎来到小健的 github
@@ -15,6 +15,7 @@
 
 ### 笔记
 
+1.  [vue 子组件实现懒加载功能](2019/04/10.html)
 1.  [层叠上下文](2019/03/0312.html)
 1.  [vue 组件通信的坑](2018/10/z15.md)
 1.  [处理安卓 line-height 错位问题的方法](2018/08/z9.md)
