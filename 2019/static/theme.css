@@ -1,0 +1,66 @@
+body {
+  color: #111;
+}
+div,
+td,
+p {
+  padding: 1vw;
+}
+td {
+  border: 1px solid #eee;
+  max-width: 50vw;
+}
+
+h1,
+h2 {
+  font-size: 3vw;
+}
+h3,
+h4 {
+  font-size: 2vw;
+}
+div,
+p,
+pre {
+  font-size: 1vw;
+}
+h5,
+h6 {
+  font-size: 0.5vw;
+}
+h1,
+h3,
+h5 {
+  font-weight: 900;
+  line-height: 2;
+  color: #222;
+}
+h2,
+h4,
+h6,
+p,
+div,
+pre {
+  font-weight: 100;
+  line-height: 1.5;
+}
+
+img {
+  min-width: 10vw;
+  width: 100%;
+}
+
+header {
+}
+nav {
+}
+section {
+}
+aside {
+}
+footer {
+}
+
+article {
+  color: #fff;
+}
