@@ -4,7 +4,7 @@
  * @Email: jinxiaojian@youxin.com
  * @LastEditors: 靳肖健
  * @Date: 2016-01-31 14:39:32
- * @LastEditTime: 2019-04-11 14:46:14
+ * @LastEditTime: 2019-04-11 14:48:17
  -->
 
 # 欢迎来到小健的 github
@@ -116,4 +116,4 @@
 
 <!-- [知识汇总](https://jxj322991.github.io/siwei/) -->
 
-![凤凰](img/fenhuan.jpg)
+![凤凰](./fenhuan.jpg)
