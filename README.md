@@ -4,7 +4,7 @@
  * @Email: jinxiaojian@youxin.com
  * @LastEditors: 靳肖健
  * @Date: 2016-01-31 14:39:32
- * @LastEditTime: 2019-04-11 12:00:06
+ * @LastEditTime: 2019-04-11 14:46:14
  -->
 
 # 欢迎来到小健的 github
@@ -107,8 +107,6 @@
 1.  [ 第 1 讲 Java 语言与面向对象的程序设计 ](2019/04/01.html)
 
 # 这一次我选择迎难而上!
-
-[测试台](test/index.html)
 
 <!-- 1. [好友助力活动:经验](2018/06/z5.md) -->
 
