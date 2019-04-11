@@ -1,14 +1,22 @@
 body {
-  color: #111;
+  color: #999;
 }
+body,
 div,
+p,
 td,
-p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
   padding: 1vw;
 }
 td {
   border: 1px solid #eee;
-  max-width: 50vw;
+  max-width: 80vw;
 }
 
 h1,
@@ -33,21 +41,33 @@ h3,
 h5 {
   font-weight: 900;
   line-height: 2;
-  color: #222;
+  color: #333;
 }
 h2,
 h4,
-h6,
+h6 {
+  font-weight: 100;
+  line-height: 1.5;
+  color: #222;
+}
 p,
 div,
 pre {
   font-weight: 100;
   line-height: 1.5;
+  color: #111;
 }
 
 img {
   min-width: 10vw;
   width: 100%;
+  display: block;
+  min-height: 1vw;
+  border: 1px dotted #999;
+}
+img:hover {
+  min-width: 50vw;
+  border: 1px solid #999;
 }
 
 header {
