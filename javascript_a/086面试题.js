@@ -1,3 +1,11 @@
+/*
+ * @Description:
+ * @Author: jinxiaojian
+ * @Email: jinxiaojian@youxin.com
+ * @LastEditors: 靳肖健
+ * @Date: 2019-04-01 11:19:50
+ * @LastEditTime: 2019-04-11 15:14:52
+ */
 // 4.不使用loop循环，创建一个长度为100的数组，并且每个元素的值等于它的下标。
 var a = Array(100)
   .join(",")
