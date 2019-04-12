@@ -33,12 +33,14 @@ pre {
   font-size: 1vw;
 }
 h5,
-h6 {
+h6,
+th {
   font-size: 0.5vw;
 }
 h1,
 h3,
-h5 {
+h5,
+th {
   font-weight: 900;
   line-height: 2;
   color: #333;
@@ -52,10 +54,22 @@ h6 {
 }
 p,
 div,
-pre {
+span {
   font-weight: 100;
   line-height: 1.5;
   color: #111;
+}
+
+pre,
+.pre {
+  font-weight: 100;
+  line-height: 1.5;
+  color: green;
+}
+a {
+  font-weight: 100;
+  line-height: 1.5;
+  color: red;
 }
 
 img {

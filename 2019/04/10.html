@@ -4,7 +4,7 @@
  * @Email: jinxiaojian@youxin.com
  * @LastEditors: 靳肖健
  * @Date: 2019-04-10 19:38:43
- * @LastEditTime: 2019-04-12 15:38:20
+ * @LastEditTime: 2019-04-12 16:03:11
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -18,42 +18,47 @@
   </head>
   <body>
     <div class="main">
-
       <div>
         <h1><strong>vue子组件实现懒加载功能</strong></h1>
 
-
         <p><strong>子组件扩展参数</strong></p>
         <table>
-          <colgroup>
-            <col />
-            <col />
-            <col />
-            <col />
-          </colgroup>
           <tbody>
             <tr class="firstRow">
               <th>参数</th>
               <th>功能</th>
-              <th><br /></th>
+              <th>参数示例</th>
               <th>备注</th>
             </tr>
             <tr>
               <td><p>WatchScroll</p></td>
               <td>是否需要懒加载</td>
-              <td>true</td>
+              <td>
+                <div class="pre">
+                  true/false
+                </div>
+              </td>
               <td>必需</td>
             </tr>
             <tr>
               <td><p>winHeight</p></td>
               <td>父元素高度</td>
-              <td><p>window.screen.availHeight</p></td>
+
+              <td>
+                <div class="pre">
+                  window.screen.availHeight
+                </div>
+              </td>
               <td>必需</td>
             </tr>
             <tr>
               <td><p>ScrollState</p></td>
               <td>滚动监听</td>
-              <td>+new Date()</td>
+              <td>
+                <div class="pre">
+                  +new Date()
+                </div>
+              </td>
               <td>必需</td>
             </tr>
           </tbody>
@@ -61,133 +66,125 @@
         <p>
           <strong>子组件加入逻辑</strong>
         </p>
-        <p>
-          <table>
-              <tr>
-                  <td>
-                    监视窗口运动,如果运动就获取子组件高度信息
-                  </td>
-  
-                <td>
-                  <pre>
-                      //状态变更(清理)
-                      ScrollState(val, old_val) {
-                        if (val) {
-                          this.getHeight();
-                        }
-                      },
-                  </pre>
-                </td>
-                <td>
-                    <img src="img10/6.png" alt="" />
-                </td>
-              </tr>
-       
+        <p></p>
+        <table>
+          <tr>
+            <td>
+              监视窗口运动,如果运动就获取子组件高度信息
+            </td>
+
+            <td>
+              <div class="pre">
+                //状态变更(清理) ScrollState(val, old_val) { if (val) {
+                this.getHeight(); } },
+              </div>
+            </td>
+            <td>
+              <img src="img10/6.png" alt="" />
+            </td>
+          </tr>
+        </table>
+
+        <table>
+          <tbody>
             <tr>
-                <td>
-                  记录子组件子组件当前高度
-                </td>
+              <td>
+                记录子组件子组件当前高度
+              </td>
 
               <td>
-                <pre>
-                    getHeight() {
-                      this.topH = this.$refs.HfqImg.getBoundingClientRect().top;
-                    },
-                </pre>
+                <div class="pre">
+                  getHeight() { this.topH =
+                  this.$refs.HfqImg.getBoundingClientRect().top; },
+                </div>
               </td>
               <td>
-                  <img src="img10/7.png" alt="" />
+                <img src="img10/7.png" alt="" />
               </td>
             </tr>
+          </tbody>
+        </table>
+        <table>
+          <tbody>
             <tr>
-                <td>
-                  图片路径为计算属性,如果子组件高于窗口,据更新img的路径
-                </td>
-
-              <td><pre>
-                  ReUrl() {
-                    if (this.WatchScroll && !this.loadingKey) {
-                      if (this.topH < this.winHeight) {
-                        this.loadingKey = true;
-                        return `${this.picDir}${this.imgs}`;
-                      } else {
-                        return "";
-                      }
-                    } else {
-                      return `${this.picDir}${this.imgs}`;
-                    }
-                  },
-              </pre></td>
               <td>
-                  <img src="img10/8.png" alt="" />
+                图片路径为计算属性,如果子组件高于窗口,据更新img的路径
+              </td>
+
+              <td>
+                <div class="pre">
+                  ReUrl() { if (this.WatchScroll &amp;&amp; !this.loadingKey) {
+                  if (this.topH &lt; this.winHeight) { this.loadingKey = true;
+                  return &#x60;${this.picDir}${this.imgs}&#x60;; } else { return
+                  &quot;&quot;; } } else { return
+                  &#x60;${this.picDir}${this.imgs}&#x60;; } },
+                </div>
+              </td>
+              <td>
+                <img src="img10/8.png" alt="" />
               </td>
             </tr>
-         
-          </table>
-        </p>
+          </tbody>
+        </table>
+
         <p><strong>需要父组件做处理</strong></p>
         <table>
-          <colgroup>
-            <col />
-            <col />
-            <col />
-          </colgroup>
           <tbody>
-            <tr class="firstRow">
-              <th>操作</th>
-              <th>代码</th>
-              <th>样例</th>
-            </tr>
             <tr>
               <td>引入子组件</td>
-              <td style="word-break: break-all;">
-                <p>
-                  &lt;hfq-img<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  :imgs="scope.row.thumb_img"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  :resourceUrl="resourceUrl"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  :WatchScroll="true"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  :winHeight="winHeight"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  :ScrollState="ScrollState"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  &gt;&lt;/hfq-img&gt;
-                </p>
+              <td>
+                <div class="pre">
+                  &lt;hfq-img :imgs=&quot;scope.row.thumb_img&quot;
+                  :resourceUrl=&quot;resourceUrl&quot;
+                  :WatchScroll=&quot;true&quot; :winHeight=&quot;winHeight&quot;
+                  :ScrollState=&quot;ScrollState&quot; &gt; &lt;/hfq-img&gt;
+                </div>
               </td>
               <td style="word-break: break-all;">
                 <img src="img10/1.png" alt="" />
               </td>
             </tr>
+          </tbody>
+        </table>
+        <table>
+          <tbody>
             <tr>
               <td style="word-break: break-all;">注册子组件需要参数</td>
               <td>
-                <p>
-                  ScrollState: 0,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; winHeight:
-                  0,
-                </p>
+                <div class="pre">
+                  ScrollState: 0, winHeight: 0,
+                </div>
               </td>
               <td style="word-break: break-all;">
                 <img src="img10/2.png" alt="" />
               </td>
             </tr>
+          </tbody>
+        </table>
+        <table>
+          <tbody>
             <tr>
               <td>引入事件监听</td>
               <td>
-                <p>
-                  &nbsp;&nbsp;&nbsp; window.addEventListener("scroll",
-                  this.handleScroll, true);
-                </p>
+                <div class="pre">
+                  window.addEventListener("scroll", this.handleScroll, true);
+                </div>
               </td>
               <td style="word-break: break-all;">
                 <img src="img10/3.png" alt="" />
               </td>
             </tr>
+          </tbody>
+        </table>
+        <table>
+          <tbody>
             <tr>
               <td>加入监控函数</td>
               <td>
-                <p>
-                  &nbsp;&nbsp; //滚动事件抓取<br />&nbsp;&nbsp;&nbsp;
-                  handleScroll() {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  this.winHeight = window.screen.availHeight;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  this.ScrollState = +new Date();<br />&nbsp;&nbsp;&nbsp; },
-                </p>
+                <div class="pre">
+                  //滚动事件抓取 handleScroll() { this.winHeight =
+                  window.screen.availHeight; this.ScrollState = +new Date(); },
+                </div>
               </td>
               <td><img src="img10/4.png" alt="" /></td>
             </tr>
@@ -197,5 +194,4 @@
       </div>
     </div>
   </body>
- 
 </html>
