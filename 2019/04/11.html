@@ -4,7 +4,7 @@
  * @Email: jinxiaojian@youxin.com
  * @LastEditors: 靳肖健
  * @Date: 2019-04-11 10:35:00
- * @LastEditTime: 2019-04-11 15:01:11
+ * @LastEditTime: 2019-04-12 10:29:02
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="../static/theme.css" />
-    <title>Document</title>
+    <title>vue 数据绑定视图 数据量过大会导致页面卡顿</title>
   </head>
   <body>
     <header>
@@ -24,7 +24,7 @@
         <h3>问题描述</h3>
         <div>
           <p>
-            cms 管理系统遇到一个问题 ,
+            使用vue 开发的 cms 管理系统遇到一个问题 ,
             本地商品页面在正式环境中会出现卡顿,闪退...而测试环境不会出现这种状况.
           </p>
           <div>
@@ -42,7 +42,7 @@
         <h3>分析问题</h3>
         <div>
           <p>
-            分析两者不同,估计可能是数据不同导致的...
+            分析两者不同,估计可能是数据差异导致的...
           </p>
           <p>
             查看正式环境请求返回数据发现,负责加载商品品牌的接口加载数据量过大,这些数据又绑定视图,生成大量页面元素造成的
@@ -111,36 +111,4 @@
       靳肖健
     </article>
   </body>
-  <style>
-    div,
-    td,
-    p {
-      padding: 1vw;
-      font-size: 1vw;
-      line-height: 1.5;
-    }
-    td {
-      border: 1px solid #eee;
-      max-width: 50vw;
-    }
-    h1 {
-      font-size: 3vw;
-    }
-    h3 {
-      font-size: 2vw;
-    }
-    h5 {
-      font-size: 1vw;
-    }
-    img {
-      min-width: 10vw;
-      width: 100%;
-    }
-    footer {
-      color: #fff;
-    }
-    header {
-      color: #aaa;
-    }
-  </style>
 </html>
