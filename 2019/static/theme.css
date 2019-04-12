@@ -18,7 +18,9 @@ td {
   border: 1px solid #eee;
   max-width: 80vw;
 }
-
+table {
+  width: 100%;
+}
 h1,
 h2 {
   font-size: 3vw;
@@ -73,14 +75,16 @@ a {
 }
 
 img {
-  min-width: 10vw;
-  width: 100%;
+  width: 33vw;
   display: block;
   min-height: 1vw;
   border: 1px dotted #999;
+  margin: 0 auto;
 }
 img:hover {
-  min-width: 50vw;
+  width: auto;
+  min-width: 33vw;
+  max-width: 99%;
   border: 1px solid #999;
 }
 

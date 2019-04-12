@@ -4,7 +4,7 @@
  * @Email: jinxiaojian@youxin.com
  * @LastEditors: 靳肖健
  * @Date: 2019-04-10 19:38:43
- * @LastEditTime: 2019-04-12 16:07:34
+ * @LastEditTime: 2019-04-12 17:56:06
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -42,7 +42,7 @@
             </tr>
             <tr>
               <td><p>winHeight</p></td>
-              <td>父元素高度</td>
+              <td>窗口高度</td>
 
               <td>
                 <div class="pre">
@@ -78,7 +78,9 @@
                 ScrollState(val, old_val) { if (val) { this.getHeight(); } },
               </div>
             </td>
-            <td>
+          </tr>
+          <tr>
+            <td colspan="2">
               <img src="img10/6.png" alt="" />
             </td>
           </tr>
@@ -97,9 +99,12 @@
                   this.$refs.HfqImg.getBoundingClientRect().top; },
                 </div>
               </td>
-              <td>
-                <img src="img10/7.png" alt="" />
-              </td>
+              <tr>
+                <td colspan="2">
+                  <img src="img10/7.png" alt="" />
+                </td>
+              </tr>
+            
             </tr>
           </tbody>
         </table>
@@ -119,9 +124,13 @@
                   &#x60;${this.picDir}${this.imgs}&#x60;; } },
                 </div>
               </td>
-              <td>
-                <img src="img10/8.png" alt="" />
-              </td>
+              <tr>
+                <td colspan="2">
+                  <img src="img10/8.png" alt="" />
+
+                </td>
+              </tr>
+            
             </tr>
           </tbody>
         </table>
@@ -139,7 +148,11 @@
                   :ScrollState=&quot;ScrollState&quot; &gt; &lt;/hfq-img&gt;
                 </div>
               </td>
-              <td style="word-break: break-all;">
+          
+         
+            </tr>
+            <tr>
+              <td colspan="2">
                 <img src="img10/1.png" alt="" />
               </td>
             </tr>
@@ -154,7 +167,10 @@
                   ScrollState: 0, winHeight: 0,
                 </div>
               </td>
-              <td style="word-break: break-all;">
+            
+            </tr>
+            <tr>
+              <td colspan="2">
                 <img src="img10/2.png" alt="" />
               </td>
             </tr>
@@ -169,7 +185,11 @@
                   window.addEventListener("scroll", this.handleScroll, true);
                 </div>
               </td>
-              <td style="word-break: break-all;">
+
+        
+            </tr>
+            <tr>
+              <td colspan="2">
                 <img src="img10/3.png" alt="" />
               </td>
             </tr>
@@ -185,7 +205,10 @@
                   this.ScrollState = +new Date(); },
                 </div>
               </td>
-              <td><img src="img10/4.png" alt="" /></td>
+              
+            </tr>
+            <tr>
+              <td colspan="2"><img src="img10/4.png" alt="" /></td>
             </tr>
           </tbody>
         </table>
