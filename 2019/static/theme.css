@@ -1,3 +1,45 @@
+@media only screen and (max-width: 888px) {
+  h1,
+  h2 {
+    font-size: 6vw;
+  }
+  h3,
+  h4 {
+    font-size: 4vw;
+  }
+  div,
+  p,
+  pre {
+    font-size: 2vw;
+  }
+  h5,
+  h6,
+  th {
+    font-size: 1vw;
+  }
+}
+@media only screen and (min-width: 888px) {
+  h1,
+  h2 {
+    font-size: 3vw;
+  }
+  h3,
+  h4 {
+    font-size: 2vw;
+  }
+  div,
+  p,
+  pre,
+  td {
+    font-size: 1vw;
+  }
+  h5,
+  h6,
+  th {
+    font-size: 0.5vw;
+  }
+}
+
 body {
   color: #999;
 }
@@ -21,24 +63,7 @@ td {
 table {
   width: 100%;
 }
-h1,
-h2 {
-  font-size: 3vw;
-}
-h3,
-h4 {
-  font-size: 2vw;
-}
-div,
-p,
-pre {
-  font-size: 1vw;
-}
-h5,
-h6,
-th {
-  font-size: 0.5vw;
-}
+
 h1,
 h3,
 h5,
