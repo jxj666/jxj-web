@@ -66,22 +66,23 @@ table {
 
 h1,
 h3,
-h5,
-th {
+h5 {
   font-weight: 900;
   line-height: 2;
-  color: #333;
+  color: #555;
 }
 h2,
 h4,
-h6 {
+h6,
+th {
   font-weight: 100;
   line-height: 1.5;
-  color: #222;
+  color: #333;
 }
 p,
 div,
-span {
+span,
+td {
   font-weight: 100;
   line-height: 1.5;
   color: #111;
