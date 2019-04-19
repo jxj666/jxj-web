@@ -134,3 +134,19 @@ footer {
 article {
   color: #fff;
 }
+
+.h1 {
+  height: 1vw;
+}
+.h2 {
+  height: 2vw;
+}
+.h4 {
+  height: 4vw;
+}
+.h8 {
+  height: 8vw;
+}
+.h16 {
+  height: 16vw;
+}
