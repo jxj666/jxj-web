@@ -4,35 +4,278 @@
  * @Email: jinxiaojian@youxin.com
  * @LastEditors: 靳肖健
  * @Date: 2019-04-07 03:47:56
- * @LastEditTime: 2019-04-07 23:26:45
+ * @LastEditTime: 2019-05-31 10:59:58
  -->
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>第 1 讲 Java 语言与面向对象的程序设计</title>
-  </head>
-  <body>
-    <h1>
-      第 1 讲 Java 语言与面向对象的程序设计
-    </h1>
-    <pre>
-    Java 有丰富的库供我们调用
 
-    Java 是一种面向对象的语言
-    
-    Java 是跨平台的语言
-    
-    JDK 包括 JRE 及开发工具
-   </pre
-    >
-  </body>
-  <style>
-    pre {
-      font-size: 2vw;
-    }
-  </style>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>第 1 讲 Java 语言与面向对象的程序设计</title>
+</head>
+
+<body>
+  <h1>
+    第 1 讲 Java 语言与面向对象的程序设计
+  </h1>
+  <pre>
+Java 有丰富的库供我们调用
+Java 是一种面向对象的语言
+Java 是跨平台的语言
+JDK 包括 JRE 及开发工具
+   </pre>
+  <h1>
+    第 2 讲 简单的 Java 程序
+
+  </h1>
+  <pre>
+Applet 是要嵌入到网页中的
+public 类名与文件同名
+package 名与路径同名
+import 表示导入
+applet 有 paint()方法，表示如何绘制
+编译程序的基本命令是 javac
+path 表示前者是命令（javac 及 java)的路径
+在 javac 及 java 命令行上使用-classpath （或-cp)选项可以引用别的库
+jar 文件中的清单信息文件中 Main-Class 表示主类
+可以使用 javadoc 来生成文档
+Javap 查看类信息及反汇编
+@param 表示对方法的说明 对方法中某参数的说明
+用 Integer.parseInt( s )可以用来解析一个整数
+add(xxxx) 可以将按钮等对象加入到 Frame 中
+btn.addActionListener 可以用来处理事件
+处理事件的真正函数是 actionPerformed（）函数
+    </pre>
+  <h1>
+    第 3 讲 数据运算、流控制和数组
+
+  </h1>
+  <pre>
+    数据类型决定数据的存储方式和运算方式
+    Java 中的数据类型分为两大类
+    String 属于引用类型
+    534L 表示长整数。
+    字符串连接运算符其实是用 append 来实现的。
+    javap –c 命令可以反汇编代码。
+    程序的三种基本流程是顺序、分支、循环。
+    循环语句有三种写法。
+    循环一般有五个要素。
+    数组都是引用类型。
+    数组元素都会隐式初始化。 
+  </pre>
+  <h1>
+    java 第 4 讲 类、包和接口
+
+  </h1>
+  <pre>
+    类（class）是组成 Java 程序的基本要素。
+在接口中定义的方法具有 public, abstract 的特点（Java8 以前）。
+在接口中定义的常量具有 public, static, final 的属性。
+接口类型是引用类型。
+抽象方法在子类中必须被实现，否则子类仍然是 abstract 的。
+final 所修饰的变量，是只读量。
+如果一个类被 abstract 所修饰，说明这个类不能被实例化。
+static 变量可以表示全局变量。
+使用 setter 及 getter 是一种好的编程习惯。
+Java 编译器自动导入包 java.lang.\*。
+如果一个方法的形式参数定义的是父类对象，那么调用这个方法时，可以使用子类对象作为实际参数。
+子类对象可以被视为其父类的一个对象。
+在构造方法中，使用 super()时，必须放在第一句。
+在覆盖父类的方法的同时，使用 super 可以利用已定义好的父类的方法。
+父类的非私有方法可以被子类自动继承。
+所有的类都是通过直接或间接地继承 java.lang.Object 得到的。
+继承可以实现代码重用，提高开发效率和可维护性。
+一个类只能有一个直接父类。
+类（class）是组成 Java 程序的基本要素。
+类将变量与函数封装到一个类中。
+方法（method）是类的功能，是用函数来表示的。
+如果没有定义任何构造方法，系统会自动产生一个构造方法。
+new 表示新建并初始化一个对象。
+方法重载是多态（polymorphism）的一种方式。
+Java 中的继承是通过 extends 关键字来实现的。
+子类也可以重新定义与父类同名的方法，实现对父类方法的覆盖(Override)。
+子类在构造方法中，可以用 super 来调用父类的构造方法。
+将字段用 private 修饰，从而更好地将信息进行封装和隐藏。
+一个字段被 static final 两个修饰符所限定时，它可以表示常量。
+在类的声明中用 implements 子句来表示一个类使用某个接口。
+一个文件中最多只能有一个 package 语句。
+构造方法（constructor )与类名同名。
+如果没有 extends 子句，则该类默认为 java.lang.Object 的子类。
+包及子包的定义，实际上是为了解决名字空间、名字冲突。
+同一包中的各个类，默认情况下可互相访问。
+类的访问控制符或者为 public，或者默认。
+在定义 final 局部变量时，也必须且只能赋值一次。
+enum 表示枚举。
+如果没有extends子句，则该类默认为java.lang.Object的子类。
+  </pre>
+  <h1>
+    第 5 讲 深入理解 Java 语言
+
+  </h1>
+  <pre>
+局部变量是方法中定义的变量或方法的参变量。
+局部变量存在于栈中。
+字段变量可以自动赋初值。
+main 函数也可以写为 public static void main( String…argv){}。
+javap –c 命令可以反汇编 Java 类中的指令。
+override 及虚方法调用是多态的一种。
+虚方法调用是由对象实例的类型来动态决定的。
+在构造方法在执行时，令所有父类的构造方法都得到调用。
+在构造方法在执行时，一定会调用 Object 的构造方法。
+创建对象时，可以用{{}}这样的语法来对字段进行赋值。
+实例初始化，先于构造方法{}中的语句执行。
+系统在回收时会自动调用对象的 finalize() 方法。
+由于 finalize()方法的调用时机并不确定，所以一般不用 finalize()。
+try-with-resources 语句可以自动执行 close()方法。
+内部类中访问外部类的字段可以用“外部类名.this.字段”的方式。
+局部类及匿名类可以访问 final 局部变量。
+匿名类不取名字，直接用其父类或接口的名字。
+匿名类在定义时就创建了一个实例。
+在用 new 创建内部类实例时，要在 new 前面冠以对象变量。
+匿名类经常用于做方法的参数。
+匿名类使用父类的构造方法。
+当方法调用结束，方法中的局部变量就结束其生命了。
+不定长参数实际上可以理解为数组。
+多态是指一个程序中相同的名字表示不同的含义的情况。
+Java 中自动进行垃圾回收。
+overload 是多态的一种。
+static,private,final 方法不是虚方法。
+static 方法调用是由所声明的变量类型所决定，与实例无关。
+在构造方法中，如果没有 this 及 super，则编译器自动加上 super()。
+静态初始化，在第一次使用这个类时要执行。
+  </pre>
+  <h1>
+    第6讲 异常处理
+  </h1>
+  <pre>
+RuntimeException 及其子类，可以不明确处理。
+非 RuntimeException 及其子类，必须明确处理。
+assertEqauls 表示程序要保证两个参数要相等。
+语法错可以由编译器发现。
+程序的调试包括断点、跟踪、监视等手段。
+捕获异常，使用关键字 catch。
+try-with-resource 语句中自动加了 close()方法的调用。
+assert 表示断言。
+assert 后面可以跟一个 boolean 类型的表达式。
+单元测试是保证代码质量的一种手段。
+现在很多 Java 集成开发工具都提供了对 JUnit 的支持。
+程序中的错误通常可以分成三大类：语法错、运行错、逻辑错。
+  </pre>
+  <h1>
+    第7讲 工具类及常用算法
+  </h1>
+  <pre>
+    java.lang 包是自动 import 的。
+    如果不覆盖 equals()方法，则 equals()方法与==的结果是一样的。
+    字符串的+运算，实际表示 StringBuffer、StringBuiler 的 append 运算。
+    字符串的+运算，实际表示 String 类的 append 运算。
+    在循环中用字符串的+运算，要注意效率问题。
+    java.util.StringTokenizer 类提供了对字符串进行分割的功能。
+    LocalDateTime 类的 parse()方法可以用来解析日期字符串。
+    Collection API 中包括 List、Set 及 Map。
+    Queue 的主要实现包括 LinkedList。
+    Vector 类大体相当于 ArrayList。
+    Hashtable 类大体相当于 HashMap。
+    for-each 语句可以用于所有的 Collection 及数组。
+    回溯是常用的算法之一。
+    递归是自己调用自己。
+    迭代的基本模式是 while(){ x=f(x); }。
+    一般在覆盖时，要同时覆盖 hashCode、equals 方法。
+    使用 Arrays 类及 Collections 类的方法可以进行排序。
+    for-each 语句可以用于所有的 Iterable 对象。
+    LinkedList 类同时实现了 List 及 Queue。
+    Hashtable 记录的是键-值对的集合。
+    List 会记录元素的保存顺序。
+    任何对象都有 toString()方法。
+    任何对象都有 wait()及 notify()方法。
+    String 对象中所包装的内容是不可改变的（immutable）。
+    Dictionary 记录的是键-值对的集合。
+    List 的主要实现包括 LinkedList 及 ArrayList。
+    Set 的主要实现包括 HashSet 及 TreeSet。
+    Map 的主要实现包括 HashMap 及 TreeMap。
+  </pre>
+  <h1>
+    第8讲 多线程
+  </h1>
+  <pre>
+线程类是Thread类来表示的。
+线程体可以位于Thread或Runnable中的run()方法。
+启动线程用start()方法。
+多个线程可以同时执行。
+设定线程优先级用setPriority()方法。
+设定一个标记变量是常用的方法来决定是否结束线程。
+并发API位于java.util. concurrent包及其子包中。
+AtomicInteger 类表示原子变量。
+java.util.Timer类可以实现按周期重复执行一定任务。
+javax.swing.Timer类可以实现按周期重复执行一定任务。
+
+  </pre>
+  <h1>第9讲 流、文件及基于文本的应用</h1>
+  <pre>
+    流可分为输入流与输出流。
+    一个流对象经过其他流的多次包装，称为流的链接。
+    处理流的构造方法总是要带一个其他的流对象作参数。
+    使用java.nio.file.Files的readAllLines()方法可以读入整个文本文件。
+    URL类可以获取网页的内容。
+    在Java中，将目录也当作文件处理。
+    流可分为字符流与字节流。
+    DataOutputStream可以以二进制的方式写入double。
+    使用java.nio.file.Files的readAllLines()方法可以读入整个文本文件。
+    序列化要求对象实现 Serializable 接口。
+    正则表达式主要的应用包括：匹配验证、分割、查找、替换等。
+    正则表达式的基本写法是：字符{数量}位置。
+  </pre>
+  <h1>
+    第10讲 图形用户界面
+  </h1>
+  <pre>
+BorderLayout最多可以加五个子组件。
+SwingUtilities.invokeLater()方法可以在别的线程中更新界面。
+将一个组件加上JScrollPane能实现自动滚动功能。
+JMenubar、JMenu、JMenuItem能实现菜单的功能。
+JMenuItem是AbstractButton的子类。
+Eclipse中可以进行可视化的窗体设计。
+默认情况下，点击JFrame的关闭按钮并不会关闭它。
+setDefaultCloseOperation(EXIT_ON_CLOSE);后点击关闭按钮可以退出。
+不同的组件可以加同一个事件监听对象。
+JApplet的默认布局是BorderLayout。
+JCheckBox可以实现复选框功能。
+MouseListener可以处理鼠标按键事件。
+如果要决定applet的绘制方法可以Override它的paint（）方法。
+按钮可以使用addActionListener来处理点击后要做的事情。
+  </pre>
+  <h1>
+    第11讲 网络、多媒体和数据库编程
+  </h1>
+  <pre>
+在Eclipse中可以引用第三方的库.
+服务端程序经常需用线程来处理多个客户.
+Polygon 表示一个多边形.
+利用Graphics类的drawImage()方法显示图像.
+播放mp3文件可以使用JMF，还可以使用第三方库. 
+JDBC中Connection表示连接.
+使用PreparedStatement比Statement更安全一些.
+在数据库应用中要将用户输入的参数放入到SQL语句中.
+在数据库应用中一般应将数据访问对象DAO定义成单独的类.
+JDBC中用Class.forName()来注册驱动程序.
+BufferedImage 对象的getGraphics() 可以得到一个绘图对象.
+获取网络信息后经常需要用正则表达式来处理.
+JDBC中Statement表示语句.
+SQL中update语句表示修改记录.
+SQL是操作数据库的标准语言.
+Polygon 表示一个多边形.
+客户端要与服务端相连，则客户端需要建立Socket对象.
+Font类表示字体.
+  </pre>
+
+</body>
+<style>
+  pre {
+    font-size: 2vw;
+  }
+</style>
+
 </html>
