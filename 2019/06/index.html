@@ -1,0 +1,76 @@
+<!--
+ * @Description: 
+ * @Author: jinxiaojian
+ * @Email: jinxiaojian@youxin.com
+ * @Date: 2019-06-10 17:53:33
+ * @LastEditTime: 2019-06-10 17:53:38
+ * @LastEditors: 靳肖健
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>hello</title>
+  <style>
+    h1 {
+      font-size: 5vw;
+      color: blue;
+    }
+
+    img {
+      max-width: 50vw;
+    }
+
+    .btn {
+      padding: 5vw;
+      margin: 5vw;
+      color: #111;
+      border: 1px solid #eee;
+      border-radius: 1vw;
+      display: inline-block;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Hello!</h1>
+  <p class="p1"></p>
+  <p class="p2"></p>
+  <div>
+    <div class="btn btn1">get</div>
+    <div class="btn btn2">post</div>
+  </div>
+  <img src='http://jxjweb.top/fenhuan.jpg'>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    var i=0
+    $(document).ready(() => {
+      $('.btn1').on('click',
+        () => {
+          $.get("./get", {
+          }, (res) => {
+            $('.p1').html(`get : ${res}`);
+          });
+        }
+      )
+      $('.btn2').on('click',
+        () => {
+          $.post("./post", {
+            num:++i,
+            time:+ new Date()
+          }, (res) => {
+            var obj=JSON.parse(res);
+            $('.p2').html(`post : 第${obj.content.num}次访问`);
+          });
+        }
+      )
+
+    })
+  </script>
+</body>
+
+</html>
