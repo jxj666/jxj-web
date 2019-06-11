@@ -3,7 +3,7 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2019-06-10 17:53:33
- * @LastEditTime: 2019-06-10 17:53:38
+ * @LastEditTime: 2019-06-11 13:40:47
  * @LastEditors: 靳肖健
  -->
 <!DOCTYPE html>
@@ -47,7 +47,7 @@
   <img src='http://jxjweb.top/fenhuan.jpg'>
   <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
   <script>
-    var i=0
+    var i = 0
     $(document).ready(() => {
       $('.btn1').on('click',
         () => {
@@ -59,12 +59,17 @@
       )
       $('.btn2').on('click',
         () => {
-          $.post("./post", {
-            num:++i,
-            time:+ new Date()
-          }, (res) => {
-            var obj=JSON.parse(res);
-            $('.p2').html(`post : 第${obj.content.num}次访问`);
+          $.ajax({
+            type: 'post',
+            url: "./post",
+            data: {
+              num: ++i,
+              time: + new Date()
+            },
+            success: (res) => {
+              var obj = JSON.parse(res);
+              $('.p2').html(`post : 第${obj.success}次访问`);
+            }
           });
         }
       )

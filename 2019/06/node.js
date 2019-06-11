@@ -3,13 +3,14 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2019-06-10 17:35:09
- * @LastEditTime: 2019-06-11 10:22:02
+ * @LastEditTime: 2019-06-11 13:39:59
  * @LastEditors: 靳肖健
  */
 const http = require('http')
 const fs = require('fs')
 const hostname = '127.0.0.1'
 const port = 3000
+var i = 0
 const server = http.createServer((req, res) => {
   console.log(req.url)
   if (req.url == '/') {
@@ -34,7 +35,7 @@ const server = http.createServer((req, res) => {
       res.writeHead(200, { "Content-Type": "text/plain" })
       var res_obj = {
         content: content,
-        success: 1
+        success: i++
       }
       res.write(JSON.stringify(res_obj))
       res.end()

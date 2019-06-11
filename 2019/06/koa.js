@@ -3,16 +3,65 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2019-06-10 19:09:40
- * @LastEditTime: 2019-06-10 20:00:20
+ * @LastEditTime: 2019-06-11 13:39:28
  * @LastEditors: 靳肖健
  */
-const Koa = require('koa');
+const Koa = require('koa')
 const fs = require('fs')
-const app = new Koa();
-let word = fs.createReadStream('./test1.html')
-const main = ctx => {
-  ctx.response.type = 'html';
-  ctx.response.body = word;
-};
-app.use(main);
-app.listen(3001);
+const Router = require('koa-router')
+
+const app = new Koa()
+const myRouter = new Router()
+var i = 0
+
+
+myRouter
+  .all(
+    '/',
+    async (ctx, next) => {
+      ctx.response.type = 'html'
+      ctx.response.body = fs.createReadStream('./index.html')
+    }
+  )
+  .get(
+    '/get',
+    async (ctx, next) => {
+      ctx.response.type = 'text'
+      ctx.response.body = ("Hello World!")
+    }
+  )
+  .post(
+    '/post',
+    async (ctx, next) => {
+      const body = ctx.request
+      var res_obj = {
+        content: body,
+        success: i++
+      }
+      ctx.response.type = 'text'
+      ctx.response.body = JSON.stringify(res_obj)
+
+    }
+  )
+
+
+app.use(
+  async (ctx, next) => {
+    console.log(`方式 : ${ctx.request.method} 路径 : ${ctx.request.url}`);
+    await next();
+  }
+)
+app.use(
+  async (ctx, next) => {
+    if (ctx.path != '/' && ctx.path != '/get' && ctx.path != '/post') {
+      ctx.response.status = 404;
+      ctx.response.type = 'html'
+      ctx.response.body = fs.createReadStream('./error.html')
+    } else {
+      await next()
+    }
+  }
+)
+app.use(myRouter.routes())
+
+app.listen(3001)
