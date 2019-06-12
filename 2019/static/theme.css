@@ -119,6 +119,11 @@ img:hover {
   max-width: 99%;
   border: 1px solid #999;
 }
+.big_img,.big_img:hover{
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+}
 
 header {
 }
