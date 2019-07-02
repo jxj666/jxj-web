@@ -4,7 +4,7 @@
  * @Email: jinxiaojian@youxin.com
  * @LastEditors: 靳肖健
  * @Date: 2016-01-31 14:39:32
- * @LastEditTime: 2019-06-26 16:09:30
+ * @LastEditTime: 2019-07-02 16:29:54
  -->
 
 # 欢迎来到小健的 github
@@ -13,11 +13,12 @@
 
 ##### [点击 => 进入 github 个人页](https://github.com/jxj322991)
 
+#####  [前端思维导图](siwei/01.html)
+
 ### 笔记
 
-1.  [PWA](2019/06/26.html)
-1.  [RESTful API](2019/06/22.html)
-1.  [JWT](2019/06/21.html)
+
+
 1.  [egg.js 在我们 LP系统 中的应用](2019/06/12.html)
 1.  [vue 数据绑定视图 数据量过大会导致页面卡顿](2019/04/11.html)
 1.  [vue 子组件实现懒加载功能](2019/04/10.html)
