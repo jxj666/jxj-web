@@ -55,3 +55,6 @@ h5 {
   font-size: 1vw;
   background: rgba(255,255,255,0.5);
 }
+.pointer{
+  cursor: pointer;
+}
