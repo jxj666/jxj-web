@@ -3,7 +3,7 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2019-07-02 15:53:19
- * @LastEditTime: 2019-07-02 16:27:16
+ * @LastEditTime: 2019-07-04 11:36:21
  * @LastEditors: 靳肖健
  -->
 <!DOCTYPE html>
@@ -13,11 +13,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+  <title>思维导图</title>
 </head>
 <style>
+  body {
+    background: rgba(250, 249, 222, 0.5);
+    line-height: 2;
+  }
+
   img {
-    max-width: 100%;
+    max-width: 99%;
+    border-radius: 5px;
+  }
+
+  img:active {
+    zoom: 2;
+
   }
 
   div,
@@ -25,6 +37,7 @@
     text-align: center;
     border: 1px #eee dashed;
     padding: 1vw;
+    color: #666;
   }
 
 
@@ -32,63 +45,55 @@
     max-width: 1000px;
     text-align: left;
     text-indent: 2em;
-    margin: 1vw auto 1vw;
+    margin: 1vw auto 1px;
     color: #999;
-    padding: 1vw;
+    padding: 1px;
+  }
+
+  h5 {
+    max-width: 1000px;
+    text-align: left;
+    text-indent: 2em;
+    margin: 1px auto 1vw;
+    color: #999;
+    padding: 1px;
     border-bottom: 1px rgba(255, 0, 0, 0.1) dashed;
   }
 </style>
 
 <body>
   <h1>前端思维导图</h1>
-
-  <div>
-    <div>
+  <div class="content" id="app">
+    <div v-for='(x,index) in arr'>
       <h3>
-
+        {{x.title}}
       </h3>
-      <img src="" alt="">
+      <h5>
+        {{x.name}}
+      </h5>
+      <img :src="x.img" :alt="x.img" data-author='靳肖健'>
     </div>
-
-    <div>
-      <h3>
-        JSON Web Token（JWT）是目前最流行的跨域认证解决方案 ​​​​
-      </h3>
-      <img src="JWT.png" alt="JWT.png">
-    </div>
-    <div>
-      <h3>
-        RESTful 是目前最流行的 API 设计规范,用于 Web 数据接口的设计 ​​​​
-      </h3>
-      <img src="RESTful+API.png" alt="RESTful+API.png">
-    </div>
-    <div>
-      <h3>
-        Proxy 对象用于定义基本操作的自定义行为（如属性查找,赋值,枚举,函数调用等）
-      </h3>
-      <img src="proxy.png" alt="proxy.png">
-    </div>
-    <div>
-      <h3>
-        常见网络攻击:
-        XSS攻击全称跨站脚本攻击是一种在web应用中的计算机安全漏洞,它允许恶意web用户将代码植入到提供给其它用户使用的页面中
-        CSRF站请求伪造是一种对网站的恶意利用.CSRF通过伪装成受信任用户的请求来利用受信任的网站.CSRF攻击往往不大流行（因此对其进行防范的资源也相当稀少）和难以防范,所以被认为比XSS更具危险性
-      </h3>
-      <img src="常见网络攻击.png" alt="常见网络攻击.png">
-    </div>
-    <div>
-      <h3>
-        Node 之父 Ryan Dahl 发布新的开源项目 deno,从官方介绍来看,可以认为它是下一代 Node,使用 Go 语言代替 C++ 重新编写跨平台底层内核驱动,上层仍然使用 V8 引擎,最终提供一个安全的 TypeScript 运行时 ​​​​
-      </h3>
-      <img src="deno.png" alt="deno.png">
-    </div>
-    <div>
-      <h3>
-        PWA（Progressive web apps）运用现代的 Web API 以及传统的渐进式增强策略来创建跨平台 Web 应用程序 ​​​​
-      </h3>
-      <img src="PWA.png" alt="PWA.png">
-    </div>
-  </div>
 </body>
+<script>
+  var arr = [
+    // { title: ``,name:``, img: `` },
+
+    { title: `PWA`, name: `PWA（Progressive web apps）运用现代的 Web API 以及传统的渐进式增强策略来创建跨平台 Web 应用程序`, img: `PWA.png` },
+    { title: `JWT`, name: `JSON Web Token（JWT）是目前最流行的跨域认证解决方案`, img: `JWT.png` },
+    { title: `RESTful API`, name: `RESTful 是目前最流行的 API 设计规范,用于 Web 数据接口的设计`, img: `RESTful+API.png` },
+    { title: `proxy`, name: `Proxy 对象用于定义基本操作的自定义行为（如属性查找,赋值,枚举,函数调用等）`, img: `proxy.png` },
+    { title: `常见网络攻击`, name: `常见网络攻击:XSS攻击全称跨站脚本攻击是一种在web应用中的计算机安全漏洞,它允许恶意web用户将代码植入到提供给其它用户使用的页面中.CSRF站请求伪造是一种对网站的恶意利用.CSRF通过伪装成受信任用户的请求来利用受信任的网站.CSRF攻击往往不大流行（因此对其进行防范的资源也相当稀少）和难以防范,所以被认为比XSS更具危险性`, img: `常见网络攻击.png` },
+    { title: `deno`, name: `Node 之父 Ryan Dahl 发布新的开源项目 deno,从官方介绍来看,可以认为它是下一代 Node,使用 Go 语言代替 C++ 重新编写跨平台底层内核驱动,上层仍然使用 V8 引擎,最终提供一个安全的 TypeScript 运行时`, img: `deno.png` },
+  ]
+</script>
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      message: 'Hello Vue!',
+      arr: arr
+    }
+  })
+</script>
 
 </html>
