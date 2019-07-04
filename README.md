@@ -4,17 +4,18 @@
  * @Email: jinxiaojian@youxin.com
  * @LastEditors: 靳肖健
  * @Date: 2016-01-31 14:39:32
- * @LastEditTime: 2019-07-04 16:09:07
+ * @LastEditTime: 2019-07-04 16:36:38
  -->
 
 # 欢迎来到小健的 github
 
-### 这里是小健的前端学习小记
+## 这里是小健的前端学习小记
 
-## [点击 => 进入 github 个人页](https://github.com/jxj322991)
+### [点击 => 进入 github 个人页](https://github.com/jxj322991)
 
-##  [前端思维导图](siwei/01.html)
+###  [前端思维导图](siwei/01.html)
 
+## 笔记 👇
 
 1.  [egg.js 在我们 LP系统 中的应用](2019/06/12.html)
 1.  [vue 数据绑定视图 数据量过大会导致页面卡顿](2019/04/11.html)

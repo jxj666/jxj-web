@@ -59,7 +59,7 @@ h5 {
 .pointer{
   cursor: pointer;
 }
-.index{
-  font-size: 0.1em;
+.titleIndex{
+  font-size:1px;
   color: #eee;
 }
