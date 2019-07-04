@@ -1,6 +1,8 @@
 body {
   background: rgba(250, 249, 222, 0.5);
   line-height: 2;
+  margin: 0;
+  padding: 0;
 }
 
 img {

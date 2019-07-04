@@ -3,7 +3,7 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2019-07-02 15:53:19
- * @LastEditTime: 2019-07-04 13:16:48
+ * @LastEditTime: 2019-07-04 13:20:29
  * @LastEditors: 靳肖健
  -->
 <!DOCTYPE html>
@@ -24,8 +24,8 @@
     <h1>前端思维导图</h1>
     <template>
       <div @click='toggleShow' class="toggleShow">
-        <h6 v-if='show==1'>隐藏图片</h6>
-        <h6 v-else>显示图片</h6>
+        <h6 v-if='show==1'>隐藏全部图片</h6>
+        <h6 v-else>显示全部图片</h6>
       </div>
     </template>
     <div v-for='(x,index) in arr' @click='x.show==1?x.show=0:x.show=1'>
@@ -73,8 +73,8 @@
     created() {
       var show = localStorage.show;
       if (show == undefined) {
-        this.show = 1
-        localStorage.show = 1
+        this.show = 0
+        localStorage.show = 0
       } else {
         this.show = Number(show)
       }
