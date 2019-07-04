@@ -3,7 +3,7 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2019-07-02 15:53:19
- * @LastEditTime: 2019-07-04 13:23:10
+ * @LastEditTime: 2019-07-04 16:15:03
  * @LastEditors: 靳肖健
  -->
 <!DOCTYPE html>
@@ -30,7 +30,7 @@
     </template>
     <div v-for='(x,index) in arr' @click='x.show==1?x.show=0:x.show=1' class="pointer">
       <h3>
-        {{x.title}}
+        <span class="index"> {{arr.length-index}} </span> {{x.title}}
       </h3>
       <h5>
         {{x.text}}

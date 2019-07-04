@@ -35,6 +35,7 @@ h3 {
   padding: 1px;
 }
 
+
 h5 {
   max-width: 1000px;
   text-align: left;
@@ -57,4 +58,8 @@ h5 {
 }
 .pointer{
   cursor: pointer;
+}
+.index{
+  font-size: 0.1em;
+  color: #eee;
 }
