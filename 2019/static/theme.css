@@ -1,24 +1,22 @@
 @media only screen and (max-width: 888px) {
   h1,
   h2 {
-    font-size: 6vw;
+    font-size: 5vw;
   }
 
   h3,
   h4 {
     font-size: 4vw;
   }
-
+  h5,
+  h6,
+  th {
+    font-size: 3vw;
+  }
   div,
   p,
   pre {
     font-size: 2vw;
-  }
-
-  h5,
-  h6,
-  th {
-    font-size: 1vw;
   }
 }
 @media only screen and (min-width: 888px) {
@@ -30,21 +28,50 @@
   h4 {
     font-size: 25px;
   }
+  h5,
+  h6,
+  th {
+    font-size: 20px;
+  }
   div,
   p,
   pre,
   td {
-    font-size: 20px;
-  }
-  h5,
-  h6,
-  th {
     font-size: 15px;
   }
+
 }
 
 body {
-  color: #999;
+  color: #000;
+  line-height: 2;
+}
+h1,
+h2 {
+color: rgba(0,0,0,0.3);
+font-weight: 900;
+
+}
+h3,
+h4 {
+  color: rgba(0,0,0,0.5);
+  font-weight: 700;
+
+}
+h5,
+h6,
+th {
+  color: rgba(0,0,0,0.7);
+  font-weight: 500;
+
+}
+div,
+p,
+pre,
+td {
+  color: rgba(0,0,0,0.9);
+  font-weight: 300;
+
 }
 
 body,
@@ -73,31 +100,6 @@ table {
   width: 100%;
 }
 
-h1,
-h3,
-h5 {
-  font-weight: 900;
-  line-height: 2;
-  color: #555;
-}
-
-h2,
-h4,
-h6,
-th {
-  font-weight: 100;
-  line-height: 1.5;
-  color: #333;
-}
-
-p,
-div,
-span,
-td {
-  font-weight: 100;
-  line-height: 1.5;
-  color: #111;
-}
 
 pre,
 .pre {
