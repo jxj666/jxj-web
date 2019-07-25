@@ -107,16 +107,14 @@ a {
 }
 
 img {
-  width: 33vw;
+  max-width: 99%;
   display: block;
-  min-height: 1vw;
+  min-height: 1vh;
+  max-height: 50vh;
   border: 1px dotted #999;
   margin: 0 auto;
 }
 img:hover {
-  width: auto;
-  min-width: 33vw;
-  max-width: 99%;
   border: 1px solid #999;
 }
 .big_img,.big_img:hover{
