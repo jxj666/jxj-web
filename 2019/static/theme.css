@@ -24,22 +24,22 @@
 @media only screen and (min-width: 888px) {
   h1,
   h2 {
-    font-size: 3vw;
+    font-size: 30px;
   }
   h3,
   h4 {
-    font-size: 2vw;
+    font-size: 25px;
   }
   div,
   p,
   pre,
   td {
-    font-size: 1vw;
+    font-size: 20px;
   }
   h5,
   h6,
   th {
-    font-size: 0.5vw;
+    font-size: 15px;
   }
 }
 
@@ -59,6 +59,11 @@ h5,
 h6 {
   margin: 0;
   padding: 1vw;
+}
+body{
+  padding: 1vh 0;
+  background: rgba(0,0,0,0.01)
+
 }
 td {
   border: 1px solid #eee;
@@ -115,7 +120,7 @@ img {
   margin: 0 auto;
 }
 img:hover {
-  border: 1px solid #999;
+  border: 1px solid red;
 }
 .big_img,.big_img:hover{
   width: 100%;
