@@ -93,7 +93,7 @@ body{
 
 }
 td {
-  border: 1px solid #eee;
+  border: 1px solid #fff;
   max-width: 80vw;
 }
 table {
@@ -105,12 +105,12 @@ pre,
 .pre {
   font-weight: 100;
   line-height: 1.5;
-  color: green;
+  color: #000;
 }
 a {
   font-weight: 100;
   line-height: 1.5;
-  color: red;
+  color: #000;
 }
 
 img {
@@ -118,11 +118,11 @@ img {
   display: block;
   min-height: 1vh;
   max-height: 50vh;
-  border: 1px dotted #999;
+  border: 1px dotted #000;
   margin: 0 auto;
 }
 img:hover {
-  border: 1px solid red;
+  border: 1px solid #000;
 }
 .big_img,.big_img:hover{
   width: 100%;
