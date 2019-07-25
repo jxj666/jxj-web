@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>test</title>
 	<link rel="stylesheet" type="text/css" href="main.css">
 
 </head>
-<body>
-<input type="file" id="fileId" name="fileId" value="上传图片"
-       hidefocus="true" onchange="getUrl(this.files,this.id);"/>
 
-<canvas id="myCanvas"     style="display: none" ></canvas>
-<img src="" alt="" id="ago" style="width: 555px;"/>
-<input type="button" value="压缩" onclick="pressss()" />
-<img src="" alt="" id="press"/>
+<body>
+	<input type="file" id="fileId" name="fileId" value="上传图片" hidefocus="true" onchange="getUrl(this.files,this.id);" />
+
+	<canvas id="myCanvas" style="display: none"></canvas>
+	<img src="" alt="404" id="ago" style="width: 555px;" />
+	<input type="button" value="压缩" onclick="pressss()" />
+	<img src="" alt="404" id="press" />
 </body>
 <script type="text/javascript" src='main.js'></script>
+
 </html>
