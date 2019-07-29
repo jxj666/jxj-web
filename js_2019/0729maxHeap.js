@@ -3,12 +3,12 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2019-07-29 10:52:16
- * @LastEditTime: 2019-07-29 16:22:24
+ * @LastEditTime: 2019-07-29 16:23:12
  * @LastEditors: 靳肖健
  */
 
 //因为声明的多个函数都需要数据长度,所以把len设置成为全局变量
-var len;
+var len
 
 //二叉树调整->建立大顶堆,由下到上子树对比
 function buildMaxHeap (arr) {
