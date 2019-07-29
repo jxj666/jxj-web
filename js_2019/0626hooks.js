@@ -6,9 +6,11 @@ function Example () {
     document.title = `You clicked ${count} times`;
   });
   return (
-    <p> {count} </p>
-    <button onClick={() => setCount(count + 1)}>
-      Click me
+    <div>
+      <p> {count} </p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
       </button>
+    </div>
   );
 }
