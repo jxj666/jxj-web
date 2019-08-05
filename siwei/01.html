@@ -3,7 +3,7 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2019-07-02 15:53:19
- * @LastEditTime: 2019-07-09 11:27:42
+ * @LastEditTime: 2019-08-05 16:45:36
  * @LastEditors: 靳肖健
  -->
 <!DOCTYPE html>
@@ -29,15 +29,22 @@
         <h6 v-else>显示全部图片</h6>
       </div>
     </template>
-    <div v-for='(x,index) in arr' @click='x.show==1?x.show=0:x.show=1' class="pointer">
-      <h3>
-        <span class="titleIndex"> {{arr.length-index}} </span> {{x.title}}
-      </h3>
-      <h5>
-        {{x.text}}
-      </h5>
-      <template v-if='show!=0 || x.show!=0'>
-        <img :src="x.img" :alt="x.img" data-author='靳肖健'>
+    <div v-for='(x,index) in arr'>
+      <tmemplete @click='x.show=!x.show' class="pointer">
+        <h3>
+          <span class="titleIndex"> {{arr.length-index}} </span> {{x.title}}
+        </h3>
+        <h5>
+          {{x.text}}
+        </h5>
+        <template v-if='show!=0 || x.show!=0'>
+          <img :src="x.img" :alt="x.img" data-author='靳肖健'>
+        </template>
+      </tmemplete>
+      <template v-if='x.link && x.link.length>0'>
+        <template v-for='y,index in x.link'>
+          <a :href="y" target="_blank">参考 {{index+1}}</a>
+        </template>
       </template>
     </div>
 </body>
@@ -47,12 +54,11 @@
     el: '#app',
     data: {
       show: 0,
-      message: 'Hello Vue!',
-      arr: dataArr
+      message: 'Hello jxj!',
+      arr: []
     },
     methods: {
       toggleShow() {
-        console.log(1)
         if (this.show == 1) {
           this.show = 0
         } else {
@@ -69,6 +75,11 @@
       } else {
         this.show = Number(show)
       }
+      var arr = dataArr
+      arr.forEach((x) => {
+        x.show = 0
+      })
+      this.arr = arr
     }
   })
 </script>

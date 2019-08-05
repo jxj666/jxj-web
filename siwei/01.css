@@ -63,3 +63,12 @@ h5 {
   font-size:1px;
   color: #eee;
 }
+
+a{
+  text-decoration:none;
+  color: rgba(255,0,0,0.5);
+  margin:0 1vw;
+  font-size: 12px;
+  border: 1px dashed #eee;
+  padding: 1px;
+}
