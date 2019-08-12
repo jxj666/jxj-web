@@ -3,11 +3,17 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2019-07-05 10:42:44
- * @LastEditTime: 2019-08-05 16:45:00
+ * @LastEditTime: 2019-08-12 20:55:35
  * @LastEditors: 靳肖健
  */
 var dataArr = [
   // { title: ``,text:``, img: ``,link:[] },
+
+
+  { title: `Node 异步`, text: `JavaScript 是单线程运行,异步操作特别重要;Node 的异步语法比浏览器更复杂`, img: `19/08/Node+异步.png`, link: ['http://www.ruanyifeng.com/blog/2018/02/node-event-loop.html'] },
+  { title: `flex`, text: `Flex 是 Flexible Box 的缩写,意为"弹性布局",用来为盒状模型提供最大的灵活性`, img: `19/08/flex.png`, link: ['http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html'] },
+  { title: `Web Worker`, text: `Web Worker 的作用,就是为 JavaScript 创造多线程环境,允许主线程创建 Worker 线程,将一些任务分配给后者运行`, img: `19/08/Web+Worker.png`, link: ['http://www.ruanyifeng.com/blog/2018/07/web-worker.html'] },
+
 
   { title: `http`, text: `超文本传输协议是应用层上的一种B/S模型的通信协议,它由请求和响应构成,且是无状态的`, img: `19/08/http.png`, link: ['http://www.ruanyifeng.com/blog/2016/08/http.html', 'https://zhuanlan.zhihu.com/p/60450391?utm_source=wechat_session&utm_medium=social&utm_oi=625370033862348800'] },
   { title: `Node`, text: `Node是JavaScript语言的服务器运行环境,首先JavaScript语言通过Node在服务器运行,其次Node提供大量工具库`, img: `19/08/Node.png`, link: ['http://javascript.ruanyifeng.com/nodejs/basic.html#'] },
