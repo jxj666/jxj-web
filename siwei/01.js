@@ -3,11 +3,17 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2019-07-05 10:42:44
- * @LastEditTime: 2019-08-12 20:55:35
+ * @LastEditTime: 2019-08-19 19:35:44
  * @LastEditors: 靳肖健
  */
 var dataArr = [
   // { title: ``,text:``, img: ``,link:[] },
+
+  { title: `代码设计模式`, text: `并不是所有设计模式都是适合 JavaScript 的,我们需要注意一些比较常见的设计模式,比如工厂模式/单例模式/发布-订阅模式`, img: `19/08/代码设计模式.png`, link: [] },
+  { title: `this`, text: `this完全取决于函数调用的地方,而不是它被声明的地方`, img: `19/08/this.png`, link: [] },
+  { title: `闭包`, text: `当函数可以记住并访问所在的词法作用域时,就产生了闭包,即使函数是在当前词法作用域之外执行`, img: `19/08/闭包.png`, link: [] },
+  { title: `高阶函数`, text: `高阶函数就是输入参数里有函数,或者输出是函数的函数`, img: `19/08/高阶函数.png`, link: [] },
+
 
 
   { title: `Node 异步`, text: `JavaScript 是单线程运行,异步操作特别重要;Node 的异步语法比浏览器更复杂`, img: `19/08/Node+异步.png`, link: ['http://www.ruanyifeng.com/blog/2018/02/node-event-loop.html'] },
