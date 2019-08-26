@@ -3,11 +3,16 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2019-07-05 10:42:44
- * @LastEditTime: 2019-08-19 19:35:44
+ * @LastEditTime: 2019-08-26 20:47:42
  * @LastEditors: 靳肖健
  */
 var dataArr = [
   // { title: ``,text:``, img: ``,link:[] },
+
+  { title: `数据与视图.png`, text: ``, img: `19/08/数据与视图.png`, link: [] },
+  { title: `es6常用特性`, text: ``, img: `19/08/es6常用特性.png`, link: [] },
+  { title: `package`, text: ``, img: `19/08/package.png`, link: ['http://javascript.ruanyifeng.com/nodejs/packagejson.html'] },
+
 
   { title: `代码设计模式`, text: `并不是所有设计模式都是适合 JavaScript 的,我们需要注意一些比较常见的设计模式,比如工厂模式/单例模式/发布-订阅模式`, img: `19/08/代码设计模式.png`, link: [] },
   { title: `this`, text: `this完全取决于函数调用的地方,而不是它被声明的地方`, img: `19/08/this.png`, link: [] },
