@@ -3,13 +3,13 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2019-07-05 10:42:44
- * @LastEditTime: 2019-08-26 21:03:58
+ * @LastEditTime: 2019-08-28 11:01:18
  * @LastEditors: 靳肖健
  */
 var dataArr = [
   // { title: ``,text:``, img: ``,link:[] },
 
-  { title: `模型与视图.png`, text: `设计模式是对在某种环境中反复出现的问题以及解决该问题的方案的描述;mv*设计模式被独特的发展起来用于映射传统的输入、处理和输出功能在一个逻辑的图形化用户界面的结构中`, img: `19/08/模型与视图.png`, link: [] },
+  { title: `模型与视图`, text: `设计模式是对在某种环境中反复出现的问题以及解决该问题的方案的描述;mv*设计模式被独特的发展起来用于映射传统的输入、处理和输出功能在一个逻辑的图形化用户界面的结构中`, img: `19/08/模型与视图.png`, link: [] },
   { title: `es6常用特性`, text: `es6标准于2015 年 6 月正式发布了;它的目标,是使js可以用来编写复杂的大型应用程序,成为企业级开发语言`, img: `19/08/es6常用特性.png`, link: [] },
   { title: `package`, text: `每个项目的根目录下面,一般都有一个package.json文件,定义了这个项目所需要的各种模块,以及项目的配置信息（比如名称、版本、许可证等元数据）`, img: `19/08/package.png`, link: ['http://javascript.ruanyifeng.com/nodejs/packagejson.html'] },
 
