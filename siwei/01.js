@@ -3,14 +3,20 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2019-07-05 10:42:44
- * @LastEditTime: 2019-08-28 11:01:18
+ * @LastEditTime: 2019-09-02 20:12:48
  * @LastEditors: 靳肖健
  */
 var dataArr = [
   // { title: ``,text:``, img: ``,link:[] },
 
+
+  { title: `NUXT`, text: `Nuxt.js 是一个基于 Vue.js 的通用应用框架;他预设了利用 Vue.js 开发服务端渲染的应用所需要的各种配置`, img: `19/09/NUXT.png`, link: ['https://zh.nuxtjs.org/', 'https://mp.weixin.qq.com/s?__biz=MjM5MTA1MjAxMQ==&mid=2651226973&idx=1&sn=2b540c1d7bb8e97379a9748f97797bac&chksm=bd495ad98a3ed3cf628a8670943d612487499c7a90a32cf861c282cbf22d4e408e5147c51b93&mpshare=1&scene=1&srcid=&sharer_sharetime=1567127900024&sharer_shareid=abea93acdfdbddf8c09d051b4b95d3ba&key=8bbaf831af1f1faeb8438d36d5ece1b7e02cebccffe0b13867f116d90b6ef3aa4483c545be76a432ea5ca1bed76cc004022d1966af7cf6825432be3d8ccc9e1907c8d57e7e1e46bd6dea4340792f8ced&ascene=1&uin=MzA4MTkwMDU0&devicetype=Windows+10&version=62060833&lang=zh_CN&pass_ticket=wnKhsmmvIv3Fftn6eGh48iKXtoQIjvKykG4P7dnWXeR96jpiQj82T92OPv%2Fqlb%2Fw'] },
+  { title: `vuex`, text: `Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式;它采用集中式存储管理应用的所有组件的状态,并以相应的规则保证状态以一种可预测的方式发生变化`, img: `19/09/vuex.png`, link: ['https://vuex.vuejs.org/zh/'] },
+  { title: `严格模式`, text: `es5的严格模式是采用具有限制性JavaScript变体的一种方式`, img: `19/09/严格模式.png`, link: ['https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Strict_mode'] },
+
+
   { title: `模型与视图`, text: `设计模式是对在某种环境中反复出现的问题以及解决该问题的方案的描述;mv*设计模式被独特的发展起来用于映射传统的输入、处理和输出功能在一个逻辑的图形化用户界面的结构中`, img: `19/08/模型与视图.png`, link: [] },
-  { title: `es6常用特性`, text: `es6标准于2015 年 6 月正式发布了;它的目标,是使js可以用来编写复杂的大型应用程序,成为企业级开发语言`, img: `19/08/es6常用特性.png`, link: [] },
+  { title: `es6常用特性`, text: `es6标准于2015年6月正式发布了;它的目标,是使js可以用来编写复杂的大型应用程序,成为企业级开发语言`, img: `19/08/es6常用特性.png`, link: [] },
   { title: `package`, text: `每个项目的根目录下面,一般都有一个package.json文件,定义了这个项目所需要的各种模块,以及项目的配置信息（比如名称、版本、许可证等元数据）`, img: `19/08/package.png`, link: ['http://javascript.ruanyifeng.com/nodejs/packagejson.html'] },
 
 
