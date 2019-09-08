@@ -3,11 +3,31 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2019-07-05 10:42:44
- * @LastEditTime: 2019-09-02 20:12:48
+ * @LastEditTime: 2019-09-09 00:40:36
  * @LastEditors: 靳肖健
  */
 var dataArr = [
   // { title: ``,text:``, img: ``,link:[] },
+
+  {
+    title: `sass`, text: `世界上最成熟、最稳定、最强大的专业级CSS扩展语言!`, img: `19/09/sass.png`, link: [
+      'https://www.cnblogs.com/hope666/p/6791790.html',
+      'https://www.sass.hk/docs/',
+    ]
+  },
+  {
+    title: `使用键的集合对象`, text: `Map/Set/WeakMap/WeakSet 均为js标准内置对象;用于储存特别结构数据这些集合对象在存储数据时会使用到键，支持按照插入顺序来迭代元素`, img: `19/09/使用键的集合对象.png`, link: [
+      'https://blog.csdn.net/qq_30101131/article/details/88544297',
+      'https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects'
+    ]
+  },
+  {
+    title: `前端优先遍历`, text: `JavaScript深度优先遍历和广度优先遍历`, img: `19/09/前端优先遍历.png`, link: [
+      'https://blog.csdn.net/foradmin/article/details/89295707',
+      'https://note.youdao.com/ynoteshare1/index.html?id=be778364d9e1518ecb54afbe1e07a656&type=note'
+    ]
+  },
+
 
 
   { title: `NUXT`, text: `Nuxt.js 是一个基于 Vue.js 的通用应用框架;他预设了利用 Vue.js 开发服务端渲染的应用所需要的各种配置`, img: `19/09/NUXT.png`, link: ['https://zh.nuxtjs.org/', 'https://mp.weixin.qq.com/s?__biz=MjM5MTA1MjAxMQ==&mid=2651226973&idx=1&sn=2b540c1d7bb8e97379a9748f97797bac&chksm=bd495ad98a3ed3cf628a8670943d612487499c7a90a32cf861c282cbf22d4e408e5147c51b93&mpshare=1&scene=1&srcid=&sharer_sharetime=1567127900024&sharer_shareid=abea93acdfdbddf8c09d051b4b95d3ba&key=8bbaf831af1f1faeb8438d36d5ece1b7e02cebccffe0b13867f116d90b6ef3aa4483c545be76a432ea5ca1bed76cc004022d1966af7cf6825432be3d8ccc9e1907c8d57e7e1e46bd6dea4340792f8ced&ascene=1&uin=MzA4MTkwMDU0&devicetype=Windows+10&version=62060833&lang=zh_CN&pass_ticket=wnKhsmmvIv3Fftn6eGh48iKXtoQIjvKykG4P7dnWXeR96jpiQj82T92OPv%2Fqlb%2Fw'] },
