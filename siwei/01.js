@@ -3,7 +3,7 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2019-07-05 10:42:44
- * @LastEditTime: 2019-09-09 00:40:36
+ * @LastEditTime: 2019-09-09 00:41:21
  * @LastEditors: 靳肖健
  */
 var dataArr = [
@@ -12,7 +12,7 @@ var dataArr = [
   {
     title: `sass`, text: `世界上最成熟、最稳定、最强大的专业级CSS扩展语言!`, img: `19/09/sass.png`, link: [
       'https://www.cnblogs.com/hope666/p/6791790.html',
-      'https://www.sass.hk/docs/',
+      'https://www.sass.hk/docs/'
     ]
   },
   {
