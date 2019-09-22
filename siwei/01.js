@@ -3,11 +3,16 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2019-07-05 10:42:44
- * @LastEditTime: 2019-09-09 00:41:21
+ * @LastEditTime: 2019-09-22 18:24:14
  * @LastEditors: 靳肖健
  */
 var dataArr = [
   // { title: ``,text:``, img: ``,link:[] },
+
+  { title: `npm模块安装机制`, text: `npm 是 Node 的模块管理器，功能极其强大。它是 Node 获得成功的重要原因之一。正因为有了npm，我们只要一行命令，就能安装别人写好的模块 `, img: `19/09/npm模块安装机制.png`, link: ['http://www.ruanyifeng.com/blog/2016/01/npm-install.html', 'https://blog.csdn.net/qq_35430000/article/details/96425986'] },
+  { title: `js检测数据类型`, text: `Javascript 有两种数据类型，分别是基本数据类型(6种)和引用数据类型`, img: `19/09/js检测数据类型.png`, link: ['https://cloud.tencent.com/developer/article/1408414'] },
+  { title: `SPA`, text: `单页面应用`, img: `19/09/SPA.png`, link: [] },
+
 
   {
     title: `sass`, text: `世界上最成熟、最稳定、最强大的专业级CSS扩展语言!`, img: `19/09/sass.png`, link: [
