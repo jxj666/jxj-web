@@ -7,10 +7,16 @@ body {
 
 img {
   max-width: 99%;
+  max-height: 99vh;
   border-radius: 5px;
 }
 
-h1,h2,h3,h4,h5,h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
   padding: 0;
 }
@@ -20,11 +26,9 @@ h1 {
   text-align: center;
   border: 1px #eee dashed;
   padding: 1px;
-  margin:1px;
+  margin: 1px;
   color: #666;
-
 }
-
 
 h3 {
   max-width: 1000px;
@@ -34,7 +38,6 @@ h3 {
   color: #999;
   padding: 1px;
 }
-
 
 h5 {
   max-width: 1000px;
@@ -46,28 +49,28 @@ h5 {
   border-bottom: 1px rgba(255, 0, 0, 0.1) dashed;
 }
 
-.toggleShow{
-  color: rgba(0,0,0,0.5);
+.toggleShow {
+  color: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 1px;
   right: 1px;
   line-height: 2vw;
   padding: 1vw;
   font-size: 1vw;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255, 255, 255, 0.5);
 }
-.pointer{
+.pointer {
   cursor: pointer;
 }
-.titleIndex{
-  font-size:1px;
+.titleIndex {
+  font-size: 1px;
   color: #eee;
 }
 
-a{
-  text-decoration:none;
-  color: rgba(255,0,0,0.5);
-  margin:0 1vw;
+a {
+  text-decoration: none;
+  color: rgba(255, 0, 0, 0.5);
+  margin: 0 1vw;
   font-size: 12px;
   border: 1px dashed #eee;
   padding: 1px;
