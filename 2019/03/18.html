@@ -4,7 +4,7 @@
  * @Email: jinxiaojian@youxin.com
  * @LastEditors: 靳肖健
  * @Date: 2019-03-18 11:37:34
- * @LastEditTime: 2019-11-20 18:03:09
+ * @LastEditTime: 2019-11-20 18:08:48
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +30,11 @@
       <div v-for='x,index in re_arr' style="float: left;">
         <div style="margin:1vw;color:#999;font-weight: bold;font-size: 16px;">
           <span style="color: #fff;font-size: 12px;"> {{index+1}}</span>
-          <span>{{x}}</span>
+          <span v-for='y,index in x.split(" ")'>
+            <span style="font-size: 20px;">
+              {{y}}
+            </span>
+          </span>
         </div>
       </div>
     </div>
