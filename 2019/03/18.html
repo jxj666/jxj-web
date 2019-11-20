@@ -4,7 +4,7 @@
  * @Email: jinxiaojian@youxin.com
  * @LastEditors: 靳肖健
  * @Date: 2019-03-18 11:37:34
- * @LastEditTime: 2019-11-20 18:08:48
+ * @LastEditTime: 2019-11-20 18:25:56
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -21,17 +21,17 @@
   </style>
 </head>
 
-<body>
-  <div id="app" style="background: #eee;">
-    <div style="margin:5vw;padding:1vw;border:1px solid #eee;border-radius:1vw">
-      <input type="text" v-model='search' style="width: 100%;border:none;border-radius: 1vw;">
+<body style="background: #eee;padding-top:10vw;">
+  <div id="app" style="background: #eee;padding: 5vw;">
+    <div style="border:1px solid #eee;border-radius:1vw;position: fixed;top: 0;left: 0;right:0;box-sizing: border-box;">
+      <input type="text" v-model='search' style="width: 100%;padding:1vw 0;border:none;border-radius: 1vw;font-size: 30px;">
     </div>
     <div style="overflow: auto;">
       <div v-for='x,index in re_arr' style="float: left;">
-        <div style="margin:1vw;color:#999;font-weight: bold;font-size: 16px;">
-          <span style="color: #fff;font-size: 12px;"> {{index+1}}</span>
+        <div style="margin:1vw;color:#999;font-weight: bold;">
+          <span style="color: #fff;font-size: 15px;"> {{index+1}}</span>
           <span v-for='y,index in x.split(" ")'>
-            <span style="font-size: 20px;">
+            <span style="font-size: 30px;">
               {{y}}
             </span>
           </span>
