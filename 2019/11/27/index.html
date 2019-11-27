@@ -3,7 +3,7 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2019-11-27 10:52:50
- * @LastEditTime: 2019-11-27 11:56:20
+ * @LastEditTime: 2019-11-27 12:00:21
  * @LastEditors: 靳肖健
  -->
 <!DOCTYPE html>
@@ -25,7 +25,7 @@
       <img :src="`幻灯片${index+1}.PNG`" :alt="index">
     </div>
     <div>
-      <h3 v-if='list.length<index' @click='addList' style="text-align: center;cursor: pointer;">下一页 (剩余{{index-list.length}})</h3>
+      <h3 v-if='list.length<index' @click='addList' style="text-align: center;cursor: pointer;">下一页 (剩余{{index-list.length}}页)</h3>
     </div>
   </div>
 </body>
