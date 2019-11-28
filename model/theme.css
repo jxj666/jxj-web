@@ -48,6 +48,8 @@ h3,
 h4,
 h5,
 h6 {
+  max-width: 99vw;
+  margin: 1vw auto;
   margin: 0.5vw;
   padding: 0.5vw;
   border-radius: 0.5vw;
