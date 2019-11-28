@@ -3,7 +3,7 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2019-11-27 11:29:52
- * @LastEditTime: 2019-11-27 11:42:54
+ * @LastEditTime: 2019-11-28 14:22:47
  * @LastEditors: 靳肖健
  */
 var listArr = [
@@ -12,7 +12,7 @@ var listArr = [
   { url: '/2019/07/25.html', name: '避免组件样式污染' },
   { url: '/2019/07/24.html', name: '代码简化/解耦' },
   { url: '/2019/07/16.html', name: '4.9.3版本计划 开发总结' },
-  { url: '/2019/06/12.html', name: 'egg.js 在我们 LP系统 中的应用' },
+  { url: '/2019/06/12', name: 'egg.js 在我们 LP系统 中的应用' },
   { url: '/2019/04/11.html', name: 'vue 数据绑定视图 数据量过大会导致页面卡顿' },
   { url: '/2019/04/10.html', name: 'vue 子组件实现懒加载功能' },
   { url: '/2019/03/12.html', name: '层叠上下文' },
