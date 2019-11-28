@@ -3,11 +3,12 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2019-11-27 11:29:52
- * @LastEditTime: 2019-11-28 14:38:30
+ * @LastEditTime: 2019-11-28 19:15:37
  * @LastEditors: 靳肖健
  */
 var listArr = []
 var list2019 = [
+  { url: '2019/11/28', name: '协议生成页面工作流' },
   { url: '2019/11/27', name: 'vue 3.0 设计原则' },
   { url: '/2019/10/29/', name: '移动端动态效果建议' },
   { url: '/2019/07/25.html', name: '避免组件样式污染' },
