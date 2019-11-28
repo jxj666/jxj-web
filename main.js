@@ -3,7 +3,7 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2019-11-27 11:29:52
- * @LastEditTime: 2019-11-28 14:30:21
+ * @LastEditTime: 2019-11-28 14:34:21
  * @LastEditors: 靳肖健
  */
 var listArr = []
@@ -18,8 +18,8 @@ var list2019 = [
   { url: '/2019/04/10.html', name: 'vue 子组件实现懒加载功能' },
   { url: '/2019/03/12.html', name: '层叠上下文' },
   { url: '/2019/04/01.html', name: ' Java 基础概念集', },
-  { url: '/2019/06/13.html', name: 'vue 简介' },
-  { url: '/2019/06/14.html', name: 'canvas介绍' },
+  { url: '/2019/06/14', name: '前端绘图技术' },
+  { url: '/2019/06/13', name: 'vue 简介' },
 ]
 var list2018 = [
   { url: '/2018/04/09.html', name: ' git ' },
