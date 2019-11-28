@@ -111,11 +111,11 @@ img {
   display: block;
   min-height: 1vh;
   max-height: 50vh;
-  border: 1px dotted #000;
+  border: 1px dotted blue;
   margin: 0 auto;
 }
 img:hover {
-  border: 1px solid #000;
+  border: 1px dotted red;
 }
 
 header {
