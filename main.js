@@ -3,10 +3,11 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2019-11-27 11:29:52
- * @LastEditTime: 2019-11-28 14:22:47
+ * @LastEditTime: 2019-11-28 14:30:21
  * @LastEditors: 靳肖健
  */
-var listArr = [
+var listArr = []
+var list2019 = [
   { url: '2019/11/27', name: 'vue 3.0 设计原则' },
   { url: '/2019/10/29', name: '移动端动态效果建议' },
   { url: '/2019/07/25.html', name: '避免组件样式污染' },
@@ -16,6 +17,12 @@ var listArr = [
   { url: '/2019/04/11.html', name: 'vue 数据绑定视图 数据量过大会导致页面卡顿' },
   { url: '/2019/04/10.html', name: 'vue 子组件实现懒加载功能' },
   { url: '/2019/03/12.html', name: '层叠上下文' },
+  { url: '/2019/04/01.html', name: ' Java 基础概念集', },
+  { url: '/2019/06/13.html', name: 'vue 简介' },
+  { url: '/2019/06/14.html', name: 'canvas介绍' },
+]
+var list2018 = [
+  { url: '/2018/04/09.html', name: ' git ' },
   { url: '/2018/10/z15.html', name: 'vue 组件通信的坑' },
   { url: '/2018/08/z9.html', name: '处理安卓 line-height 错位问题的方法' },
   { url: '/2018/08/z8.html', name: '关于微信小程序多元素运动卡顿问题的见解' },
@@ -35,13 +42,13 @@ var listArr = [
   { url: '/2018/12/z20.html', name: 'vuex' },
   { url: '/2018/12/z21.html', name: '命令行' },
   { url: '/2018/12/z18.html', name: '结构化思维' },
+]
+var list2017 = [
   { url: '/2017/12/06.html', name: '什么是 css BFC' },
   { url: '/2017/12/04.html', name: '移动端常见兼容问题' },
   { url: '/2017/11/21.html', name: '前端如何估算项目时间' },
   { url: '/2017/11/20.html', name: '一次线上问题调试经历' },
   { url: '/2017/11/07.html', name: '双因素认证' },
-  { url: '/2019/06/13.html', name: 'vue 简介' },
-  { url: '/2019/06/14.html', name: 'canvas介绍' },
   { url: '/2017/08/0821.html', name: 'koa 学习' },
   { url: '/2017/08/0810.html', name: 'babel 原理' },
   { url: '/2017/08/0809.html', name: 'AMD CMD CommonJS' },
@@ -94,6 +101,6 @@ var listArr = [
   { url: '/2017/02/zk0201.html', name: '后端温故 1' },
   { url: '/2017/01/zl0102.html', name: '算法冒泡插入' },
   { url: '/2017/01/zl0104.html', name: '身份证号码验证' },
-  { url: '/2018/04/09.html', name: ' git ' },
-  { url: '/2019/04/01.html', name: ' Java 基础 概念 ', }
 ]
+
+listArr = [...list2019, ...list2018, ...list2017]
