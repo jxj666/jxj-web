@@ -24,16 +24,21 @@
 @media only screen and (min-width: 888px) {
   h1,
   h2 {
-    font-size: 30px;
+    font-size: 4vw;
   }
   h3,
   h4 {
-    font-size: 25px;
+    font-size: 3vw;
   }
   h5,
   h6,
   th {
-    font-size: 20px;
+    font-size: 2vw;
+  }
+  div,
+  p,
+  pre {
+    font-size: 1vw;
   }
   body {
     padding: 1vw 10vw;
@@ -82,7 +87,7 @@ td {
   font-weight: 300;
 }
 body {
-  background: rgba(0, 0, 0, 0.01);
+  background: rgba(255, 0, 0, 0.01);
 }
 td {
   border: 1px solid #fff;
@@ -91,8 +96,7 @@ td {
 table {
   width: 100%;
 }
-pre,
-.pre {
+pre {
   font-weight: 100;
   line-height: 1.5;
   color: #000;
@@ -113,28 +117,40 @@ img {
 img:hover {
   border: 1px solid #000;
 }
+
+header {
+  background: rgba(1, 1, 1, 0.1);
+}
+nav {
+  background: rgba(1, 1, 1, 0.2);
+}
+section {
+  background: rgba(1, 1, 1, 0.3);
+}
+aside {
+  background: rgba(1, 1, 1, 0.4);
+}
+footer {
+  background: rgba(1, 1, 1, 0.5);
+}
+article {
+  background: rgba(1, 1, 1, 0.6);
+  color: #fff;
+}
+
+/* 类控制 */
 .big_img,
 .big_img:hover {
   width: 100%;
   min-width: 100%;
   max-width: 100%;
 }
-body {
-  background: rgba(0, 0, 0, 0.1);
+.pre {
+  font-weight: 100;
+  line-height: 1.5;
+  color: #000;
 }
-header {
-}
-nav {
-}
-section {
-}
-aside {
-}
-footer {
-}
-article {
-  color: #fff;
-}
+
 .h1 {
   height: 1vw;
 }
