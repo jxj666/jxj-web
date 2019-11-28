@@ -3,13 +3,13 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2019-11-27 11:29:52
- * @LastEditTime: 2019-11-28 14:34:21
+ * @LastEditTime: 2019-11-28 14:38:30
  * @LastEditors: 靳肖健
  */
 var listArr = []
 var list2019 = [
   { url: '2019/11/27', name: 'vue 3.0 设计原则' },
-  { url: '/2019/10/29', name: '移动端动态效果建议' },
+  { url: '/2019/10/29/', name: '移动端动态效果建议' },
   { url: '/2019/07/25.html', name: '避免组件样式污染' },
   { url: '/2019/07/24.html', name: '代码简化/解耦' },
   { url: '/2019/07/16.html', name: '4.9.3版本计划 开发总结' },
@@ -18,8 +18,8 @@ var list2019 = [
   { url: '/2019/04/10.html', name: 'vue 子组件实现懒加载功能' },
   { url: '/2019/03/12.html', name: '层叠上下文' },
   { url: '/2019/04/01.html', name: ' Java 基础概念集', },
-  { url: '/2019/06/14', name: '前端绘图技术' },
-  { url: '/2019/06/13', name: 'vue 简介' },
+  { url: '/2019/06/14/', name: '前端绘图技术' },
+  { url: '/2019/06/13/', name: 'vue 简介' },
 ]
 var list2018 = [
   { url: '/2018/04/09.html', name: ' git ' },
