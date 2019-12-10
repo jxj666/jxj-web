@@ -3,7 +3,7 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2019-11-22 18:14:49
- * @LastEditTime: 2019-11-28 19:25:30
+ * @LastEditTime: 2019-12-10 10:54:56
  * @LastEditors: 靳肖健
  -->
 <!DOCTYPE html>
@@ -38,14 +38,14 @@
   </section>
   <section class="main-content">
     <h1>欢迎来到小健个人页面 <span> ☆ </span> <span style="font-size: 0.1em;">这里是小健的前端学习小记</span></h1>
-    <h2><a href="https://github.com/jxj322991">点击 =&gt; 进入 github 个人页</a></h2>
+    <h2><a href="https://github.com/jxj322991"> github 个人主页</a></h2>
     <h2><a href="http://jxjweb.top/siwei/01.html">前端思维导图</a></h2>
 
     <h2 id="笔记-">笔记 👇</h2>
     <div id="app">
       <ol reversed>
         <template v-if='list.length==0'>
-          <li>欢迎,欢迎,热烈欢迎!</li>
+          <li>欢迎,欢迎,请刷新!</li>
         </template>
         <template v-else>
           <li v-for='(x,index) in list'>
@@ -54,9 +54,6 @@
         </template>
       </ol>
     </div>
-
-    <h1 id="这一次我选择迎难而上">这一次我选择迎难而上!</h1>
-
     <p><img src="./model/index/fenhuan.jpg" alt="凤凰"></p>
   </section>
 
