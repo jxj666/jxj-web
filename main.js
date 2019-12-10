@@ -3,24 +3,24 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2019-11-27 11:29:52
- * @LastEditTime: 2019-11-28 19:15:37
+ * @LastEditTime: 2019-12-10 10:49:11
  * @LastEditors: 靳肖健
  */
 var listArr = []
 var list2019 = [
   { url: '2019/11/28', name: '协议生成页面工作流' },
-  { url: '2019/11/27', name: 'vue 3.0 设计原则' },
+  { url: '2019/11/27', name: 'vue 3.0 设计原则 (ppt)' },
   { url: '/2019/10/29/', name: '移动端动态效果建议' },
   { url: '/2019/07/25.html', name: '避免组件样式污染' },
   { url: '/2019/07/24.html', name: '代码简化/解耦' },
   { url: '/2019/07/16.html', name: '4.9.3版本计划 开发总结' },
-  { url: '/2019/06/12', name: 'egg.js 在我们 LP系统 中的应用' },
+  { url: '/2019/06/12', name: 'egg.js 在我们 LP系统 中的应用 (ppt)' },
   { url: '/2019/04/11.html', name: 'vue 数据绑定视图 数据量过大会导致页面卡顿' },
   { url: '/2019/04/10.html', name: 'vue 子组件实现懒加载功能' },
   { url: '/2019/03/12.html', name: '层叠上下文' },
+  { url: '/2019/06/14/', name: '前端绘图技术 (ppt)' },
+  { url: '/2019/06/13/', name: 'vue 简介 (ppt)' },
   { url: '/2019/04/01.html', name: ' Java 基础概念集', },
-  { url: '/2019/06/14/', name: '前端绘图技术' },
-  { url: '/2019/06/13/', name: 'vue 简介' },
 ]
 var list2018 = [
   { url: '/2018/04/09.html', name: ' git ' },
@@ -53,7 +53,6 @@ var list2017 = [
   { url: '/2017/08/0821.html', name: 'koa 学习' },
   { url: '/2017/08/0810.html', name: 'babel 原理' },
   { url: '/2017/08/0809.html', name: 'AMD CMD CommonJS' },
-  { url: '/2017/08/vue03', name: 'vue 源码研习 3' },
   { url: '/2017/07/0725.html', name: 'iaas paas saas 一个有趣的比喻' },
   { url: '/2017/06/0625.html', name: '验证 Email 地址' },
   { url: '/2017/06/0622.html', name: 'HTML 自定义元素' },
@@ -87,21 +86,22 @@ var list2017 = [
   { url: '/2017/03/20.html', name: '图片异步上传' },
   { url: '/2017/03/19.html', name: '移动端尺寸计量单位' },
   { url: '/2017/03/18.html', name: '加载进度条制作' },
-  { url: '/2017/03/16.html', name: 'js 顺口溜' },
-  { url: '/2017/03/15.html', name: 'bom 顺口溜' },
-  { url: '/2017/03/14.html', name: 'h5c3 顺口溜' },
-  { url: '/2017/03/zj0307.html', name: '网易经验考察' },
+  { url: '/2017/03/zj0307.html', name: '编码经验考察' },
   { url: '/2017/03/zj0306.html', name: 'zepto 总结' },
   { url: '/2017/03/zj0303.html', name: '复制一个对象' },
+  { url: '/2017/08/vue03', name: 'vue 源码研习 3' },
   { url: '/2017/02/vue02', name: 'vue 源码研习 2' },
   { url: '/2017/02/vue01', name: 'vue 源码研习 1' },
   { url: '/2017/02/es6.html', name: 'es6 常用特性' },
   { url: '/2017/02/zk0225.html', name: '使用 useAgent 验证用户访问的设备' },
-  { url: '/2017/02/zk0203.html', name: '后端温故 3' },
-  { url: '/2017/02/zk0202.html', name: '后端温故 2' },
-  { url: '/2017/02/zk0201.html', name: '后端温故 1' },
+  { url: '/2017/02/zk0203.html', name: 'php 简述 3' },
+  { url: '/2017/02/zk0202.html', name: 'php 简述 2' },
+  { url: '/2017/02/zk0201.html', name: 'php 简述 1' },
   { url: '/2017/01/zl0102.html', name: '算法冒泡插入' },
   { url: '/2017/01/zl0104.html', name: '身份证号码验证' },
+  { url: '/2017/03/16.html', name: 'js ' },
+  { url: '/2017/03/15.html', name: 'bom ' },
+  { url: '/2017/03/14.html', name: 'h5/c3 ' },
 ]
 
 listArr = [...list2019, ...list2018, ...list2017]
