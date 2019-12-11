@@ -3,11 +3,12 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2019-11-27 11:29:52
- * @LastEditTime: 2019-12-10 10:49:11
+ * @LastEditTime: 2019-12-11 18:00:06
  * @LastEditors: 靳肖健
  */
 var listArr = []
 var list2019 = [
+  { url: '2019/12/11', name: 'vue 动态表格动态表单 数据绑定' },
   { url: '2019/11/28', name: '协议生成页面工作流' },
   { url: '2019/11/27', name: 'vue 3.0 设计原则 (ppt)' },
   { url: '/2019/10/29/', name: '移动端动态效果建议' },
