@@ -3,7 +3,7 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2019-12-11 17:27:18
- * @LastEditTime: 2019-12-11 19:48:02
+ * @LastEditTime: 2019-12-11 20:09:59
  * @LastEditors: 靳肖健
  -->
 <!DOCTYPE html>
@@ -19,7 +19,7 @@
 
 <body>
   <header>
-    <h1>vue 动态表格动态表单 数据绑定</h1>
+    <h1>vue 动态表格动态表单 数据绑定 (存疑)</h1>
     <h3>在开发产品提出需求的时候遇到一个问题</h3>
     <h5>这个产品需求需要动态表格表单</h5>
     <img src="./img/e42abeef90a91243e4ba9eebbdb5c08.png" alt="">
@@ -42,12 +42,10 @@
       <p>经过检查,调试,数据结构不存在问题,赋值方式也没有问题,很可能是v-model无法正确对动态数据进行双向绑定</p>
     </div>
     <div>
-      <p>经过思考:有两种解决方式</p>
-      <p>1.创建一个数组暂存数据,用这个媒介数组进行双向数据绑定</p>
-      <p>2.自定义双向绑定</p>
+      <h5>经过思考:</h5>
     </div>
     <div>
-      <p>我选第二种,因为他更简洁</p>
+      <h5>1.自定义双向绑定</h5>
       <p>v-model其实是v-on,v-bind组成的</p>
       <div>
         <img src="./img/3ed99285bd1cc5004b0c3a730925a4c.png" alt="">
@@ -64,6 +62,15 @@
         <img src="./img/5030b0d7eaa1bd57d5b3e85bebae30c.png" alt="">
       </div>
     </div>
+    <div>
+      <h5>2.很可能是 vue element框架 的bug</h5>
+      <p>写引用变量v-model失效</p>
+      <div><img src="./img/541c7ea3bf6041154e28a517f31c117.png" alt=""></div>
+      <p>写直接量v-model有效</p>
+      <div><img src="./img/d6789dc1d71877b3fb39e44dd50ef96.png" alt=""></div>
+
+    </div>
+
   </main>
 
   <article>
