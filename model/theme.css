@@ -117,25 +117,37 @@ img {
 img:hover {
   border: 1px dotted red;
 }
-
+main {
+  background: rgba(1, 1, 1, 0);
+}
 header {
-  background: rgba(1, 1, 1, 0.1);
+  background: rgba(1, 1, 1, 0.01);
 }
 nav {
-  background: rgba(1, 1, 1, 0.2);
+  background: rgba(1, 1, 1, 0.02);
 }
 section {
-  background: rgba(1, 1, 1, 0.3);
+  background: rgba(1, 1, 1, 0.03);
 }
 aside {
-  background: rgba(1, 1, 1, 0.4);
-}
-footer {
-  background: rgba(1, 1, 1, 0.5);
+  background: rgba(1, 1, 1, 0.04);
 }
 article {
-  background: rgba(1, 1, 1, 0.6);
+  background: rgba(1, 1, 1, 0.05);
   color: #fff;
+}
+footer {
+  background: rgba(1, 1, 1, 0.06);
+}
+
+main,
+header,
+nav,
+section,
+aside,
+footer,
+article {
+  padding: 1vw;
 }
 
 /* 类控制 */

@@ -1,0 +1,74 @@
+<!--
+ * @Description: 
+ * @Author: jinxiaojian
+ * @Email: jinxiaojian@youxin.com
+ * @Date: 2019-12-11 17:27:18
+ * @LastEditTime: 2019-12-11 17:58:59
+ * @LastEditors: 靳肖健
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../../model/theme.css">
+  <title>vue 动态表格动态表单 数据绑定</title>
+</head>
+
+<body>
+  <header>
+    <h1>vue 动态表格动态表单 数据绑定</h1>
+    <h3>在开发产品提出需求的时候遇到一个问题</h3>
+    <h5>这个需求需要动态表格表单</h5>
+    <img src="./img/e42abeef90a91243e4ba9eebbdb5c08.png" alt="">
+    <p>下方的表格需要根据当前的时间动态生成,并填写</p>
+  </header>
+  <main>
+    <div>
+      <p>设计了一下数据的结构,并编码出来,结构/代码/结果如下</p>
+      <div style="display: flex; justify-content: space-between; ">
+        <div><img src="./img/b72887e0c9782eaa06632d0ea62c338.png" alt=""></div>
+        <div><img src="./img/36b92c8157d68d1b9d6316b3d7a70a8.png" alt=""></div>
+        <div><img src="./img/939e4ad37e2c22812021b70cb2934cf.png" alt=""></div>
+      </div>
+      <div>
+        <div>
+          <img src="./img/60e52860a776b5ce2fd103e8f86c3bb.png" alt="">
+        </div>
+      </div>
+      <p>但是出现了问题,数据绑定失效了,数据无法输入</p>
+      <p>经过坚持,数据结构不存在问题,赋值方式也没有,很可能事v-model不知这种动态结构</p>
+    </div>
+    <div>
+      <p>经过思考:有两种解决方式</p>
+      <p>1.创建一个数据暂存数据,用这个媒介数组进行双向数据绑定</p>
+      <p>2.自定义双向绑定</p>
+    </div>
+    <div>
+      <p>我选第二种,因为他更简洁</p>
+      <p>v-model其实是v-on,v-bind组成的</p>
+      <div>
+        <img src="./img/3ed99285bd1cc5004b0c3a730925a4c.png" alt="">
+      </div>
+      <p>
+        通过重新自定义,解决了双向绑定失效的问题
+      </p>
+      <div style="display:flex;justify-content:space-between; ">
+        <div> <img src="./img/7c0f4d39a99aa2be8f314321b435fd5.png" alt=""></div>
+        <div><img src="./img/4373c10564c554d2d2dbd6931e00aa3.png" alt=""></div>
+        <div> <img src="./img/2992e0b1512faa4e0c4012b95e22144.png" alt=""></div>
+      </div>
+      <div>
+        <img src="./img/5030b0d7eaa1bd57d5b3e85bebae30c.png" alt="">
+      </div>
+    </div>
+  </main>
+
+  <article>
+    靳肖健
+  </article>
+</body>
+
+</html>
