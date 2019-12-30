@@ -1,0 +1,77 @@
+<!--
+ * @Description: 
+ * @Author: jinxiaojian
+ * @Email: jinxiaojian@youxin.com
+ * @Date: 2019-12-30 11:38:03
+ * @LastEditTime : 2019-12-30 14:08:04
+ * @LastEditors  : 靳肖健
+ -->
+<html>
+
+<head>
+  <title>My first three.js app</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    canvas {
+      width: 100%;
+      height: 100%
+    }
+  </style>
+</head>
+
+<body>
+  <script src="js/three.js"></script>
+  <script>
+    //建立场景
+    var scene = new THREE.Scene();
+    //建立摄像机
+    var camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+    var renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    // 球体
+    var geom = new THREE.SphereGeometry(30, 64, 64);
+    // 纹理
+    var loader = new THREE.TextureLoader();
+    var texture = loader.load("./img/5.jpg");
+    // 材质
+    var material = new THREE.MeshLambertMaterial({
+      map: texture,
+      side: THREE.DoubleSide,//两面可见
+    });
+
+    // var material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+    var earth = new THREE.Mesh(geom, material);
+
+
+    scene.add(earth);
+
+    camera.position.z = 100;
+
+    var animate = function () {
+      requestAnimationFrame(animate);
+      // earth.rotation.x += 0.01;
+
+      earth.rotation.y += 0.01;
+
+      renderer.render(scene, camera);
+    };
+
+
+
+    animate();
+
+    // 环境光
+    light = new THREE.AmbientLight(0xFFFFFF);
+    light.position.set(100, 100, 200);
+    scene.add(light);
+
+  </script>
+</body>
+
+</html>
