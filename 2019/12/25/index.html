@@ -1,17 +1,16 @@
+<!--
+ * @Description: 
+ * @Author: jinxiaojian
+ * @Email: jinxiaojian@youxin.com
+ * @Date: 2020-01-02 19:59:03
+ * @LastEditTime : 2020-01-03 12:37:40
+ * @LastEditors  : 靳肖健
+ -->
 <html>
 
 <head>
-  <title>旋转地球 🌏</title>
-  <style>
-    body {
-      margin: 0;
-    }
-
-    canvas {
-      width: 100%;
-      height: 100%
-    }
-  </style>
+  <title>🌏 地球模型</title>
+  <link rel="stylesheet" href="./css/main.css">
 </head>
 
 
@@ -19,27 +18,25 @@
 <body>
   <div id="three">
 
+
+  </div>
+  <div class="btnBox">
+    <div class="btn up" key="1">👆</div>
+    <div class="btn down" key="2">👇</div>
   </div>
   <script src="js/jquery.min.js"></script>
   <script src="js/three.js"></script>
   <script>
     var key = 1
-
-
     //建立场景
     var scene = new THREE.Scene();
     //建立摄像机
     var camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.z = 50;
-
     //建立画布
     var renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
-    // document.body.appendChild(renderer.domElement);
-
     $('#three').append(renderer.domElement)
-
-
     // 地球
     var geom = new THREE.SphereGeometry(12.8, 64, 64);
     var loader = new THREE.TextureLoader();
@@ -49,22 +46,18 @@
       side: THREE.DoubleSide,//两面可见
     });
     var earth = new THREE.Mesh(geom, material);
-
-
     // 月球
     var geom1 = new THREE.SphereGeometry(3.5, 64, 64);
     var texture1 = loader.load("./img/6.jpg");
     var material1 = new THREE.MeshLambertMaterial({
       map: texture1,
+      side: THREE.DoubleSide,
     });
     var moon = new THREE.Mesh(geom1, material1);
-
     //地心
     var geom2 = new THREE.SphereGeometry(1, 22, 22);
     var material2 = new THREE.MeshBasicMaterial({ color: 'red' });
     var earthCenter = new THREE.Mesh(geom2, material2);
-
-
     // 环境光
     light = new THREE.AmbientLight(0xFFFFFF);
     light.position.set(100, 100, 200);
@@ -77,8 +70,8 @@
 
     var animate = function () {
       requestAnimationFrame(animate);
-      earthCenter.rotation.y += 0.01 * key;
-      earth.rotation.y += 0.02 * key;
+      earthCenter.rotation.y += 1 * key * 0.001;
+      earth.rotation.y += 27 * key * 0.001;
       renderer.render(scene, camera);
     };
     animate();
@@ -87,17 +80,28 @@
       if (key) { key = 0 } else { key = 1 }
     })
     $("#three").on('mousewheel DOMMouseScroll', (e) => {
-
       var delta = (e.originalEvent.wheelDelta && (e.originalEvent.wheelDelta > 0 ? 1 : -1)) ||
         (e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1));
       console.log(delta)
-      if (camera.position.z > 20 && delta < 0) {
+      if (camera.position.z > 30 && delta < 0) {
         camera.position.z += delta * 10
-      } else if (camera.position.z < 1000 && delta > 0) {
+      } else if (camera.position.z < 900 && delta > 0) {
         camera.position.z += delta * 10
       } else {
 
       }
+    })
+    $('.btn').on('click', (e) => {
+      var className = e.target.className
+      var k
+      if (className == 'btn up') {
+        k = 1
+      } else {
+        k = -1
+      }
+      earthCenter.rotation.x += 0.01 * k * 10;
+      earth.rotation.x += 0.01 * k * 10;
+
     })
   </script>
 </body>
