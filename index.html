@@ -3,8 +3,8 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2019-11-22 18:14:49
- * @LastEditTime: 2019-12-12 13:40:09
- * @LastEditors: 靳肖健
+ * @LastEditTime : 2020-01-14 14:42:30
+ * @LastEditors  : 靳肖健
  -->
 <!DOCTYPE html>
 <!-- saved from url=(0018)http://jxjweb.top/ -->
@@ -41,18 +41,38 @@
     <h2><a href="https://github.com/jxj322991"> github 个人主页</a></h2>
     <h2><a href="http://jxjweb.top/siwei/01.html">前端思维导图</a></h2>
 
-    <h2 id="笔记-">笔记 👇</h2>
+    <h2>笔记 👇</h2>
     <div id="app">
-      <ol reversed>
-        <template v-if='list.length==0'>
-          <li>欢迎,欢迎,请刷新!</li>
-        </template>
-        <template v-else>
-          <li v-for='(x,index) in list'>
-            <a :key='index' :href="x.url">{{x.name}}</a>
-          </li>
-        </template>
-      </ol>
+      <div>
+        <h2>2019 ❀❀❀</h2>
+        <ol reversed>
+          <template>
+            <li v-for='(x,index) in list.list2019'>
+              <a :key='index' :href="x.url">{{x.name}}</a>
+            </li>
+          </template>
+        </ol>
+      </div>
+      <div>
+        <h2>2018 ❀❀</h2>
+        <ol reversed>
+          <template>
+            <li v-for='(x,index) in list.list2018'>
+              <a :key='index' :href="x.url">{{x.name}}</a>
+            </li>
+          </template>
+        </ol>
+      </div>
+      <div>
+        <h2>2017 ❀</h2>
+        <ol reversed>
+          <template>
+            <li v-for='(x,index) in list.list2017'>
+              <a :key='index' :href="x.url">{{x.name}}</a>
+            </li>
+          </template>
+        </ol>
+      </div>
     </div>
     <p><img src="./model/index/fenhuan.jpg" alt="凤凰"></p>
   </section>
@@ -66,14 +86,14 @@
     el: '#app',
     data() {
       return {
-        list: [],
+        list: {},
         index: 0
       }
     },
     created() {
     },
     mounted() {
-      this.list = listArr
+      this.list = list
     },
   })
 </script>

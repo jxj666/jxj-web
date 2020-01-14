@@ -1,3 +1,11 @@
+/*
+ * @Description: 
+ * @Author: jinxiaojian
+ * @Email: jinxiaojian@youxin.com
+ * @Date: 2020-01-02 16:48:23
+ * @LastEditTime : 2020-01-14 14:41:29
+ * @LastEditors  : 靳肖健
+ */
 var listArr = []
 
 var list2019 = [
@@ -73,30 +81,28 @@ var list2017 = [
   { url: '/2017/04/0404.html', name: 'promise' },
   { url: '/2017/04/0403.html', name: 'new 复习' },
   { url: '/2017/04/0402.html', name: '浅谈 npm webpack' },
-  { url: '/2017/04/0401.html', name: '前端页面 pc 端兼容' },
   { url: '/2017/03/29.html', name: '移动端开发 bug 与 技巧 大盘点' },
   { url: '/2017/03/27.html', name: '巧妙使用 canvas 制作缩略图' },
-  { url: '/2017/03/26.html', name: '有趣而无用的 js 题' },
   { url: '/2017/03/21.html', name: '移动端布局相关' },
-  { url: '/2017/03/20.html', name: '图片异步上传' },
   { url: '/2017/03/19.html', name: '移动端尺寸计量单位' },
   { url: '/2017/03/18.html', name: '加载进度条制作' },
-  { url: '/2017/03/zj0307.html', name: '编码经验考察' },
-  { url: '/2017/03/zj0306.html', name: 'zepto 总结' },
   { url: '/2017/03/zj0303.html', name: '复制一个对象' },
   { url: '/2017/08/vue03', name: 'vue 源码研习 3' },
   { url: '/2017/02/vue02', name: 'vue 源码研习 2' },
   { url: '/2017/02/vue01', name: 'vue 源码研习 1' },
   { url: '/2017/02/es6.html', name: 'es6 常用特性' },
-  { url: '/2017/02/zk0225.html', name: '使用 useAgent 验证用户访问的设备' },
   { url: '/2017/02/zk0203.html', name: 'php 简述 3' },
   { url: '/2017/02/zk0202.html', name: 'php 简述 2' },
   { url: '/2017/02/zk0201.html', name: 'php 简述 1' },
-  { url: '/2017/01/zl0102.html', name: '算法冒泡插入' },
-  { url: '/2017/01/zl0104.html', name: '身份证号码验证' },
+  { url: '/2017/01/zl0102.html', name: '算法 : 冒泡插入' },
+  { url: '/2017/04/0401.html', name: '前端页面 pc 端兼容' },
+  { url: '/2017/03/20.html', name: '图片异步上传' },
+  { url: '/2017/03/zj0307.html', name: '编码经验考察' },
+  { url: '/2017/02/zk0225.html', name: '使用 useAgent 验证用户访问的设备' },
+  { url: '/2017/03/zj0306.html', name: 'zepto 总结' },
   { url: '/2017/03/16.html', name: 'js ' },
   { url: '/2017/03/15.html', name: 'bom ' },
   { url: '/2017/03/14.html', name: 'h5/c3 ' },
 ]
 
-listArr = [...list2019, ...list2018, ...list2017]
+list = { list2019, list2018, list2017 }
