@@ -3,7 +3,7 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2019-11-22 18:14:49
- * @LastEditTime : 2020-01-14 14:53:58
+ * @LastEditTime : 2020-01-14 15:01:47
  * @LastEditors  : 靳肖健
  -->
 <!DOCTYPE html>
@@ -40,7 +40,6 @@
     <h1>欢迎来到小健个人页面 <span> ☆ </span> <span style="font-size: 0.1em;">这里是小健的前端学习小记</span></h1>
     <h2><a href="//github.com/jxj322991"> github 个人主页</a></h2>
     <h2><a href="//m.jxjweb.top">个人快站</a></h2>
-
     <h2>笔记 👇</h2>
     <div id="app">
       <div>
@@ -81,6 +80,18 @@
 
 
 </body>
+<style>
+  @media screen and (min-width: 888px) {
+    ol {
+      overflow: hidden;
+    }
+
+    ol li {
+      width: 50%;
+      float: left;
+    }
+  }
+</style>
 <script>
   var app = new Vue({
     el: '#app',
