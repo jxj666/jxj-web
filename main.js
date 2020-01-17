@@ -3,16 +3,18 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2020-01-02 16:48:23
- * @LastEditTime : 2020-01-14 14:41:29
+ * @LastEditTime : 2020-01-17 17:36:07
  * @LastEditors  : 靳肖健
  */
-var listArr = []
 
+var list2020 = [
+  { url: '/2020/1/17', name: 'cms模板数据化(ppt)' }
+]
 var list2019 = [
-  { url: '2019/12/25', name: '使用three制作一个地球仪' },
-  { url: '2019/12/11', name: 'vue 动态表格动态表单 数据绑定' },
-  { url: '2019/11/28', name: '协议生成页面工作流' },
-  { url: '2019/11/27', name: 'vue 3.0 设计原则 (ppt)' },
+  { url: '/2019/12/25', name: '使用three制作一个地球仪' },
+  { url: '/2019/12/11', name: 'vue 动态表格动态表单 数据绑定' },
+  { url: '/2019/11/28', name: '协议生成页面工作流' },
+  { url: '/2019/11/27', name: 'vue 3.0 设计原则 (ppt)' },
   { url: '/2019/10/29/', name: '移动端动态效果建议' },
   { url: '/2019/07/25.html', name: '避免组件样式污染' },
   { url: '/2019/07/24.html', name: '代码简化/解耦' },
@@ -105,4 +107,4 @@ var list2017 = [
   { url: '/2017/03/14.html', name: 'h5/c3 ' },
 ]
 
-list = { list2019, list2018, list2017 }
+var list = { list2020, list2019, list2018, list2017 }

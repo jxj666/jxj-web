@@ -3,7 +3,7 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2019-11-22 18:14:49
- * @LastEditTime : 2020-01-14 15:18:24
+ * @LastEditTime : 2020-01-17 17:33:29
  * @LastEditors  : 靳肖健
  -->
 <!DOCTYPE html>
@@ -42,36 +42,17 @@
     <h2><a href="//m.jxjweb.top">个人快站</a></h2>
     <h2>笔记 👇</h2>
     <div id="app">
-      <div>
-        <h2>2019 ❀❀❀</h2>
+      <div v-for='(x,index) in [2020,2019,2018,2017]'>
+        <h2>{{x}} </h2>
         <ol reversed>
           <template>
-            <li v-for='(x,index) in list.list2019'>
-              <a :key='index' :href="x.url">{{x.name}}</a>
+            <li v-for='(y,index1) in list[`list${x}`]'>
+              <a :key='index1' :href="y.url">{{y.name}}</a>
             </li>
           </template>
         </ol>
       </div>
-      <div>
-        <h2>2018 ❀❀</h2>
-        <ol reversed>
-          <template>
-            <li v-for='(x,index) in list.list2018'>
-              <a :key='index' :href="x.url">{{x.name}}</a>
-            </li>
-          </template>
-        </ol>
-      </div>
-      <div>
-        <h2>2017 ❀</h2>
-        <ol reversed>
-          <template>
-            <li v-for='(x,index) in list.list2017'>
-              <a :key='index' :href="x.url">{{x.name}}</a>
-            </li>
-          </template>
-        </ol>
-      </div>
+
     </div>
     <div style="width: 50vw;margin: 0 auto; padding: 10vw;">
       <div>
