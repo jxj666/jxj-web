@@ -1,0 +1,66 @@
+<!--
+ * @Description: 
+ * @Author: jinxiaojian
+ * @Email: jinxiaojian@youxin.com
+ * @Date: 2019-11-27 10:52:50
+ * @LastEditTime : 2020-01-17 17:01:26
+ * @LastEditors  : 靳肖健
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../../model/theme.css">
+  <script src="../../../model/vue.min.js"></script>
+  <title>cms模板数据化</title>
+</head>
+
+<body>
+  <h1>cms模板数据化</h1>
+  <div id="app">
+    <div v-for='(x,index) in list'>
+      <img :class={big:bigShow} :src="`幻灯片${index+1}.PNG`" :alt="index">
+    </div>
+    <div>
+      <h3 v-if='list.length<index' @click='addList' style="text-align: center;cursor: pointer;">下一页 (剩余{{index-list.length}}页)</h3>
+      <h3 @click='toggleBig' style="text-align: center;cursor: pointer;">切换图片大小</h3>
+    </div>
+  </div>
+</body>
+<script>
+  var app = new Vue({
+    el: '#app',
+    data() {
+      return {
+        list: [],
+        index: 11,
+        bigShow: false
+      }
+    },
+    created() {
+      this.addList()
+    },
+    methods: {
+      addList() {
+        var that = this
+        this.list.push({ key: +new Date() })
+      },
+      toggleBig() {
+        this.bigShow = !this.bigShow
+      }
+    }
+  })
+</script>
+<style>
+  .big {
+    width: 100%;
+    height: auto;
+    max-height: 100vh;
+
+  }
+</style>
+
+</html>
