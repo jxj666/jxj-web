@@ -3,28 +3,28 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2020-01-02 16:48:23
- * @LastEditTime : 2020-01-17 17:36:07
+ * @LastEditTime : 2020-01-19 13:20:58
  * @LastEditors  : 靳肖健
  */
 
 var list2020 = [
-  { url: '/2020/1/17', name: 'cms模板数据化(ppt)' }
+  { url: '//m.jxjweb.top/ppt/cms', name: 'cms模板数据化(ppt)' }
 ]
 var list2019 = [
   { url: '/2019/12/25', name: '使用three制作一个地球仪' },
   { url: '/2019/12/11', name: 'vue 动态表格动态表单 数据绑定' },
   { url: '/2019/11/28', name: '协议生成页面工作流' },
-  { url: '/2019/11/27', name: 'vue 3.0 设计原则 (ppt)' },
+  { url: '//m.jxjweb.top/ppt/vue3', name: 'vue 3.0 设计原则 (ppt)' },
   { url: '/2019/10/29/', name: '移动端动态效果建议' },
   { url: '/2019/07/25.html', name: '避免组件样式污染' },
   { url: '/2019/07/24.html', name: '代码简化/解耦' },
   { url: '/2019/07/16.html', name: '4.9.3版本计划 开发总结' },
-  { url: '/2019/06/12', name: 'egg.js 在我们 LP系统 中的应用 (ppt)' },
+  { url: '//m.jxjweb.top/ppt/egg', name: 'egg.js 在我们 LP系统 中的应用 (ppt)' },
   { url: '/2019/04/11.html', name: 'vue 数据绑定视图 数据量过大会导致页面卡顿' },
   { url: '/2019/04/10.html', name: 'vue 子组件实现懒加载功能' },
   { url: '/2019/03/12.html', name: '层叠上下文' },
-  { url: '/2019/06/14/', name: '前端绘图技术 (ppt)' },
-  { url: '/2019/06/13/', name: 'vue 简介 (ppt)' },
+  { url: '//m.jxjweb.top/ppt/canvas', name: '前端绘图技术 (ppt)' },
+  { url: '//m.jxjweb.top/ppt/vue', name: 'vue 简介 (ppt)' },
   { url: '/2019/04/01.html', name: ' Java 基础概念集', },
 ]
 var list2018 = [
