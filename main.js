@@ -77,9 +77,6 @@ var list2017 = [
   { url: "/2017/05/0523.html", name: "工作中对类名命名的一些总结" },
   { url: "/2017/04/0429.html", name: "有趣的 js" },
   { url: "/2017/04/0430.html", name: "严格模式" },
-  { url: "/2017/04/0428.html", name: " js 面向对象三 " },
-  { url: "/2017/04/0427.html", name: " js 面向对象二 " },
-  { url: "/2017/04/0426.html", name: " js 面向对象一 " },
   { url: "/2017/04/0424.html", name: " css in js " },
   { url: "/2017/04/0423.html", name: " js 内存泄漏 " },
   { url: "/2017/04/0422.html", name: " gulp " },
@@ -98,7 +95,8 @@ var list2017 = [
   { url: "/2017/03/21.html", name: "移动端布局相关" },
   { url: "/2017/03/19.html", name: "移动端尺寸计量单位" },
   { url: "/2017/03/18.html", name: "加载进度条制作" },
-  { url: "/2017/03/zj0303.html", name: "复制一个对象" },
+];
+var list2016 = [
   { url: "/2017/08/vue03", name: "vue 源码研习 3" },
   { url: "/2017/02/vue02", name: "vue 源码研习 2" },
   { url: "/2017/02/vue01", name: "vue 源码研习 1" },
@@ -106,15 +104,21 @@ var list2017 = [
   { url: "/2017/02/zk0203.html", name: "php 简述 3" },
   { url: "/2017/02/zk0202.html", name: "php 简述 2" },
   { url: "/2017/02/zk0201.html", name: "php 简述 1" },
-  { url: "/2017/01/zl0102.html", name: "算法 : 冒泡插入" },
   { url: "/2017/04/0401.html", name: "前端页面 pc 端兼容" },
   { url: "/2017/03/20.html", name: "图片异步上传" },
   { url: "/2017/03/zj0307.html", name: "编码经验考察" },
   { url: "/2017/02/zk0225.html", name: "使用 useAgent 验证用户访问的设备" },
   { url: "/2017/03/zj0306.html", name: "zepto 总结" },
+  { url: "/2017/04/0428.html", name: " js 面向对象三 " },
+  { url: "/2017/04/0427.html", name: " js 面向对象二 " },
+  { url: "/2017/04/0426.html", name: " js 面向对象一 " },
+];
+var list2015 = [
+  { url: "/2017/03/zj0303.html", name: "复制一个对象" },
   { url: "/2017/03/16.html", name: "js " },
   { url: "/2017/03/15.html", name: "bom " },
   { url: "/2017/03/14.html", name: "h5/c3 " },
+  { url: "/2017/01/zl0102.html", name: "算法 : 冒泡插入" },
 ];
 
-var list = { list2020, list2019, list2018, list2017 };
+var list = { list2020, list2019, list2018, list2017, list2016, list2015 };
