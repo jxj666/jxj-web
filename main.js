@@ -3,7 +3,7 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2020-01-02 16:48:23
- * @LastEditTime: 2020-03-03 18:27:59
+ * @LastEditTime: 2020-03-03 18:30:02
  * @LastEditors: 靳肖健
  */
 
@@ -108,19 +108,17 @@ var list2016 = [
   { url: "/2017/02/zk0201.html", name: "php 简述 1" },
   { url: "/2017/04/0401.html", name: "前端页面 pc 端兼容" },
   { url: "/2017/03/20.html", name: "图片异步上传" },
-  { url: "/2017/03/zj0307.html", name: "编码经验考察" },
   { url: "/2017/02/zk0225.html", name: "使用 useAgent 验证用户访问的设备" },
   { url: "/2017/03/zj0306.html", name: "zepto 总结" },
-  { url: "/2017/04/0428.html", name: " js 面向对象三 " },
-  { url: "/2017/04/0427.html", name: " js 面向对象二 " },
-  { url: "/2017/04/0426.html", name: " js 面向对象一 " },
-];
-var list2015 = [
   { url: "/2017/03/zj0303.html", name: "复制一个对象" },
   { url: "/2017/03/16.html", name: "js " },
   { url: "/2017/03/15.html", name: "bom " },
   { url: "/2017/03/14.html", name: "h5/c3 " },
   { url: "/2017/01/zl0102.html", name: "算法 : 冒泡插入" },
+  { url: "/2017/03/zj0307.html", name: "编码经验考察" },
+  { url: "/2017/04/0428.html", name: " js 面向对象三 " },
+  { url: "/2017/04/0427.html", name: " js 面向对象二 " },
+  { url: "/2017/04/0426.html", name: " js 面向对象一 " },
 ];
 
-var list = { list2020, list2019, list2018, list2017, list2016, list2015 };
+var list = { list2020, list2019, list2018, list2017, list2016 };

@@ -3,93 +3,95 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2019-11-22 18:14:49
- * @LastEditTime : 2020-01-19 13:19:09
- * @LastEditors  : 靳肖健
+ * @LastEditTime: 2020-03-03 18:29:21
+ * @LastEditors: 靳肖健
  -->
 <!DOCTYPE html>
 <!-- saved from url=(0018)http://jxjweb.top/ -->
 <html lang="en-US">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-    <!-- Begin Jekyll SEO tag v2.5.0 -->
-    <title>熠熠生阳</title>
-    <meta name="generator" content="Jekyll v3.8.5" />
-    <meta property="og:title" content="jxj-web" />
-    <meta property="og:locale" content="en_US" />
-    <meta name="description" content="前端,加油!" />
-    <meta property="og:description" content="前端,加油!" />
-    <link rel="canonical" href="http://jxjweb.top/" />
-    <meta property="og:url" content="http://jxjweb.top/" />
-    <meta property="og:site_name" content="jxj-web" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#157878" />
-    <link rel="stylesheet" href="./model/index/style.css" />
-    <script src="./main.js"></script>
-    <script src="./model/vue.min.js"></script>
-  </head>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">熠熠生阳</h1>
-      <h2 class="project-tagline">前端,加油!</h2>
-    </section>
-    <section class="main-content">
-      <h1>
-        欢迎来到小健个人页面 <span> ☆ </span>
-        <span style="font-size: 0.1em;">这里是小健的前端学习小记</span>
-      </h1>
-      <h2><a href="//github.com/jxj322991"> github 个人主页</a></h2>
-      <h2><a href="//m.jxjweb.top">个人快站</a></h2>
-      <h2>笔记 👇</h2>
-      <div id="app">
-        <div v-for="(x,index) in [2020,2019,2018,2017,2016,2015]">
-          <h2>{{x}}</h2>
-          <ol reversed>
-            <template>
-              <li v-for="(y,index1) in list[`list${x}`]">
-                <a :key="index1" :href="y.url">{{y.name}}</a>
-              </li>
-            </template>
-          </ol>
-        </div>
+  <!-- Begin Jekyll SEO tag v2.5.0 -->
+  <title>熠熠生阳</title>
+  <meta name="generator" content="Jekyll v3.8.5" />
+  <meta property="og:title" content="jxj-web" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="description" content="前端,加油!" />
+  <meta property="og:description" content="前端,加油!" />
+  <link rel="canonical" href="http://jxjweb.top/" />
+  <meta property="og:url" content="http://jxjweb.top/" />
+  <meta property="og:site_name" content="jxj-web" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#157878" />
+  <link rel="stylesheet" href="./model/index/style.css" />
+  <script src="./main.js"></script>
+  <script src="./model/vue.min.js"></script>
+</head>
+
+<body>
+  <section class="page-header">
+    <h1 class="project-name">熠熠生阳</h1>
+    <h2 class="project-tagline">前端,加油!</h2>
+  </section>
+  <section class="main-content">
+    <h1>
+      欢迎来到小健个人页面 <span> ☆ </span>
+      <span style="font-size: 0.1em;">这里是小健的前端学习小记</span>
+    </h1>
+    <h2><a href="//github.com/jxj322991"> github 个人主页</a></h2>
+    <h2><a href="//m.jxjweb.top">个人快站</a></h2>
+    <h2>笔记 👇</h2>
+    <div id="app">
+      <div v-for="(x,index) in [2020,2019,2018,2017,2016]">
+        <h2>{{x}}</h2>
+        <ol reversed>
+          <template>
+            <li v-for="(y,index1) in list[`list${x}`]">
+              <a :key="index1" :href="y.url">{{y.name}}</a>
+            </li>
+          </template>
+        </ol>
       </div>
-      <h3><a href="//m.jxjweb.top/siwei/dist/">前端思维导图</a></h3>
-      <div style="width: 50vw;margin: 0 auto; padding: 10vw;">
-        <div>
-          <p style="color: red;">京ICP备20000480号-1</p>
-        </div>
-        <div>
-          <p><img src="./model/index/fenhuan.jpg" alt="凤凰" /></p>
-        </div>
+    </div>
+    <h3><a href="//m.jxjweb.top/siwei/dist/">前端思维导图</a></h3>
+    <div style="width: 50vw;margin: 0 auto; padding: 10vw;">
+      <div>
+        <p style="color: red;">京ICP备20000480号-1</p>
       </div>
-    </section>
-  </body>
-  <style>
-    @media screen and (min-width: 888px) {
-      ol {
-        overflow: hidden;
-      }
-
-      ol li {
-        width: 50%;
-        float: left;
-      }
+      <div>
+        <p><img src="./model/index/fenhuan.jpg" alt="凤凰" /></p>
+      </div>
+    </div>
+  </section>
+</body>
+<style>
+  @media screen and (min-width: 888px) {
+    ol {
+      overflow: hidden;
     }
-  </style>
-  <script>
-    var app = new Vue({
-      el: "#app",
-      data() {
-        return {
-          list: {},
-          index: 0,
-        };
-      },
-      created() {},
-      mounted() {
-        this.list = list;
-      },
-    });
-  </script>
+
+    ol li {
+      width: 50%;
+      float: left;
+    }
+  }
+</style>
+<script>
+  var app = new Vue({
+    el: "#app",
+    data() {
+      return {
+        list: {},
+        index: 0,
+      };
+    },
+    created() { },
+    mounted() {
+      this.list = list;
+    },
+  });
+</script>
+
 </html>
