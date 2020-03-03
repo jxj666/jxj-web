@@ -3,7 +3,7 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2020-01-02 16:48:23
- * @LastEditTime: 2020-03-03 18:24:18
+ * @LastEditTime: 2020-03-03 18:27:59
  * @LastEditors: 靳肖健
  */
 
@@ -20,7 +20,7 @@ var list2019 = [
   { url: "/2019/07/25.html", name: "避免组件样式污染" },
   { url: "/2019/07/24.html", name: "代码简化/解耦" },
   { url: "/2019/07/16.html", name: "4.9.3版本计划 开发总结" },
-  { url: "2020/03/03.html", name: "hfqUpload上传组件封装" },
+  { url: "2020/03/03/", name: "hfqUpload上传组件封装" },
 
   {
     url: "//m.jxjweb.top/ppt/egg",
