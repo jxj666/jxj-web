@@ -3,12 +3,12 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2020-01-02 16:48:23
- * @LastEditTime : 2020-01-19 13:20:58
+ * @LastEditTime : 2020-01-20 14:20:51
  * @LastEditors  : 靳肖健
  */
 
 var list2020 = [
-  { url: '//m.jxjweb.top/ppt/cms', name: 'cms模板数据化(ppt)' }
+  { url: '//m.jxjweb.top/ppt/cms', name: 'cms模板数据化(ppt)' },
 ]
 var list2019 = [
   { url: '/2019/12/25', name: '使用three制作一个地球仪' },
