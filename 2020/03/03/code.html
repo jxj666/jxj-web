@@ -1,0 +1,604 @@
+<!--
+ * @Description: 
+ * @Author: jinxiaojian
+ * @Email: jinxiaojian@youxin.com
+ * @Date: 2020-03-03 15:41:48
+ * @LastEditTime: 2020-03-03 15:47:05
+ * @LastEditors: 靳肖健
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>code</title>
+</head>
+
+<body>
+  <style>
+    pre {
+      color: #fff;
+    }
+
+    div {
+      margin: 1vw;
+    }
+  </style>
+  <div>
+    <pre>
+      &lt;!--
+      * @Description: 
+      * @Author: 靳小健
+      * @Email: jinxiaojian@youxin.com
+      * @LastEditors: 靳肖健
+      * @Date: 2019-03-06 15:06:50
+      --&gt;
+      &lt;!--
+      * 上传文件组件文档
+      * http://wiki.youxin.com/pages/viewpage.action?pageId=19988806
+      --&gt;
+     
+     &lt;template&gt;
+       &lt;div&gt;
+         &lt;!-- img --&gt;
+         &lt;div class=&quot;imgBox&quot; v-if=&quot;uploadType==&#x27;img&#x27;&quot;&gt;
+           &lt;div class=&quot;uploadWrapper&quot;&gt;
+             &lt;form class=&quot;uploadFileForm&quot; ref=&quot;uploadFileForm&quot; method=&quot;post&quot;&gt;
+               &lt;div class=&quot;uploadButton&quot; @click=&quot;chooseImg()&quot;&gt;
+                 &lt;ul v-if=&quot;imageUrl&quot; class=&quot;el-upload-list el-picture-card img-hover&quot;&gt;
+                   &lt;li class=&quot;el-list-item is-success&quot;&gt;
+                     &lt;span class=&quot;delete-img&quot; @click.stop=&quot;deleteImg()&quot; v-if=&quot;closeBtn_re&quot;&gt;×&lt;/span&gt;
+                     &lt;img :src=&quot;imageUrl&quot; alt /&gt;
+                     &lt;span class=&quot;el-list-item-actions&quot; v-if=&quot;!hideLookBtn&quot;&gt;
+                       &lt;i class=&quot;el-icon-view&quot; @click.stop=&quot;handlePreview(imageUrl)&quot;&gt;&lt;/i&gt;
+                     &lt;/span&gt;
+                   &lt;/li&gt;
+                 &lt;/ul&gt;
+                 &lt;i v-if=&quot;!imageUrl&quot; class=&quot;el-icon-plus&quot;&gt;&lt;/i&gt;
+                 &lt;input type=&quot;file&quot; ref=&quot;upFile&quot; name=&quot;file&quot; class=&quot;upFile&quot; @change=&quot;checkFileType&quot; /&gt;
+               &lt;/div&gt;
+             &lt;/form&gt;
+           &lt;/div&gt;
+         &lt;/div&gt;
+         &lt;!-- btn --&gt;
+         &lt;div class=&quot;imgButton&quot; v-else-if=&quot;uploadType==&#x27;btn&#x27;&quot;&gt;
+           &lt;div class=&quot;imgButtonItem&quot;&gt;
+             &lt;div v-if=&quot;direction &amp;&amp; imageUrl&quot;&gt;
+               &lt;div class=&quot;imgBaseBox imgItem&quot;&gt;
+                 &lt;img :src=&quot;imageUrl&quot; class=&quot;resImg imgBtn&quot; @click=&quot;showImg&quot; /&gt;
+                 &lt;div class=&quot;closeBtn&quot; v-if=&quot;closeBtn_re&quot;&gt;×&lt;/div&gt;
+               &lt;/div&gt;
+             &lt;/div&gt;
+             &lt;el-button
+               type=&quot;primary&quot;
+               size=&quot;small&quot;
+               :disabled=&quot;disabled&quot;
+               @click=&quot;chooseImg&quot;
+             &gt;{{ textName_re }}&lt;/el-button&gt;
+             &lt;div v-if=&quot;!direction &amp;&amp; imageUrl&quot;&gt;
+               &lt;div class=&quot;imgBaseBox imgItem&quot;&gt;
+                 &lt;img :src=&quot;imageUrl&quot; class=&quot;resImg imgBtn&quot; @click=&quot;showImg&quot; /&gt;
+                 &lt;div class=&quot;closeBtn&quot; v-if=&quot;closeBtn_re &amp;&amp; !disabled&quot; @click=&quot;deleteImg&quot;&gt;×&lt;/div&gt;
+               &lt;/div&gt;
+             &lt;/div&gt;
+           &lt;/div&gt;
+           &lt;input type=&quot;file&quot; ref=&quot;upFile&quot; name=&quot;file&quot; class=&quot;upFile&quot; @change=&quot;checkFileType&quot; /&gt;
+         &lt;/div&gt;
+         &lt;!-- file --&gt;
+         &lt;div class=&quot;fileBox&quot; v-else&gt;
+           &lt;div class=&quot;uploadFileWrapper&quot;&gt;
+             &lt;span v-if=&quot;fileUrl&quot;&gt;{{fileUrl}}&lt;/span&gt;
+             &lt;form class=&quot;fileuploadFileForm&quot; ref=&quot;uploadFileForm&quot; method=&quot;post&quot;&gt;
+               &lt;div class=&quot;uploadFileButton&quot;&gt;
+                 &lt;el-button type=&quot;primary&quot; @click=&quot;chooseImg&quot; :disabled=&quot;disabled&quot; size=&quot;small&quot;&gt;选取文件&lt;/el-button&gt;
+                 &lt;input type=&quot;file&quot; ref=&quot;upFile&quot; name=&quot;file&quot; class=&quot;upFile&quot; @change=&quot;checkFileType&quot; /&gt;
+               &lt;/div&gt;
+             &lt;/form&gt;
+           &lt;/div&gt;
+         &lt;/div&gt;
+         &lt;!-- 弹窗 --&gt;
+         &lt;el-dialog :visible.sync=&quot;innerVisible&quot; append-to-body :modal=&quot;isModel&quot;&gt;
+           &lt;div class=&quot;dialogBox&quot;&gt;
+             &lt;img class=&quot;dialogImg&quot; :src=&quot;imageUrl&quot; alt /&gt;
+           &lt;/div&gt;
+         &lt;/el-dialog&gt;
+       &lt;/div&gt;
+     &lt;/template&gt;
+     &lt;script&gt;
+     import common from &quot;@/utils/common&quot;;
+     export default {
+       props: [
+         //* 文件上传的url地址(必需)
+         &quot;action&quot;, //* 文件存放地址(必需)
+         &quot;imageAddress&quot;, //* 组件样式类型(必需)(img,btn,file)
+         &quot;uploadType&quot;, //* 组件重置(必需)(new Date())
+         &quot;changeState&quot;, //* 上传时需要的文件变量名(必需)
+         &quot;uploadVal&quot;, //是否失效
+         &quot;disabled&quot;, //文件大小限制
+         &quot;sizeLimit&quot;, //按钮文字
+         &quot;imgText&quot;, //属性名
+         &quot;name&quot;, //表单图片所在行
+         &quot;row&quot;, //上传位于按钮方向
+         &quot;direction&quot;, //图片区是否加大
+         &quot;big&quot;, //受否存在关闭按钮
+         &quot;closeBtn&quot;, //其他请求参数
+         &quot;otherReqDate&quot;, //定义上传文件类型
+         &quot;fileType&quot;, //函数辅助变量
+         &quot;assist&quot;, //图片特定存储路径
+         &quot;resourceUrl&quot;, //显示展示按钮
+         &quot;hideLookBtn&quot;,
+       ],
+       components: {},
+     
+       data() {
+         return {
+           filePath: &quot;&quot;,
+           innerVisible: false,
+           isModel: false,
+         };
+       },
+     
+       computed: {
+         //按钮名称
+         textName_re() {
+           return this.imgText || &quot;本地上传&quot;;
+         },
+     
+         //是否显示关闭
+         closeBtn_re() {
+           return this.closeBtn === false ? false : true;
+         },
+     
+         //图片父路径
+         resourceUrl_re() {
+           return this.resourceUrl || common.resourceUrl;
+         },
+     
+         //图片地址
+         imageUrl() {
+           if (this.filePath) {
+             return this.filePath.indexOf(&quot;http&quot;) &gt; -1
+               ? this.filePath
+               : this.resourceUrl_re + this.filePath;
+           } else if (this.imageAddress) {
+             return this.imageAddress.indexOf(&quot;http&quot;) &gt; -1
+               ? this.imageAddress
+               : this.resourceUrl_re + this.imageAddress;
+           } else {
+             return &quot;&quot;;
+           }
+         },
+     
+         //文件地址
+         fileUrl() {
+           return this.filePath || this.imageAddress || &quot;&quot;;
+         },
+       },
+       methods: {
+         //显示图片
+         showImg() {
+           this.innerVisible = true;
+         },
+     
+         //选择图片
+         chooseImg() {
+           if (this.disabled) {
+             this.$message(&quot;查看状态不能更改!&quot;);
+             return;
+           }
+     
+           this.$refs.upFile.click();
+         },
+     
+         //调用外显示弹窗
+         handlePreview(imageUrl) {
+           this.$emit(&quot;showPicturePreview&quot;, {
+             pic_url: imageUrl || this.imageUrl,
+           });
+           return false;
+         },
+     
+         // 检测文件类型
+         checkFileType() {
+           let upFile = this.$refs.upFile;
+     
+           if (upFile.files.length &gt; 0) {
+             let currentFile = upFile.files[0];
+             var fileCheck = false;
+     
+             if (this.fileType) {
+               for (var i = 0; i &lt; this.fileType.length; i++) {
+                 if (currentFile.name.indexOf(this.fileType[i]) &gt; -1) {
+                   fileCheck = true;
+                 }
+               }
+             } else {
+               fileCheck = true;
+             }
+     
+             if (!fileCheck) {
+               this.$message(&quot;文件类型错误&quot;);
+               this.clearUpFile();
+               return false;
+             }
+     
+             if (this.sizeLimit) {
+               if (currentFile.size &gt; 1024 * 1024 * this.sizeLimit) {
+                 this.$message(&#x60;文件超过${this.sizeLimit}mb大小限制&#x60;);
+                 this.clearUpFile();
+                 return false;
+               }
+             }
+     
+             this.submitUpFile();
+           }
+         },
+     
+         // 上传文件
+         submitUpFile() {
+           let uploadFile = this.$refs.upFile;
+     
+           if (uploadFile.files.length &lt;= 0) {
+             this.$message(&quot;请选择一个上传的文件&quot;);
+             return false;
+           }
+     
+           let formData = new FormData();
+           formData.append(this.uploadVal, uploadFile.files[0]);
+     
+           if (this.otherReqDate) {
+             var obj = JSON.parse(JSON.stringify(this.otherReqDate));
+     
+             for (var i in obj) {
+               formData.append(i, obj[i]);
+             }
+           }
+     
+           common.ajax({
+             url: this.action,
+             type: &quot;POST&quot;,
+             uploadFiles: true,
+             data: formData,
+             otherReqDate: &quot;json&quot;,
+             contentType: false,
+             processData: false,
+             success: res =&gt; {
+               this.clearUpFile();
+     
+               if (res.status == 0) {
+                 var resObj = {};
+                 console.log(1, res.data);
+     
+                 if (typeof res.data == &quot;string&quot;) {
+                   this.filePath = res.data;
+                 } else {
+                   this.filePath = res.data.path;
+                   resObj = JSON.parse(JSON.stringify(res.data));
+                 }
+     
+                 resObj.name = this.name;
+                 resObj.imgPath = this.filePath;
+                 resObj.filePath = this.filePath;
+                 resObj.row = this.row;
+                 resObj.delete = false;
+                 resObj.assist = this.assist ? this.assist : {};
+                 this.$emit(&quot;uploadSuccess&quot;, resObj);
+               }
+     
+               this.$message(&quot;上传&quot; + res.message);
+             },
+             error: res =&gt; {
+               this.$emit(&quot;uploadFail&quot;);
+               this.clearUpFile();
+               this.$message(res.message);
+             },
+           });
+         },
+     
+         //删除图片
+         deleteImg() {
+           this.$confirm(&quot;确认删除图片?&quot;, &quot;提示&quot;, {
+             confirmButtonText: &quot;确定&quot;,
+             cancelButtonText: &quot;取消&quot;,
+             type: &quot;warning&quot;,
+           })
+             .then(() =&gt; {
+               this.clearUpFile();
+               this.filePath = &quot;&quot;;
+               var resObj = {};
+               resObj.name = this.name;
+               resObj.imgPath = this.filePath;
+               resObj.filePath = this.filePath;
+               resObj.row = this.row;
+               resObj.delete = true;
+               resObj.assist = this.assist ? this.assist : {};
+               this.$emit(&quot;uploadSuccess&quot;, resObj);
+             })
+             .catch(() =&gt; {
+               this.$message({
+                 type: &quot;info&quot;,
+                 message: &quot;已取消操作&quot;,
+               });
+             });
+         },
+     
+         //清空上传元素
+         clearUpFile() {
+           this.filePath = &quot;&quot;;
+           this.$refs.upFile.value = &quot;&quot;;
+         },
+       },
+       watch: {
+         //状态变更(清理)
+         changeState(val) {
+           if (val) {
+             this.clearUpFile();
+           }
+         },
+       },
+     };
+     &lt;/script&gt;
+     &lt;style lang=&quot;scss&quot; scoped &gt;
+     /* &#x27;img&#x27;(纯图片区域) */
+     .imgBox {
+       position: relative;
+       .el-list-item-actions {
+         position: absolute;
+         top: 0;
+         left: 0;
+         line-height: 100px;
+         display: block;
+         width: 88px;
+         height: 88px;
+         text-shadow: 5px 2px 6px #000;
+         i {
+           font-size: 30px;
+           color: rgba(255, 255, 255, 0.8);
+         }
+       }
+       .resImg-uploader {
+         .el-upload {
+           border: 1px dashed #d9d9d9;
+           border-radius: 6px;
+           cursor: pointer;
+           position: relative;
+           overflow: hidden;
+           &amp;:hover {
+             border-color: #20a0ff;
+           }
+         }
+       }
+       .resImg-uploader-icon {
+         font-size: 20px;
+         color: #8c939d;
+         width: 50px;
+         line-height: 50px;
+         text-align: center;
+       }
+       .resImg {
+         width: 50px;
+         height: 50px;
+         display: block;
+       }
+       .up-box {
+         text-align: center;
+       }
+       .uploadButton {
+         display: inline-block;
+         text-align: center;
+         cursor: pointer;
+         background-color: #fbfdff;
+         border: 1px dashed #c0ccda;
+         border-radius: 6px;
+         box-sizing: border-box;
+         width: 88px;
+         height: 88px;
+         line-height: 88px;
+         vertical-align: top;
+       }
+       .img-dialog {
+         position: absolute;
+         left: 0;
+         top: 0;
+         display: inline-block;
+         text-align: center;
+         cursor: pointer;
+         background-color: #eef1f6;
+         border: 1px dashed #c0ccda;
+         border-radius: 6px;
+         box-sizing: border-box;
+         width: 88px;
+         height: 88px;
+         line-height: 88px;
+         vertical-align: top;
+       }
+       .upFile {
+         display: none;
+       }
+       .el-picture-card {
+         .el-list-item {
+           background-color: #fff;
+           border: 1px solid #c0ccda;
+           border-radius: 6px;
+           box-sizing: border-box;
+           width: 88px;
+           height: 88px;
+           margin: 0 8px 8px 0;
+           display: inline-block;
+           overflow: hidden;
+           position: relative;
+           top: 0;
+           left: 0;
+           img {
+             width: 100%;
+             height: 100%;
+             display: block;
+           }
+         }
+       }
+       .mw_600 {
+         max-width: 800px;
+         max-height: 600px;
+       }
+       .center {
+         text-align: center;
+       }
+       .ptb-5 {
+         padding: 5px 0;
+         display: block;
+       }
+       .uploadWrapper {
+         text-align: center;
+         vertical-align: middle;
+         margin: 5px 0;
+       }
+       .uploadFileForm {
+         display: block;
+         min-height: 30px;
+         width: 70px;
+         float: left;
+       }
+       .delete-img {
+         width: 20px;
+         height: 20px;
+         text-align: center;
+         line-height: 18px;
+         vertical-align: top;
+         font-weight: bold;
+         color: #fff;
+         font-size: 15px;
+         background: red;
+         position: absolute;
+         top: 0;
+         right: 0;
+         border-radius: 50%;
+         z-index: 1000;
+       }
+     }
+     /* &#x27;btn&#x27;(带上传按钮) */
+     .imgButton {
+       .imgButtonItem {
+         display: flex;
+         align-items: center;
+         justify-conten: space-between;
+       }
+       min-width: 100px;
+       position: relative;
+       .imgBaseBox {
+         position: relative;
+         margin: 5px 0;
+         width: 30px;
+         height: 30px;
+         position: relative;
+         box-sizing: border-box;
+       }
+       .resImg-uploader {
+         .el-upload {
+           border: 1px dashed #d9d9d9;
+           border-radius: 6px;
+           cursor: pointer;
+           position: relative;
+           overflow: hidden;
+           &amp;:hover {
+             border-color: #20a0ff;
+           }
+         }
+       }
+       .resImg-uploader-icon {
+         font-size: 20px;
+         color: #8c939d;
+         width: 50px;
+         height: 50px;
+         line-height: 50px;
+         text-align: center;
+       }
+       .imgBtn {
+         width: 100%;
+         height: 100%;
+         min-width: 30px;
+         min-height: 30px;
+         display: block;
+       }
+       .up-box {
+         text-align: center;
+       }
+       .uploadButton {
+         margin: 0;
+         width: 125px;
+       }
+       .ptb-5 {
+         padding: 5px 0;
+         display: block;
+       }
+       .uploadFileForm {
+         display: block;
+         height: 30px;
+         min-width: 170px;
+         float: left;
+         margin-top: 5px;
+       }
+       .big {
+         .imgBaseBox {
+           zoom: 2;
+         }
+       }
+       .imgBaseBoximg {
+         width: 100%;
+         height: 100%;
+       }
+       .closeBtn {
+         padding: 0;
+         line-height: 12px;
+         font-size: 16px;
+         height: 15px;
+         width: 15px;
+         background: red;
+         color: #fff;
+         border-radius: 50%;
+         overflow: hidden;
+         position: absolute;
+         top: 1px;
+         right: 1px;
+         font-weight: 900;
+         cursor: pointer;
+         text-align: center;
+       }
+       .imgUpload {
+         text-align: center;
+         vertical-align: middle;
+         height: 30px;
+         margin: 5px 0px;
+         line-height: 30px;
+       }
+     }
+     /* 弹窗 */
+     .dialogBox {
+       padding: 1vw;
+       .dialogImg {
+         width: 100%;
+         min-height: 30vw;
+         margin: 1vw auto;
+         display: block;
+       }
+     }
+     &lt;/style&gt;
+     &lt;style lang=&quot;scss&quot; scoped&gt;
+     /*input通用*/
+     input {
+       visibility: hidden;
+       height: 0;
+       width: 0;
+       overflow: hidden;
+       position: absolute;
+       z-index: -1;
+     }
+     &lt;/style&gt;
+     
+    </pre>
+  </div>
+
+</body>
+
+</html>

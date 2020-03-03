@@ -1,0 +1,69 @@
+<!--
+ * @Description: 
+ * @Author: jinxiaojian
+ * @Email: jinxiaojian@youxin.com
+ * @Date: 2020-03-03 14:15:49
+ * @LastEditTime: 2020-03-03 17:26:23
+ * @LastEditors: 靳肖健
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>上传文件组件 合并</title>
+</head>
+
+<body>
+  <style>
+    img {
+      max-width: 99%;
+      margin: 0 auto;
+    }
+  </style>
+  <div>
+    <h3>上传文件组件</h3>
+  </div>
+  <div>
+    <img src="./1(4).png" alt="">
+    <h3>
+      现行图片组件有很多重复的,按照业务需求应当予以合并
+    </h3>
+    <p>
+      1.合并计划,合成一种组件,通过先繁后简的方式,渐进缩减, 将以上组件, 合成一个组件
+    </p>
+    <p>
+      2.组件封装/通信方式,与采取与element相近的方式
+    </p>
+    <img src="./1(5).png" alt="1">
+    <img src="./1(6).png" alt="2">
+    <img src="./1(7).png" alt="3">
+    <img src="./1(8).png" alt="4">
+    <img src="./1(9).png" alt="5">
+    <img src="./1(10).png" alt="6">
+  </div>
+  <div>
+    <h3>合并经验</h3>
+    <p>组件应按照'单一任务'这个原则进行,组件太小会让产生记忆/引用/组件嵌套繁杂的问题, 组件太大就会不灵活,无法做到有效复用</p>
+    <p>什么时候抽取组件? 应当按照'事不过三'原则进行, 当你应用的部分代码,使用等于三次或以上,就应该进行抽取,做成组件</p>
+  </div>
+  <div>
+    <P>组件引入</P>
+    import HfqUpload from '@/components/common/HfqUpload.vue';
+  </div>
+  <div>
+    <h3>组件参数 </h3>
+    <img src="./2(1).png" alt="">
+  </div>
+  <div>
+    <h3>组件触发钩子 </h3>
+    <img src="./2(2).png" alt="">
+  </div>
+  <div>
+    <iframe src="./code.html" frameborder="0" style="width: 100%;height: 99vh;background-color: #000;border-radius: 0.5vw;border:0.1vw solid #000;"></iframe>
+  </div>
+</body>
+
+</html>
