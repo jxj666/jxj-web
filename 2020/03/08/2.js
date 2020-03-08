@@ -8,12 +8,11 @@ class ClassLazyMan {
     }, 0);
   }
   sleepFirst(time) {
-    var that = this;
-    var fn = (function(t) {
-      return function() {
+    var fn = (t => {
+      return () => {
         setTimeout(() => {
           console.log(`等待了${t}秒...`);
-          that.next();
+          this.next();
         }, t * 1000);
       };
     })(time);
@@ -21,23 +20,21 @@ class ClassLazyMan {
     return this;
   }
   eat(name) {
-    var that = this;
-    var fn = (function(n) {
-      return function() {
+    var fn = (n => {
+      return () => {
         console.log(`I am eating ${n}`);
-        that.next();
+        this.next();
       };
     })(name);
     this.taskList.push(fn);
     return this;
   }
   sleep(time) {
-    var that = this;
-    var fn = (function(t) {
-      return function() {
+    var fn = (t => {
+      return () => {
         setTimeout(() => {
           console.log(`等待了${t}秒...`);
-          that.next();
+          this.next();
         }, t * 1000);
       };
     })(time);
