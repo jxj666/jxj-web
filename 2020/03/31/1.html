@@ -1,0 +1,58 @@
+<!--
+ * @LastEditTime: 2020-03-31 18:08:04
+ * @LastEditors: jinxiaojian
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="../../../model/vue.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>产生表单</title>
+  </head>
+  <body>
+    <style></style>
+    <div id="app">
+      <div>
+        <div>
+          <div>
+            <input type="text" v-model="obj.value" placeholder="value" />
+          </div>
+          <div><input type="text" v-model="obj.name" placeholder="name" /></div>
+          <div><input type="text" v-model="obj.render" /></div>
+          <div><input type="text" v-model="obj.remark" /></div>
+        </div>
+        <div @click="add" style="font-size:20px;">
+          确定
+        </div>
+        <div>
+          {{text}}
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    var app = new Vue({
+      el: "#app",
+      data() {
+        return {
+          obj: { value: "", name: "", render: "", remark: "" },
+          text: "",
+        };
+      },
+      created() {},
+      methods: {
+        add() {
+          var text = `{     
+          value:'${this.obj.value || ""}',
+          name:'${this.obj.name || ""}',
+          render:'${this.obj.render || ""}',
+          remark:'${this.obj.remark || ""}',
+        },`;
+          this.text += text;
+          this.obj = { value: "", name: "", render: "", remark: "" };
+        },
+      },
+    });
+  </script>
+</html>
