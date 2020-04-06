@@ -1,5 +1,5 @@
 <!--
- * @LastEditTime: 2020-03-31 18:08:04
+ * @LastEditTime: 2020-03-31 18:36:19
  * @LastEditors: jinxiaojian
  -->
 <!DOCTYPE html>
@@ -16,17 +16,28 @@
       <div>
         <div>
           <div>
-            <input type="text" v-model="obj.value" placeholder="value" />
+            <input
+              type="text"
+              v-model="obj.name"
+              placeholder="name"
+              style="width: 80vw;height:20vh;"
+            />
           </div>
-          <div><input type="text" v-model="obj.name" placeholder="name" /></div>
-          <div><input type="text" v-model="obj.render" /></div>
-          <div><input type="text" v-model="obj.remark" /></div>
+          <!-- <div>
+            <input type="text" v-model="obj.value" placeholder="value" />
+          </div> -->
+          <!-- <div><input type="text" v-model="obj.render" /></div> -->
         </div>
         <div @click="add" style="font-size:20px;">
           确定
         </div>
+
         <div>
-          {{text}}
+          <textarea
+            style="width: 80vw;height:20vh;"
+            type="text"
+            v-model="text"
+          ></textarea>
         </div>
       </div>
     </div>
@@ -43,12 +54,15 @@
       created() {},
       methods: {
         add() {
+          let arr = this.obj.name.split(/[\(\)]/);
+          console.log(arr);
           var text = `{     
-          value:'${this.obj.value || ""}',
-          name:'${this.obj.name || ""}',
+          value:'${arr[1] || ""}',
+          name:'${arr[0] || ""}',
           render:'${this.obj.render || ""}',
-          remark:'${this.obj.remark || ""}',
-        },`;
+        },
+        
+        `;
           this.text += text;
           this.obj = { value: "", name: "", render: "", remark: "" };
         },
