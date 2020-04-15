@@ -1,0 +1,96 @@
+<!--
+ * @LastEditTime: 2020-03-19 10:17:20
+ * @LastEditors: jinxiaojian
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="../../../model/vue.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>推测疫情</title>
+  </head>
+  <body>
+    <style>
+      span {
+        display: inline-block;
+        width: 40%;
+        text-align: center;
+        line-height: 1.1;
+        font-size: 18px;
+      }
+    </style>
+    <div id="app">
+      <h1 style="text-align: center;">日本可能的感染人数</h1>
+      <div style="display: flex;justify-content: space-around;">
+        <div style="border: 1px solid gray;text-align: center;padding: 1vw;">
+          <h3>世卫公布的RO(3.7)传染率</h3>
+          <p v-for="x in arr1">
+            <span style="color: gray;">{{x.day}}</span>
+            <span style="color:red">{{x.num}}</span>
+          </p>
+        </div>
+        <div style="border: 1px solid gray;text-align: center;padding: 1vw;">
+          <h3>假设口罩可以防止百分之50的传染</h3>
+          <p v-for="x in arr2">
+            <span style="color: gray;">{{x.day}}</span>
+            <span style="color:blue">{{x.num}}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    var app = new Vue({
+      el: "#app",
+      data() {
+        return {
+          ro: 3.7,
+          ro_day: 13,
+          day_riben_2_16: 1581782400000,
+          people_riben_2_16: 53,
+          day_yidali_2_24: 1582473600000,
+          popple_yidali_2_24: 230,
+          arr1: [],
+          arr2: [],
+          arr3: [],
+        };
+      },
+      created() {
+        this.sum(
+          this.day_riben_2_16,
+          50,
+          this.people_riben_2_16,
+          this.ro,
+          this.ro_day,
+          this.arr1,
+        );
+        this.sum(
+          this.day_riben_2_16,
+          50,
+          this.people_riben_2_16,
+          this.ro * 0.5,
+          this.ro_day,
+          this.arr2,
+        );
+      },
+      methods: {
+        sum(startDay, day, people, ro, ro_day, arr) {
+          var sum = people;
+          var time = startDay;
+          var day_ro = ro;
+          for (var i = 0; i < day; i++) {
+            time += 24 * 60 * 60 * 1000;
+            sum = sum * (1 + day_ro / ro_day);
+            day_ro = day_ro * 0.99;
+            var k = new Date(time);
+            arr.push({
+              day: `${k.getMonth() + 1}月${k.getDate()}日`,
+              num: `${sum.toFixed(0)}`,
+            });
+          }
+        },
+      },
+    });
+  </script>
+</html>

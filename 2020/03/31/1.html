@@ -1,0 +1,72 @@
+<!--
+ * @LastEditTime: 2020-03-31 18:36:19
+ * @LastEditors: jinxiaojian
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="../../../model/vue.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>产生表单</title>
+  </head>
+  <body>
+    <style></style>
+    <div id="app">
+      <div>
+        <div>
+          <div>
+            <input
+              type="text"
+              v-model="obj.name"
+              placeholder="name"
+              style="width: 80vw;height:20vh;"
+            />
+          </div>
+          <!-- <div>
+            <input type="text" v-model="obj.value" placeholder="value" />
+          </div> -->
+          <!-- <div><input type="text" v-model="obj.render" /></div> -->
+        </div>
+        <div @click="add" style="font-size:20px;">
+          确定
+        </div>
+
+        <div>
+          <textarea
+            style="width: 80vw;height:20vh;"
+            type="text"
+            v-model="text"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    var app = new Vue({
+      el: "#app",
+      data() {
+        return {
+          obj: { value: "", name: "", render: "", remark: "" },
+          text: "",
+        };
+      },
+      created() {},
+      methods: {
+        add() {
+          let arr = this.obj.name.split(/[\(\)]/);
+          console.log(arr);
+          var text = `{     
+          value:'${arr[1] || ""}',
+          name:'${arr[0] || ""}',
+          render:'${this.obj.render || ""}',
+        },
+        
+        `;
+          this.text += text;
+          this.obj = { value: "", name: "", render: "", remark: "" };
+        },
+      },
+    });
+  </script>
+</html>
