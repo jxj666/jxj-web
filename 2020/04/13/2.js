@@ -2,7 +2,7 @@
  * @LastEditTime: 2020-04-13 22:27:20
  * @LastEditors: jinxiaojian
  */
-var findMedianSortedArrays = function(nums1, nums2) {
+var findMedianSortedArrays = function (nums1, nums2) {
   let newArr = [...nums1, ...nums2].sort((a, b) => {
     return a - b;
   });
@@ -13,5 +13,5 @@ var findMedianSortedArrays = function(nums1, nums2) {
     return newArr[num];
   }
 };
-findMedianSortedArrays([1, 22, 333], [123, 213, 321]);
-findMedianSortedArrays([1, 22, 333, 444], [123, 213, 321]);
+findMedianSortedArrays([1, 3], [2]);
+findMedianSortedArrays([1, 2], [3, 4]);
