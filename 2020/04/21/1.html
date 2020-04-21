@@ -1,0 +1,49 @@
+<!--
+ * @Description: 
+ * @Author: jinxiaojian
+ * @Email: jinxiaojian@youxin.com
+ * @Date: 2019-11-27 10:52:50
+ * @LastEditTime : 2020-01-17 17:01:26
+ * @LastEditors  : 靳肖健
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="../../../model/vue.min.js"></script>
+    <title>eye</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <div class="cell" v-for="(x,i) in list" :key="i"></div>
+    </div>
+  </body>
+  <script>
+    var app = new Vue({
+      el: "#app",
+      data() {
+        return {
+          list: [],
+        };
+      },
+      created() {
+        for (var i = 0; i < 1000; i++) {
+          this.list.push(1);
+        }
+      },
+      methods: {},
+    });
+  </script>
+  <style>
+    .cell {
+      width: 3.05vw;
+      height: 6vh;
+      box-sizing: border-box;
+      border: 1px solid black;
+      float: left;
+    }
+  </style>
+</html>

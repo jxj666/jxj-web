@@ -2,6 +2,7 @@
  * @LastEditTime: 2020-04-13 22:12:16
  * @LastEditors: jinxiaojian
  */
+
 function min(a, b) {
   return Math.min(
     a === undefined ? Infinity : a,
@@ -15,7 +16,7 @@ function max(a, b) {
   );
 }
 
-var findMedianSortedArrays = function(nums1, nums2) {
+var findMedianSortedArrays = function (nums1, nums2) {
   // 短的数组作为nums1，可以减少二分的次数
   if (nums1.length > nums2.length) {
     let temp = nums1;
