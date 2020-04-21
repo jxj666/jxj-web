@@ -19,3 +19,6 @@ var lengthOfLongestSubstring = function(s) {
     })[0].length + 1
   );
 };
+lengthOfLongestSubstring("abcabcbb");
+lengthOfLongestSubstring("bbbbb");
+lengthOfLongestSubstring("pwwkew");
