@@ -1,3 +1,4 @@
 {
-  "debug.chrome.useV3": true
+  "debug.chrome.useV3": true,
+  "github.gitAuthentication": false
 }
