@@ -1,5 +1,5 @@
 /*
- * @LastEditTime: 2020-07-03 11:19:24
+ * @LastEditTime: 2020-07-03 11:25:07
  * @LastEditors: jinxiaojian
  */
 // /*
@@ -59,3 +59,22 @@ const creatStore = function (initState) {
     getState
   }
 }
+
+let initState = {
+  record: {
+    num: 1
+  }
+}
+let store = creatStore(initState)
+store.subscribe(() => {
+  {
+    let state = store.getState()
+    console.log(state)
+  }
+})
+store.changeState({
+  ...store.getState(),
+  info: {
+    type: 0
+  }
+})
