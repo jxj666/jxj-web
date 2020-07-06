@@ -1,0 +1,43 @@
+<!--
+ * @LastEditTime: 2020-07-06 19:29:05
+ * @LastEditors: jinxiaojian
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>proxy</title>
+</head>
+<body>
+  <h1>使用Proxy实现双向数据绑定</h1>
+  <input type="text" id="input">
+  <h2>您输入的内容是： <i id="txt"></i></h2>
+  <script>
+    //获取dom元素
+    let Input = document.getElementById("input");
+    let Txt = document.getElementById("txt");
+ 
+    //初始化代理对象
+    let obj = {};
+    //给obj增加代理对象
+    let newProxy = new Proxy(obj, {
+      get: (target, key) => {
+        return Reflect.get(target, key);
+      },
+      set: (target, key, value ) => {
+        //监听newProxy是否有新的变化
+        if (key == "text") {
+          Txt.innerHTML = value;
+        }
+        //将变化反射回原有对象
+        return Reflect.set(target, key, value );
+      }
+    })
+    //监听input输入事件
+    Input.addEventListener("keyup", (e) => {
+      //修改代理对象的值
+      newProxy.text = e.target.value;
+    })
+  </script>
+</body>
+</html>
