@@ -1,11 +1,15 @@
 /*
- * @LastEditTime: 2020-07-07 11:10:28
+ * @LastEditTime: 2020-07-07 11:33:45
+ * @LastEditors: jinxiaojian
+ */ 
+/*
+ * @LastEditTime: 2020-07-06 20:08:50
  * @LastEditors: jinxiaojian
  */
 
-// 拆分reducer
-
-function counterReducer (state, action) {
+function counterReducer (state = {
+  count: 0
+}, action) {
   switch (action.type) {
     case 'INCREMENT':
       return {
@@ -21,7 +25,10 @@ function counterReducer (state, action) {
   }
 }
 
-function InfoReducer (state, action) {
+function InfoReducer (state = {
+  name: '',
+  description: ''
+}, action) {
   switch (action.type) {
     case 'SET_NAME':
       return {
@@ -63,17 +70,9 @@ const reducer = combineReducers({
   info: InfoReducer
 });
 
-let initState = {
-  counter: {
-    count: 0
-  },
-  info: {
-    name: '前端九部',
-    description: '我们都是前端爱好者！'
-  }
-}
-const createStore = function (reducer, initState) {
-  let state = initState
+
+const createStore = function (reducer) {
+  let state
   let listeners = [];
   /*订阅*/
   function subscribe (listener) {
@@ -90,6 +89,7 @@ const createStore = function (reducer, initState) {
   function getState () {
     return state
   }
+  dispatch({ type: Symbol() })
   return {
     subscribe,
     dispatch,
@@ -97,19 +97,16 @@ const createStore = function (reducer, initState) {
   }
 }
 
-let store = createStore(reducer, initState);
+let store = createStore(reducer);
 
-store.subscribe(() => {
-  let state = store.getState();
-  console.log(state.counter.count, state.info.name, state.info.description);
-});
-/*自增*/
+// 记录日志
+/*重写了store.dispatch*/
+const next = store.dispatch;
+store.dispatch = (action) => {
+  console.log('this state', store.getState(),'action', action);
+  next(action);
+  console.log('next state', store.getState());
+}
 store.dispatch({
   type: 'INCREMENT'
-});
-
-/*修改 name*/
-store.dispatch({
-  type: 'SET_NAME',
-  name: '前端九部2号'
 });
