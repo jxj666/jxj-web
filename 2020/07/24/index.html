@@ -1,0 +1,296 @@
+<!--
+ * @LastEditTime: 2020-07-31 19:52:29
+ * @LastEditors: jinxiaojian
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>首页-文档</title>
+  <style>
+    body,
+    div,
+    span {
+      padding: 0;
+      margin: 0;
+      font-family: MicrosoftYaHei;
+
+
+    }
+
+    .body {
+      background: rgba(242, 242, 244, 1);
+      padding: 10px;
+    }
+  </style>
+  <style>
+    .header {
+      height: 50px;
+      background: white;
+      border-radius: 2px;
+      border: 1px solid #dedede;
+      overflow: hidden;
+    }
+
+    .header .left {
+      float: left;
+    }
+
+    .header .top1,
+    .header .top2 {
+      border-right: 1px solid #dedede;
+      height: 50px;
+    }
+
+    .header .top1 {
+      width: 550px;
+    }
+
+    .header .top1 .cell {
+      margin-left: 30px;
+      display: inline-block;
+      line-height: 50px;
+    }
+
+    .header .top1 .cell img {
+      vertical-align: middle;
+    }
+
+    .header .top1 .cell span {
+      vertical-align: middle;
+    }
+
+    .header .top1 .cell .fB {
+      font-size: 12px;
+      font-family: MicrosoftYaHei;
+      font-weight: bold;
+      color: #333333;
+      line-height: 16px;
+      margin-left: 10px;
+      margin-right: 5px;
+    }
+
+    .header .top1 .cell .fG {
+      font-size: 12px;
+      font-family: MicrosoftYaHei;
+      color: #333333;
+      line-height: 16px;
+    }
+
+    .header .top2 {
+      width: 250px;
+    }
+
+    .header .top2 .cell {
+      margin-left: 20px;
+      display: inline-block;
+      line-height: 50px;
+    }
+
+    .header .top2 .cell img {
+      vertical-align: middle;
+    }
+
+    .header .top2 .cell span {
+      vertical-align: middle;
+    }
+
+    .header .top2 .cell .fB {
+      font-size: 12px;
+      font-family: MicrosoftYaHei;
+      font-weight: bold;
+      color: #333333;
+      line-height: 16px;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+
+    .header .top2 .cell .fG {
+      font-size: 12px;
+      font-family: MicrosoftYaHei;
+      color: #333333;
+      line-height: 16px;
+    }
+
+    .header .top3 span,
+    .header .top3 .vision {
+      vertical-align: middle;
+    }
+
+    .header .top3 .cell {
+      margin-left: 30px;
+      display: inline-block;
+      line-height: 50px;
+    }
+
+    .header .top3 .cell .fB {
+      font-size: 12px;
+      font-family: MicrosoftYaHei;
+      font-weight: bold;
+      color: #333333;
+      line-height: 16px;
+      margin-right: 5px;
+    }
+
+    .header .top3 .cell .vision {
+      width: 50px;
+      height: 14px;
+      background: #cfcfcf;
+      opacity: 0.99;
+      font-size: 12px;
+      font-family: ArialMT;
+      color: white;
+      line-height: 14px;
+      display: inline-block;
+      text-align: center;
+      margin-left: 1px;
+    }
+
+    .header .top3 .cell .blue {
+      background: #3A7EEA;
+    }
+  </style>
+  <style>
+    .core {
+      height: 129px;
+      background: white;
+      border-radius: 2px;
+      border: 1px solid #dedede;
+      margin-top: 10px;
+    }
+
+    .core .title {
+      font-size: 14px;
+      font-family: MicrosoftYaHei-Bold, MicrosoftYaHei;
+      font-weight: bold;
+      color: #333333;
+      line-height: 19px;
+      margin: 15px;
+    }
+
+    .core .content {
+      overflow: hidden;
+    }
+
+    .core .cell {
+      float: left;
+      width: 30%;
+      margin-left: 2.5%;
+    }
+
+    .core .top {
+      padding-top: 5px;
+      line-height: 30px;
+      margin-bottom: 15px;
+    }
+
+    .core .top img {
+      height: 26px;
+      vertical-align: bottom;
+    }
+
+    .core .top>span {
+      font-size: 14px;
+      line-height: 19px;
+      vertical-align: bottom;
+      margin-left: 10px;
+    }
+
+    .core .top .warn {
+      color: #bd0000;
+    }
+
+    .core .top .info {
+      color: #333333;
+    }
+
+    .core .top .bold {
+      font-weight: bold;
+    }
+
+    .core .top .big {
+      font-size: 30px;
+    }
+
+    .core .bottom {
+      line-height: 0;
+    }
+
+    .core .bottom>span {
+      height: 6px;
+      background: #3d3e52;
+      margin-left: 1px;
+      display: inline-block;
+    }
+
+    .core .bottom .red {
+      background: #db0000;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="body">
+    <div class="header">
+      <div class="left top1">
+        <div class="cell">
+          <img src="./img/top1.png" alt=""><span class="fB">主机总数:</span><span class="fG">111</span>
+        </div>
+        <div class="cell">
+          <img src="./img/top2.png" alt=""><span class="fB">在线主机:</span><span class="fG">111</span>
+        </div>
+        <div class="cell">
+          <img src="./img/top3.png" alt=""><span class="fB">离线主机:</span><span class="fG">111</span>
+        </div>
+      </div>
+      <div class="left top2">
+        <div class="cell">
+          <img src="./img/top4.png" alt=""><span class="fB">账号:</span><span class="fG">11</span>
+        </div>
+        <div class="cell">
+          <img src="./img/top5.png" alt=""><span class="fB">进程:</span><span class="fG">11</span>
+        </div>
+      </div>
+      <div class="left top3">
+        <div class="cell">
+          <span class="fB">Agent版本: </span><span class="vision blue" style="width:120px">1.01</span><span class="vision" style="width:80px">2.01</span>
+        </div>
+      </div>
+    </div>
+    <div class="core">
+      <div class="title">
+        核心指标
+      </div>
+      <div class="content">
+        <div class="cell">
+          <div class="top">
+            <img src="./img/content3.png" alt=""><span class="warn"><span class="bold">已失陷主机: </span><span class="big">111</span>台</span><span class="info">告警主机: <span class="big">111</span>台</span>
+          </div>
+          <div class="bottom">
+            <span class="red" style='width:26px'></span><span style='width:319px'></span>
+          </div>
+        </div>
+        <div class="cell">
+          <div class="top">
+            <img src="./img/content2.png" alt=""><span class="warn"><span class="bold">严重威胁事件: </span><span class="big">111</span>起</span><span class="info">威胁事件: <span class="big">111</span>起</span>
+          </div>
+          <div class="bottom">
+            <span class="red" style='width:26px'></span><span style='width:319px'></span>
+          </div>
+        </div>
+        <div class="cell">
+          <div class="top">
+            <img src="./img/content1.png" alt=""><span class="warn"><span class="bold">告警日志: </span><span class="big">111</span></span><span class="info">日志总量: <span class="big">111</span>K</span>
+          </div>
+          <div class="bottom">
+            <span class="red" style='width:26px'></span><span style='width:319px'></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
