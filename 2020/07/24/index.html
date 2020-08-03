@@ -1,5 +1,5 @@
 <!--
- * @LastEditTime: 2020-07-31 19:52:29
+ * @LastEditTime: 2020-08-03 11:17:10
  * @LastEditors: jinxiaojian
 -->
 <!DOCTYPE html>
@@ -229,6 +229,98 @@
       background: #db0000;
     }
   </style>
+  <style>
+    .tag {
+      /* height: 129px; */
+      background: white;
+      border-radius: 2px;
+      border: 1px solid #dedede;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+    }
+
+    .tag .title {
+      font-size: 14px;
+      font-family: MicrosoftYaHei-Bold, MicrosoftYaHei;
+      font-weight: bold;
+      color: #333333;
+      line-height: 19px;
+      margin: 15px;
+    }
+
+    .tag .tagType {
+      padding: 0 15px 0;
+      position: relative;
+      display: inline-block;
+    }
+
+    .tag .tagType img {
+      height: 100%;
+    }
+
+    .tag .cell {
+      position: absolute;
+      top: 0;
+      width: 15%;
+      height: 100%;
+      text-align: center;
+    }
+
+    .tag .cell1 {
+      left: 2%;
+    }
+
+    .tag .cell2 {
+      left: 18%;
+    }
+
+    .tag .cell3 {
+      left: 34%;
+    }
+
+    .tag .cell4 {
+      left: 50%;
+    }
+
+    .tag .cell5 {
+      left: 66%;
+    }
+
+    .tag .cell6 {
+      left: 82%;
+    }
+
+    .tag .box {
+      width: 150px;
+      display: inline-block;
+      position: relative;
+      top: 20%;
+    }
+
+    .tag .name {
+      font-size: 14px;
+      font-family: MicrosoftYaHei-Bold, MicrosoftYaHei;
+      font-weight: bold;
+      color: white;
+      line-height: 19px;
+      text-align: center;
+    }
+
+    .tag .line {
+      height: 1px;
+      background: #fff;
+      margin: 7px auto;
+    }
+
+    .tag .num {
+      font-size: 14px;
+      font-family: MicrosoftYaHei;
+      color: white;
+      line-height: 19px;
+      text-align: center;
+    }
+  </style>
 </head>
 
 <body>
@@ -286,6 +378,66 @@
           </div>
           <div class="bottom">
             <span class="red" style='width:26px'></span><span style='width:319px'></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tag">
+      <div class="title">
+        整体威胁情况
+      </div>
+      <div class="content">
+        <div class="tagType">
+          <img src="./img/tag.png" alt="">
+          <div class="cell cell1">
+            <div class="box">
+              <div class="name">初始入侵</div>
+              <div class="line"></div>
+              <div class="num">主机：0 事件：0</div>
+            </div>
+          </div>
+          <div class="cell cell2">
+            <div class="box">
+              <div class="name">巩固阵地</div>
+              <div class="line"></div>
+              <div class="num">主机：0 事件：0</div>
+            </div>
+
+          </div>
+          <div class="cell cell3">
+            <div class="box">
+              <div class="name">提权横移</div>
+              <div class="line"></div>
+              <div class="num">主机：0 事件：0</div>
+            </div>
+
+
+          </div>
+          <div class="cell cell4">
+            <div class="box">
+              <div class="name">建立外连</div>
+              <div class="line"></div>
+              <div class="num">主机：0 事件：0</div>
+            </div>
+
+
+          </div>
+          <div class="cell cell5">
+            <div class="box">
+              <div class="name">破坏窃取</div>
+              <div class="line"></div>
+              <div class="num">主机：0 事件：0</div>
+            </div>
+
+
+          </div>
+          <div class="cell cell6">
+            <div class="box">
+              <div class="name">掩盖痕迹</div>
+              <div class="line"></div>
+              <div class="num">主机：0 事件：0</div>
+            </div>
+
           </div>
         </div>
       </div>
