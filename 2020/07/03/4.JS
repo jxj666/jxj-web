@@ -1,11 +1,13 @@
 /*
- * @LastEditTime: 2020-07-07 11:10:28
+ * @LastEditTime: 2020-07-07 11:10:15
  * @LastEditors: jinxiaojian
  */
 
-// 拆分reducer
+//  拆分state
 
-function counterReducer (state, action) {
+function counterReducer (state = {
+  count: 0
+}, action) {
   switch (action.type) {
     case 'INCREMENT':
       return {
@@ -21,7 +23,10 @@ function counterReducer (state, action) {
   }
 }
 
-function InfoReducer (state, action) {
+function InfoReducer (state = {
+  name: '',
+  description: ''
+}, action) {
   switch (action.type) {
     case 'SET_NAME':
       return {
@@ -63,17 +68,9 @@ const reducer = combineReducers({
   info: InfoReducer
 });
 
-let initState = {
-  counter: {
-    count: 0
-  },
-  info: {
-    name: '前端九部',
-    description: '我们都是前端爱好者！'
-  }
-}
-const createStore = function (reducer, initState) {
-  let state = initState
+
+const createStore = function (reducer) {
+  let state
   let listeners = [];
   /*订阅*/
   function subscribe (listener) {
@@ -90,6 +87,7 @@ const createStore = function (reducer, initState) {
   function getState () {
     return state
   }
+  dispatch({ type: Symbol() })
   return {
     subscribe,
     dispatch,
@@ -97,7 +95,7 @@ const createStore = function (reducer, initState) {
   }
 }
 
-let store = createStore(reducer, initState);
+let store = createStore(reducer);
 
 store.subscribe(() => {
   let state = store.getState();
