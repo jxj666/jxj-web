@@ -1,4 +1,4 @@
-function composeTree(list) {
+function convert(list) {
   const depMap = new Map();
   list.forEach(d => depMap.set(d.id, d));
 
