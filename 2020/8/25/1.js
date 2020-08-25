@@ -1,5 +1,5 @@
 /*
- * @LastEditTime: 2020-08-25 10:11:59
+ * @LastEditTime: 2020-08-25 10:49:38
  * @LastEditors: jinxiaojian
  */
 
@@ -33,5 +33,4 @@ const fn = (data, value) => {
   return res
 
 }
-
 fn(list, '112')
