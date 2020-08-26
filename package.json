@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "live-server": "^1.2.1",
     "tracer": "^0.9.9"
   },
   "devDependencies": {

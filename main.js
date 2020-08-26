@@ -3,13 +3,13 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2020-01-02 16:48:23
- * @LastEditTime: 2020-08-26 23:30:58
+ * @LastEditTime: 2020-08-26 23:50:20
  * @LastEditors: jinxiaojian
  */
 
 var list2020 = [
-  { url: "/2020/08/26", name: "edr v0.5 开发总结" },
-  { url: "/2020/02/19", name: "参与开发的好分期项目" },
+  { url: "/2020/8/26", name: "edr v0.5 开发总结" },
+  { url: "/2020/2/19", name: "参与开发的好分期项目" },
   { url: "//m.jxjweb.top/ppt/cms", name: "cms模板数据化(ppt)" },
 ];
 var list2019 = [
