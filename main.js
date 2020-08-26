@@ -3,11 +3,12 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2020-01-02 16:48:23
- * @LastEditTime: 2020-03-03 18:30:02
- * @LastEditors: 靳肖健
+ * @LastEditTime: 2020-08-26 23:30:58
+ * @LastEditors: jinxiaojian
  */
 
 var list2020 = [
+  { url: "/2020/08/26", name: "edr v0.5 开发总结" },
   { url: "/2020/02/19", name: "参与开发的好分期项目" },
   { url: "//m.jxjweb.top/ppt/cms", name: "cms模板数据化(ppt)" },
 ];
