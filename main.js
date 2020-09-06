@@ -3,11 +3,17 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2020-01-02 16:48:23
- * @LastEditTime: 2020-08-26 23:50:20
+ * @LastEditTime: 2020-09-07 00:07:26
  * @LastEditors: jinxiaojian
  */
 
 var list2020 = [
+  // { url: '', name: '' },
+  { url: '//jxj322991.github.io/react45/word/react5.html', name: 'React 性能优化 ' },
+  { url: '//jxj322991.github.io/react45/word/react3.html', name: 'React 构建可维护可扩展的前端应用 ' },
+  { url: '//jxj322991.github.io/react45/word/react2.html', name: 'React 生态圈' },
+  { url: '//jxj322991.github.io/react45/word/react1.html', name: 'React 基础' },
+
   { url: "/2020/8/26", name: "edr v0.5 开发总结" },
   { url: "/2020/2/19", name: "参与开发的好分期项目" },
   { url: "//m.jxjweb.top/ppt/cms", name: "cms模板数据化(ppt)" },
@@ -21,7 +27,7 @@ var list2019 = [
   { url: "/2019/07/25.html", name: "避免组件样式污染" },
   { url: "/2019/07/24.html", name: "代码简化/解耦" },
   { url: "/2019/07/16.html", name: "4.9.3版本计划 开发总结" },
-  { url: "2020/03/03/", name: "hfqUpload上传组件封装" },
+  { url: "/2020/3/03/", name: "hfqUpload上传组件封装" },
 
   {
     url: "//m.jxjweb.top/ppt/egg",
