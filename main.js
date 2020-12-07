@@ -3,7 +3,7 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2020-01-02 16:48:23
- * @LastEditTime: 2020-09-07 00:07:26
+ * @LastEditTime: 2020-09-07 00:08:29
  * @LastEditors: jinxiaojian
  */
 
@@ -13,7 +13,6 @@ var list2020 = [
   { url: '//jxj322991.github.io/react45/word/react3.html', name: 'React 构建可维护可扩展的前端应用 ' },
   { url: '//jxj322991.github.io/react45/word/react2.html', name: 'React 生态圈' },
   { url: '//jxj322991.github.io/react45/word/react1.html', name: 'React 基础' },
-
   { url: "/2020/8/26", name: "edr v0.5 开发总结" },
   { url: "/2020/2/19", name: "参与开发的好分期项目" },
   { url: "//m.jxjweb.top/ppt/cms", name: "cms模板数据化(ppt)" },
