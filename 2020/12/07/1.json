@@ -1,0 +1,212 @@
+{
+  "dataDetail": {
+    "id": "RcAyKHYBevj1RbQEBNYg",
+    "log_uuid": "aba6f5c94c1cf4bc9346ab0628daf6d9",
+    "event_time": 1606968000,
+    "umid": "t-ce959d128494a9240bf008464cea5519",
+    "host_name": "edr-dev",
+    "host_ip": "192.168.101.120",
+    "user": {
+      "auid": "0",
+      "auname": "root",
+      "uid": "0",
+      "uname": "root",
+      "euid": "0",
+      "euname": "root",
+      "gid": "0"
+    },
+    "ppid": "1",
+    "pid": "1000",
+    "cmdline": "wget curl",
+    "proc_file": {
+      "name": "wget",
+      "path": "/usr/bin/wget",
+      "md5": "af9d83836ecf1f49c598bcb1995b3c98"
+    },
+    "threat": {
+      "id": "t-d33ff17e2e9c1ae48978e9ca9cef7cad",
+      "name": "可疑下载",
+      "tactic_name": "",
+      "tactic": "TA0002",
+      "type": "",
+      "technique": "T1068",
+      "level": "attack",
+      "severity": 2
+    },
+    "incident": {
+      "id": "t-2e5c3a15b940229e1faf275d40786d13",
+      "name": "进程树测试事件#2"
+    },
+    "first_time": 1606968000,
+    "last_time": 1606968000,
+    "net_list": [],
+    "alert_list": [
+      {
+        "id": "RcAyKHYBevj1RbQEBNYg",
+        "log_uuid": "aba6f5c94c1cf4bc9346ab0628daf6d9",
+        "event_time": 1606968000,
+        "umid": "t-ce959d128494a9240bf008464cea5519",
+        "host_name": "edr-dev",
+        "host_ip": "192.168.101.120",
+        "user": {
+          "auid": "0",
+          "auname": "root",
+          "uid": "0",
+          "uname": "root",
+          "euid": "0",
+          "euname": "root",
+          "gid": "0"
+        },
+        "ppid": "1",
+        "pid": "1000",
+        "cmdline": "wget curl",
+        "proc_file": {
+          "name": "wget",
+          "path": "/usr/bin/wget",
+          "md5": "af9d83836ecf1f49c598bcb1995b3c98"
+        },
+        "threat": {
+          "id": "t-d33ff17e2e9c1ae48978e9ca9cef7cad",
+          "name": "可疑下载",
+          "tactic_name": "",
+          "tactic": "TA0002",
+          "type": "",
+          "technique": "T1068",
+          "level": "attack",
+          "severity": 2
+        },
+        "incident": {
+          "id": "t-2e5c3a15b940229e1faf275d40786d13",
+          "name": "进程树测试事件#2"
+        }
+      }
+    ]
+  },
+  "point": {
+    "incident_id": "t-2e5c3a15b940229e1faf275d40786d13",
+    "umid": "t-ce959d128494a9240bf008464cea5519",
+    "first_time": 1606968000,
+    "last_time": 1606968000,
+    "ppid": "1",
+    "pid": "1000",
+    "cmdline": "wget curl",
+    "proc_file": {
+      "name": "wget",
+      "path": "/usr/bin/wget",
+      "md5": "af9d83836ecf1f49c598bcb1995b3c98"
+    },
+    "children": [
+      {
+        "incident_id": "t-2e5c3a15b940229e1faf275d40786d13",
+        "umid": "t-ce959d128494a9240bf008464cea5519",
+        "first_time": 1606449600,
+        "last_time": 1606449600,
+        "ppid": "1000",
+        "pid": "1001",
+        "cmdline": "curl python3",
+        "proc_file": {
+          "name": "curl",
+          "path": "/usr/bin/curl",
+          "md5": "f6e57c9de709e45feb0d955351f53548"
+        },
+        "pproc_file": {
+          "name": "wget",
+          "path": "/usr/bin/wget",
+          "md5": "af9d83836ecf1f49c598bcb1995b3c98"
+        },
+        "actions": [
+          "threat"
+        ],
+        "has_threat": true,
+        "x": 121.5,
+        "y": -120.5,
+        "depth": 2,
+        "type": "proc-point",
+        "id": "node30",
+        "style": {
+          "active": {
+            "fill": "rgb(247, 250, 255)",
+            "stroke": "rgb(95, 149, 255)",
+            "lineWidth": 2,
+            "shadowColor": "rgb(95, 149, 255)",
+            "shadowBlur": 10
+          },
+          "selected": {
+            "fill": "rgb(255, 255, 255)",
+            "stroke": "rgb(95, 149, 255)",
+            "lineWidth": 4,
+            "shadowColor": "rgb(95, 149, 255)",
+            "shadowBlur": 10,
+            "text-shape": {
+              "fontWeight": 500
+            }
+          },
+          "highlight": {
+            "fill": "rgb(223, 234, 255)",
+            "stroke": "#4572d9",
+            "lineWidth": 2,
+            "text-shape": {
+              "fontWeight": 500
+            }
+          },
+          "inactive": {
+            "fill": "rgb(247, 250, 255)",
+            "stroke": "rgb(191, 213, 255)",
+            "lineWidth": 1
+          },
+          "disable": {
+            "fill": "rgb(250, 250, 250)",
+            "stroke": "rgb(224, 224, 224)",
+            "lineWidth": 1
+          }
+        }
+      }
+    ],
+    "actions": [
+      "threat"
+    ],
+    "has_threat": true,
+    "x": 0.5,
+    "y": -120.5,
+    "depth": 1,
+    "type": "proc-point",
+    "id": "node29",
+    "style": {
+      "active": {
+        "fill": "rgb(247, 250, 255)",
+        "stroke": "rgb(95, 149, 255)",
+        "lineWidth": 2,
+        "shadowColor": "rgb(95, 149, 255)",
+        "shadowBlur": 10
+      },
+      "selected": {
+        "fill": "rgb(255, 255, 255)",
+        "stroke": "rgb(95, 149, 255)",
+        "lineWidth": 4,
+        "shadowColor": "rgb(95, 149, 255)",
+        "shadowBlur": 10,
+        "text-shape": {
+          "fontWeight": 500
+        }
+      },
+      "highlight": {
+        "fill": "rgb(223, 234, 255)",
+        "stroke": "#4572d9",
+        "lineWidth": 2,
+        "text-shape": {
+          "fontWeight": 500
+        }
+      },
+      "inactive": {
+        "fill": "rgb(247, 250, 255)",
+        "stroke": "rgb(191, 213, 255)",
+        "lineWidth": 1
+      },
+      "disable": {
+        "fill": "rgb(250, 250, 250)",
+        "stroke": "rgb(224, 224, 224)",
+        "lineWidth": 1
+      }
+    }
+  }
+}

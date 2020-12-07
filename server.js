@@ -1,16 +1,20 @@
-/*
- * @Description: 
- * @Author: jinxiaojian
- * @Email: jinxiaojian@youxin.com
- * @Date: 2019-12-25 13:11:57
- * @LastEditTime : 2019-12-26 13:19:16
- * @LastEditors  : 靳肖健
- */
-var liveServer = require("live-server");
+function sendFile_0(realPath, Request, Response, callback) {
+  try {
+      var stats = fs.statSync(realPath);
+      if (stats.isDirectory()) {
+          callback("error: isDirectory");
+          return;
+      }
+      Response.statusCode = 200;
+      Response.setHeader("Content-Length", stats.size);
+      fs.createReadStream(realPath).pipe(Response);
+  } catch (err) {
+      callback(err);
+  }
+}
 
-var params = {
-  port: 8181, // Set the server port. Defaults to 8080.
-  host: "0.0.0.0", // Set the address to bind to. Defaults to 0.0.0.0 or process.env.IP.
-  root: "./", // Set root directory that's being served. Defaults to cwd.
-};
-liveServer.start(params);
+var http = require("http");
+var fs = require("fs");
+http.createServer((Request, Response) => {
+  sendFile_0("/index.html", Request, Response, console.log);
+}).listen(7777);
