@@ -1,10 +1,10 @@
 
 /*
- * @LastEditTime: 2020-12-13 22:24:29
+ * @LastEditTime: 2020-12-13 23:47:36
  * @LastEditors: jinxiaojian
  */
 // 深度遍历整个多叉树
-const mainLimit = {}
+const mainLimit = { '0': { top: 0} }
 function dfs (obj, nodes = [], edges = [], xindex = 0, yindex = 0, config = { pre: [] }) {
   if (obj) {
     const hasChild = []
@@ -16,7 +16,7 @@ function dfs (obj, nodes = [], edges = [], xindex = 0, yindex = 0, config = { pr
     }
     nodes.push({ xindex, yindex, id: obj.pid || obj.id, config, ...obj, hasChild, children: null })
     if (obj.children && obj.children.length) {
-      const { length } = obj.children
+      xindex += 1
       obj.children.forEach(
         (x, i) => {
           edges.push({
@@ -27,20 +27,28 @@ function dfs (obj, nodes = [], edges = [], xindex = 0, yindex = 0, config = { pr
             sourceAnchor: 1,
             targetAnchor: 0
           })
-          let yindexSelf = 0
-          yindexSelf = yindex + (i + 1) - length / 2 - 0.5
+          let yindexSelf;
+
           if (!mainLimit[xindex]) {
-            mainLimit[xindex] = { left: 0, right: 0 }
+            mainLimit[xindex] = {}
+            mainLimit[xindex].top = mainLimit[xindex-1].top
+          } else {
+            mainLimit[xindex].top += 1
           }
-          dfs(x, nodes, edges, xindex + 1, yindexSelf, { pre: [...config.pre, obj.pid] })
+          if (i === obj.children.length - 1) {
+            config.pre.forEach((bol, boli) => {
+                mainLimit[xindex - 1 - boli].top = mainLimit[xindex - boli].top
+            })
+          }
+          yindexSelf = - mainLimit[xindex].top
+          dfs(x, nodes, edges, xindex, yindexSelf, { pre: [...config.pre, obj.pid] })
         }
       )
     }
   }
-  console.log(mainLimit)
   return { nodes, edges }
 }
 
-
 let list = dfs(data).nodes
-console.log(list)
+console.log(mainLimit)
+console.log(JSON.parse(JSON.stringify(list)))

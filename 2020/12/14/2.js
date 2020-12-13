@@ -1,10 +1,10 @@
 
 /*
- * @LastEditTime: 2020-12-13 22:14:22
+ * @LastEditTime: 2020-12-13 22:37:21
  * @LastEditors: jinxiaojian
  */
 // 深度遍历整个多叉树
-const mainLimit = { '0': { left: 0, bottom: 0 } }
+const mainLimit = { '0': { top: 0, bottom: 0 } }
 function dfs (obj, nodes = [], edges = [], xindex = 0, yindex = 0, config = { pre: [] }) {
   if (obj) {
     const hasChild = []
@@ -44,50 +44,6 @@ function dfs (obj, nodes = [], edges = [], xindex = 0, yindex = 0, config = { pr
   }
   console.log(mainLimit)
   return { nodes, edges }
-}
-const data = {
-  id: 0,
-  name: 0,
-  children: [
-    {
-      id: 1,
-      name: 1,
-      children: [
-        {
-          id: 11,
-          name: 11,
-          children: [
-            {
-              id: 111,
-              name: 111
-            },
-            {
-              id: 112,
-              name: 112
-            },
-            {
-              id: 113,
-              name: 113
-            }
-          ]
-        },
-        {
-          id: 12,
-          name: 12,
-          children: [
-            {
-              id: 121,
-              name: 121
-            },
-            {
-              id: 122,
-              name: 122
-            }
-          ]
-        }
-      ]
-    }
-  ]
 }
 
 let list = dfs(data).nodes
