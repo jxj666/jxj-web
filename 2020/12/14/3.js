@@ -1,6 +1,6 @@
 
 /*
- * @LastEditTime: 2020-12-13 23:47:36
+ * @LastEditTime: 2020-12-14 01:51:58
  * @LastEditors: jinxiaojian
  */
 // 深度遍历整个多叉树
@@ -49,6 +49,15 @@ function dfs (obj, nodes = [], edges = [], xindex = 0, yindex = 0, config = { pr
   return { nodes, edges }
 }
 
+
 let list = dfs(data).nodes
+let max=0
+for(let i in mainLimit){
+  if(max>mainLimit[i].top){
+    mainLimit[i].top=max
+  }else{
+    max=mainLimit[i].top
+  }
+}
 console.log(mainLimit)
 console.log(JSON.parse(JSON.stringify(list)))

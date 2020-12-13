@@ -1,5 +1,5 @@
 <!--
- * @LastEditTime: 2020-12-14 01:40:05
+ * @LastEditTime: 2020-12-14 01:44:55
  * @LastEditors: jinxiaojian
 -->
 <!DOCTYPE html>
@@ -11,12 +11,13 @@
   <title>Document</title>
 </head>
 <script src="./data.js"></script>
-<script src="./1.js"></script>
+<script src="./4.js"></script>
 <script src="../../../model/vue.min.js"></script>
 
 <body>
   <div id="app">
-    <div v-bind:style="{ left: x.xindex*40+'px', top: x.yindex*40 + 'px' }" class="list" v-for="(x,index) in list">{{x.id}}</div>
+    <div v-bind:style="{ left: x.xindex*50+'px', top: (x.yindex+mainLimit[x.xindex].top/2)*50 + 'px' }" class="list" v-for="(x,index) in list">{{x.id}}</div>
+    <!-- <div v-bind:style="{ left: x.xindex*50+'px', top: (x.yindex)*50 + 'px' }" class="list" v-for="(x,index) in list">{{x.id}}</div> -->
   </div>
 </body>
 <script>
@@ -39,9 +40,10 @@
     left: 10vw;
     top: 50vw;
   }
-  .list{
+
+  .list {
     position: absolute;
-    background:rgba(255,0,0,0.2);
+    background: rgba(255, 0, 0, 0.2);
   }
 </style>
 

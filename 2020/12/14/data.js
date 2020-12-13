@@ -1,5 +1,5 @@
 /*
- * @LastEditTime: 2020-12-13 23:45:39
+ * @LastEditTime: 2020-12-14 01:57:35
  * @LastEditors: jinxiaojian
  */
 const data = {
@@ -46,6 +46,19 @@ const data = {
             },
             {
               id: 122,
+              children: [
+                {
+                  id: 1221,
+                  children: [
+                    {
+                      id: 12211
+                    },
+                    {
+                      id: 12212
+                    }
+                  ]
+                }
+              ]
 
             }
           ]
@@ -76,9 +89,9 @@ const data = {
             {
               id: 211,
               children: [
-                { id: 2211 },
-                { id: 2212 },
-                { id: 2213 }
+                { id: 2111 },
+                { id: 2112 },
+                { id: 2113 }
 
               ]
             }
