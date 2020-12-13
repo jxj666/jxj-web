@@ -1,0 +1,47 @@
+<!--
+ * @LastEditTime: 2020-12-13 22:15:56
+ * @LastEditors: jinxiaojian
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<script src="./2.js"></script>
+<script src="../../../model/vue.min.js"></script>
+
+<body>
+  <div id="app">
+    <div v-bind:style="{ left: x.xindex*30+'px', top: (x.yindex+mainLimit[x.xindex].top/2)*30 + 'px' }" class="list" v-for="(x,index) in list">{{x.id}}</div>
+  </div>
+</body>
+<script>
+  var app = new Vue({
+    el: "#app",
+    data() {
+      return {
+        list: [],
+      };
+    },
+    created() { },
+    mounted() {
+      this.list = list;
+    },
+  });
+</script>
+<style>
+  #app {
+    position: fixed;
+    left: 10vw;
+    top: 50vw;
+  }
+  .list{
+    position: absolute;
+    background:rgba(255,0,0,0.2);
+  }
+</style>
+
+</html>
