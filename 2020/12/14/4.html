@@ -1,5 +1,5 @@
 <!--
- * @LastEditTime: 2020-12-14 01:44:55
+ * @LastEditTime: 2020-12-14 14:44:56
  * @LastEditors: jinxiaojian
 -->
 <!DOCTYPE html>
@@ -16,8 +16,7 @@
 
 <body>
   <div id="app">
-    <div v-bind:style="{ left: x.xindex*50+'px', top: (x.yindex+mainLimit[x.xindex].top/2)*50 + 'px' }" class="list" v-for="(x,index) in list">{{x.id}}</div>
-    <!-- <div v-bind:style="{ left: x.xindex*50+'px', top: (x.yindex)*50 + 'px' }" class="list" v-for="(x,index) in list">{{x.id}}</div> -->
+    <div v-bind:style="{ left: x.xindex*50+'px', top: (x.yindex)*50 + 'px' }" class="list" v-for="(x,index) in list">{{x.id}}</div>
   </div>
 </body>
 <script>
@@ -38,7 +37,7 @@
   #app {
     position: fixed;
     left: 10vw;
-    top: 50vw;
+    top: 80vw;
   }
 
   .list {

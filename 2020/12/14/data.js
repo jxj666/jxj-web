@@ -1,9 +1,9 @@
 /*
- * @LastEditTime: 2020-12-14 01:57:35
+ * @LastEditTime: 2020-12-14 14:43:10
  * @LastEditors: jinxiaojian
  */
 const data = {
-  id: 0,
+  id: '0',
 
   children: [
     {

@@ -1,6 +1,6 @@
 
 /*
- * @LastEditTime: 2020-12-14 01:55:42
+ * @LastEditTime: 2020-12-14 14:43:00
  * @LastEditors: jinxiaojian
  */
 // 深度遍历整个多叉树
@@ -39,7 +39,9 @@ function dfs (obj, nodes = [], edges = [], xindex = 0, yindex = 0, config = { pr
 
           if (!mainLimit[xindex]) {
             mainLimit[xindex] = {}
-            mainLimit[xindex].top = mainLimit[xindex - 1].top
+            mainLimit[xindex].top = mainLimit[xindex-1].top
+          }else if(mainLimit[xindex].top < mainLimit[xindex-1].top){
+            mainLimit[xindex].top = mainLimit[xindex-1].top
           } else {
             mainLimit[xindex].top += 1
           }
@@ -81,14 +83,9 @@ function movePre (nodes) {
   return nodes
 }
 let list = movePre(dfs(data).nodes)
+
 let max=0
-for(let i in mainLimit){
-  if(max>mainLimit[i].top){
-    mainLimit[i].top=max
-  }else{
-    max=mainLimit[i].top
-  }
-}
+
 console.log(mainLimit)
 console.log(searched)
 
