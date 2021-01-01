@@ -3,12 +3,17 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2020-01-02 16:48:23
- * @LastEditTime: 2020-09-07 00:08:29
+ * @LastEditTime: 2021-01-01 22:35:11
  * @LastEditors: jinxiaojian
  */
 
 var list2020 = [
   // { url: '', name: '' },
+  { name: 'g6 开发经验', url: 'https://segmentfault.com/a/1190000038774214' },
+  { name: 'g6 自定义算法 树图', url: 'https://segmentfault.com/a/1190000038774157' },
+  { name: 'g6 核心概念', url: 'https://segmentfault.com/a/1190000038774096' },
+  { name: 'g6 基本用法', url: 'https://segmentfault.com/a/1190000038773920' },
+
   { url: '//jxj322991.github.io/react45/word/react5.html', name: 'React 性能优化 ' },
   { url: '//jxj322991.github.io/react45/word/react3.html', name: 'React 构建可维护可扩展的前端应用 ' },
   { url: '//jxj322991.github.io/react45/word/react2.html', name: 'React 生态圈' },
