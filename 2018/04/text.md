@@ -25,6 +25,6 @@
 ![1](test/05.png)
 ![1](test/06.png)
 
-### [页面预览](https://jxj322991.github.io/bid2/)
+### [页面预览](https://jxj666.github.io/bid2/)
 
 ### [兼容粗侧](https://developer.microsoft.com/en-us/microsoft-edge/tools/screenshots/)
